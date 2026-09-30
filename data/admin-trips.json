@@ -1,0 +1,469 @@
+[
+  {
+    "id": "trip-001",
+    "enquiryId": "enq-005",
+    "customerId": "cust-rahul",
+    "customerName": "Rahul Sharma",
+    "destination": "Kerala",
+    "destinationSlug": "kerala",
+    "travelDates": { "start": "2026-11-12", "end": "2026-11-16" },
+    "travellers": { "adults": 2, "children": 1 },
+    "status": "Confirmed",
+    "notes": "Family backwaters circuit — quote approved; awaiting final hotel names.",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrive Kerala hub",
+        "notes": "Airport meet & assist; hotel check-in.",
+        "activities": [
+          {
+            "id": "act-krl-1a",
+            "title": "Arrival transfer",
+            "time": "Afternoon",
+            "description": "Private transfer to hotel; rest after travel."
+          },
+          {
+            "id": "act-krl-1b",
+            "title": "Evening orientation",
+            "time": "Evening",
+            "description": "Light stroll near the stay; early dinner preferred for child."
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Backwater day",
+        "notes": "Core backwaters experience day.",
+        "activities": [
+          {
+            "id": "act-krl-2a",
+            "title": "Backwater cruise / houseboat segment",
+            "time": "Morning",
+            "description": "Illustrative canal cruise with lunch onboard (demo)."
+          },
+          {
+            "id": "act-krl-2b",
+            "title": "Village canal views",
+            "time": "Afternoon",
+            "description": "Gentle pacing along canal-side villages."
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Leisure & local sights",
+        "notes": "",
+        "activities": [
+          {
+            "id": "act-krl-3a",
+            "title": "Local market / spice stop",
+            "time": "Morning",
+            "description": "Short cultural stop suited to families."
+          },
+          {
+            "id": "act-krl-3b",
+            "title": "Hotel leisure",
+            "time": "Afternoon",
+            "description": "Pool or rest time — flexible for weather."
+          }
+        ]
+      },
+      {
+        "day": 4,
+        "title": "Easy transfer day",
+        "notes": "Optional hill or coastal add-on depending on final routing.",
+        "activities": [
+          {
+            "id": "act-krl-4a",
+            "title": "Scenic transfer",
+            "time": "Morning",
+            "description": "Comfortable road transfer between hubs."
+          },
+          {
+            "id": "act-krl-4b",
+            "title": "Check-in & free evening",
+            "time": "Evening",
+            "description": "Settle into second stay; free evening."
+          }
+        ]
+      },
+      {
+        "day": 5,
+        "title": "Departure",
+        "notes": "Checkout timing tied to flight.",
+        "activities": [
+          {
+            "id": "act-krl-5a",
+            "title": "Departure transfer",
+            "time": "Morning",
+            "description": "Hotel checkout and airport drop."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "trip-002",
+    "enquiryId": "enq-006",
+    "customerId": "cust-amit",
+    "customerName": "Amit Roy",
+    "destination": "Thailand",
+    "destinationSlug": "thailand",
+    "travelDates": { "start": "2026-12-05", "end": "2026-12-10" },
+    "travellers": { "adults": 2, "children": 1 },
+    "status": "Upcoming",
+    "notes": "Booked Thailand Highlights-style circuit; flights guest-arranged.",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrive Bangkok",
+        "notes": "Late-afternoon arrival assumed.",
+        "activities": [
+          {
+            "id": "act-th-1a",
+            "title": "Airport to hotel",
+            "time": "Afternoon",
+            "description": "Private transfer; hotel check-in."
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Temple circuit day",
+        "notes": "Modest dress for temple visits.",
+        "activities": [
+          {
+            "id": "act-th-2a",
+            "title": "Grand palace / temple precinct",
+            "time": "Morning",
+            "description": "Guided illustrative temple circuit."
+          },
+          {
+            "id": "act-th-2b",
+            "title": "River / local lunch stop",
+            "time": "Afternoon",
+            "description": "Family-paced break near river precinct."
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Old town & markets",
+        "notes": "",
+        "activities": [
+          {
+            "id": "act-th-3a",
+            "title": "Old town walk",
+            "time": "Morning",
+            "description": "Heritage lanes and photo stops."
+          },
+          {
+            "id": "act-th-3b",
+            "title": "Evening market",
+            "time": "Evening",
+            "description": "Optional night market for snacks and souvenirs."
+          }
+        ]
+      },
+      {
+        "day": 4,
+        "title": "Transfer to coastal belt",
+        "notes": "Domestic transfer mode TBC.",
+        "activities": [
+          {
+            "id": "act-th-4a",
+            "title": "City to coast transfer",
+            "time": "Morning",
+            "description": "Transfer to coastal hotel; check-in."
+          }
+        ]
+      },
+      {
+        "day": 5,
+        "title": "Coastal leisure day",
+        "notes": "",
+        "activities": [
+          {
+            "id": "act-th-5a",
+            "title": "Beach / pool leisure",
+            "time": "Morning",
+            "description": "Unstructured leisure for family recovery day."
+          },
+          {
+            "id": "act-th-5b",
+            "title": "Optional island viewpoint",
+            "time": "Afternoon",
+            "description": "Short optional outing if energy allows."
+          }
+        ]
+      },
+      {
+        "day": 6,
+        "title": "Departure",
+        "notes": "",
+        "activities": [
+          {
+            "id": "act-th-6a",
+            "title": "Return transfer & departure",
+            "time": "Morning",
+            "description": "Checkout and airport transfer."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "trip-003",
+    "enquiryId": "enq-007",
+    "customerId": "cust-amit",
+    "customerName": "Amit Roy",
+    "destination": "Kashmir",
+    "destinationSlug": "kashmir",
+    "travelDates": { "start": "2025-09-10", "end": "2025-09-15" },
+    "travellers": { "adults": 2, "children": 2 },
+    "status": "Completed",
+    "notes": "Past guest trip — positive review received.",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrive Srinagar",
+        "notes": "",
+        "activities": [
+          {
+            "id": "act-ks-1a",
+            "title": "Arrival & lakeside check-in",
+            "time": "Afternoon",
+            "description": "Hotel check-in; gentle lakeside evening."
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Dal Lake & local sights",
+        "notes": "",
+        "activities": [
+          {
+            "id": "act-ks-2a",
+            "title": "Shikara ride",
+            "time": "Morning",
+            "description": "Family shikara on Dal Lake."
+          },
+          {
+            "id": "act-ks-2b",
+            "title": "Mughal gardens stop",
+            "time": "Afternoon",
+            "description": "Selected garden sightseeing in season."
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Gulmarg day trip",
+        "notes": "",
+        "activities": [
+          {
+            "id": "act-ks-3a",
+            "title": "Gulmarg meadows",
+            "time": "Full day",
+            "description": "Drive to Gulmarg; meadow views; return Srinagar."
+          }
+        ]
+      },
+      {
+        "day": 4,
+        "title": "Transfer to Pahalgam",
+        "notes": "",
+        "activities": [
+          {
+            "id": "act-ks-4a",
+            "title": "Scenic transfer",
+            "time": "Morning",
+            "description": "Transfer to Pahalgam with short photo stops."
+          },
+          {
+            "id": "act-ks-4b",
+            "title": "Valley walk",
+            "time": "Afternoon",
+            "description": "Easy riverside walk suited to children."
+          }
+        ]
+      },
+      {
+        "day": 5,
+        "title": "Pahalgam leisure & return",
+        "notes": "",
+        "activities": [
+          {
+            "id": "act-ks-5a",
+            "title": "Leisure morning",
+            "time": "Morning",
+            "description": "Free morning in Pahalgam."
+          },
+          {
+            "id": "act-ks-5b",
+            "title": "Return toward Srinagar",
+            "time": "Afternoon",
+            "description": "Drive back for overnight near departure hub."
+          }
+        ]
+      },
+      {
+        "day": 6,
+        "title": "Departure",
+        "notes": "",
+        "activities": [
+          {
+            "id": "act-ks-6a",
+            "title": "Airport transfer",
+            "time": "Morning",
+            "description": "Checkout and departure transfer."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "trip-004",
+    "enquiryId": "enq-004",
+    "customerId": "cust-arjun",
+    "customerName": "Arjun Mehta",
+    "destination": "Dubai",
+    "destinationSlug": "dubai",
+    "travelDates": { "start": "2027-01-10", "end": "2027-01-14" },
+    "travellers": { "adults": 1, "children": 0 },
+    "status": "Planning",
+    "notes": "Quotation sent — awaiting guest confirmation.",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrive Dubai",
+        "notes": "",
+        "activities": [
+          {
+            "id": "act-db-1a",
+            "title": "Arrival transfer",
+            "time": "Evening",
+            "description": "Airport to downtown hotel."
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Downtown & skyline precinct",
+        "notes": "",
+        "activities": [
+          {
+            "id": "act-db-2a",
+            "title": "Downtown landmarks",
+            "time": "Morning",
+            "description": "Illustrative skyline and fountain precinct time."
+          },
+          {
+            "id": "act-db-2b",
+            "title": "Mall / leisure block",
+            "time": "Afternoon",
+            "description": "Flexible shopping or rest block."
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Old Dubai & markets",
+        "notes": "",
+        "activities": [
+          {
+            "id": "act-db-3a",
+            "title": "Creek & souk circuit",
+            "time": "Morning",
+            "description": "Old Dubai lanes and market stops."
+          }
+        ]
+      },
+      {
+        "day": 4,
+        "title": "Desert-edge evening",
+        "notes": "Optional desert outing.",
+        "activities": [
+          {
+            "id": "act-db-4a",
+            "title": "Desert evening experience",
+            "time": "Evening",
+            "description": "Illustrative desert-edge evening (demo)."
+          }
+        ]
+      },
+      {
+        "day": 5,
+        "title": "Departure",
+        "notes": "",
+        "activities": [
+          {
+            "id": "act-db-5a",
+            "title": "Departure transfer",
+            "time": "Morning",
+            "description": "Hotel checkout and airport drop."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "trip-005",
+    "enquiryId": "enq-003",
+    "customerId": "cust-sneha",
+    "customerName": "Sneha Kapoor",
+    "destination": "Rajasthan",
+    "destinationSlug": "rajasthan",
+    "travelDates": { "start": "2026-11-20", "end": "2026-11-26" },
+    "travellers": { "adults": 2, "children": 0 },
+    "status": "Planning",
+    "notes": "Heritage itinerary draft — quote still in draft.",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrive Jaipur",
+        "notes": "",
+        "activities": [
+          {
+            "id": "act-rj-1a",
+            "title": "Arrival & check-in",
+            "time": "Afternoon",
+            "description": "Hotel check-in; unhurried Pink City evening."
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Jaipur forts & viewpoints",
+        "notes": "",
+        "activities": [
+          {
+            "id": "act-rj-2a",
+            "title": "Amer / fort circuit",
+            "time": "Morning",
+            "description": "Signature fort and viewpoint stops."
+          },
+          {
+            "id": "act-rj-2b",
+            "title": "City palace precinct",
+            "time": "Afternoon",
+            "description": "Palace and adjacent heritage lanes."
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Jaipur markets & heritage lanes",
+        "notes": "",
+        "activities": [
+          {
+            "id": "act-rj-3a",
+            "title": "Bazaar time",
+            "time": "Morning",
+            "description": "Local markets for textiles and crafts."
+          }
+        ]
+      }
+    ]
+  }
+]

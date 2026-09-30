@@ -1,0 +1,62 @@
+[
+  {
+    "id": "book-001",
+    "bookingRef": "BK-2026-014",
+    "quotationId": "quote-002",
+    "tripId": "trip-002",
+    "customerId": "cust-amit",
+    "customerName": "Amit Roy",
+    "destination": "Thailand",
+    "travelDates": { "start": "2026-12-05", "end": "2026-12-10" },
+    "travellers": { "adults": 2, "children": 1 },
+    "amount": 145000,
+    "status": "Confirmed",
+    "itinerarySummary": "Bangkok temples & markets → coastal leisure → departure (6 days).",
+    "createdAt": "2026-02-10T11:00:00.000Z"
+  },
+  {
+    "id": "book-002",
+    "bookingRef": "BK-2025-042",
+    "quotationId": "quote-003",
+    "tripId": "trip-003",
+    "customerId": "cust-amit",
+    "customerName": "Amit Roy",
+    "destination": "Kashmir",
+    "travelDates": { "start": "2025-09-10", "end": "2025-09-15" },
+    "travellers": { "adults": 2, "children": 2 },
+    "amount": 92000,
+    "status": "Completed",
+    "itinerarySummary": "Srinagar lakeside → Gulmarg day → Pahalgam → departure (6 days).",
+    "createdAt": "2025-07-28T09:15:00.000Z"
+  },
+  {
+    "id": "book-003",
+    "bookingRef": "BK-2026-021",
+    "quotationId": "quote-001",
+    "tripId": "trip-001",
+    "customerId": "cust-rahul",
+    "customerName": "Rahul Sharma",
+    "destination": "Kerala",
+    "travelDates": { "start": "2026-11-12", "end": "2026-11-16" },
+    "travellers": { "adults": 2, "children": 1 },
+    "amount": 78500,
+    "status": "Pending",
+    "itinerarySummary": "Kerala hub arrival → backwaters day → leisure / transfer → departure (5 days).",
+    "createdAt": "2026-02-22T14:40:00.000Z"
+  },
+  {
+    "id": "book-004",
+    "bookingRef": "BK-2025-031",
+    "quotationId": "quote-003",
+    "tripId": "trip-003",
+    "customerId": "cust-amit",
+    "customerName": "Amit Roy",
+    "destination": "Kashmir",
+    "travelDates": { "start": "2025-08-01", "end": "2025-08-05" },
+    "travellers": { "adults": 2, "children": 0 },
+    "amount": 68000,
+    "status": "Cancelled",
+    "itinerarySummary": "Earlier Kashmir dates cancelled; guest rebooked September circuit.",
+    "createdAt": "2025-06-15T10:00:00.000Z"
+  }
+]

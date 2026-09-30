@@ -1,0 +1,47 @@
+[
+  {
+    "id": "cust-rahul",
+    "name": "Rahul Sharma",
+    "email": "rahul.sharma@example.com",
+    "phone": "+91 98100 11223",
+    "status": "Active",
+    "createdAt": "2025-11-12T09:30:00.000Z",
+    "notes": "Prefers family-paced domestic circuits; Innova preferred."
+  },
+  {
+    "id": "cust-priya",
+    "name": "Priya Das",
+    "email": "priya.das@example.com",
+    "phone": "+91 98200 44556",
+    "status": "Lead",
+    "createdAt": "2026-01-08T11:15:00.000Z",
+    "notes": "Interested in Bali honeymoon-style pacing; flexible on dates."
+  },
+  {
+    "id": "cust-amit",
+    "name": "Amit Roy",
+    "email": "amit.roy@example.com",
+    "phone": "+91 98300 77889",
+    "status": "Past Guest",
+    "createdAt": "2025-06-20T07:45:00.000Z",
+    "notes": "Completed Kashmir family trip; returned for Thailand enquiry."
+  },
+  {
+    "id": "cust-sneha",
+    "name": "Sneha Kapoor",
+    "email": "sneha.kapoor@example.com",
+    "phone": "+91 98400 22334",
+    "status": "Active",
+    "createdAt": "2025-12-03T14:20:00.000Z",
+    "notes": "Heritage-focused traveller; also exploring Singapore city break."
+  },
+  {
+    "id": "cust-arjun",
+    "name": "Arjun Mehta",
+    "email": "arjun.mehta@example.com",
+    "phone": "+91 98500 55667",
+    "status": "Lead",
+    "createdAt": "2026-02-14T10:05:00.000Z",
+    "notes": "Corporate-friendly Dubai short stay; quotation in progress."
+  }
+]

@@ -7,9 +7,21 @@
   "use strict";
 
   var STORAGE_KEY = "taDemoPlanner";
+  var ADMIN_ENQUIRIES_KEY = "taAdmin:enquiries";
   var SUMMARY_PATH = "/plan-your-trip/summary/";
   var PLANNER_PATH = "/plan-your-trip/";
   var WA_NUMBER = "919999999999";
+
+  var DEST_DISPLAY = {
+    kashmir: "Kashmir",
+    rajasthan: "Rajasthan",
+    kerala: "Kerala",
+    sikkim: "Sikkim",
+    bali: "Bali",
+    thailand: "Thailand",
+    dubai: "Dubai",
+    singapore: "Singapore"
+  };
 
   var STEP_IDS = [
     "destination",
@@ -93,6 +105,82 @@
       sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     } catch (e) {
       /* ignore quota / private mode */
+    }
+  }
+
+  /**
+   * Push submitted planner state into admin enquiry localStorage.
+   * Prefers TAAdminStore when loaded; otherwise writes the same
+   * `taAdmin:enquiries` shape so admin pages still see the enquiry.
+   */
+  function pushEnquiryToAdmin(state) {
+    if (!state || !state.submittedAt) return;
+    try {
+      if (
+        window.TAAdminStore &&
+        typeof window.TAAdminStore.appendEnquiryFromPlannerState === "function"
+      ) {
+        window.TAAdminStore.appendEnquiryFromPlannerState(state);
+        return;
+      }
+    } catch (e) {
+      /* fall through to direct write */
+    }
+
+    try {
+      var prefs = state.preferences || {};
+      var contact = state.contact || {};
+      var reqParts = [];
+      if (prefs.hotelCategory) reqParts.push("Hotel: " + prefs.hotelCategory);
+      if (prefs.vehicleCategory) reqParts.push("Vehicle: " + prefs.vehicleCategory);
+      if (prefs.pace) reqParts.push("Pace: " + prefs.pace);
+      if (prefs.mustVisit) reqParts.push("Must visit: " + prefs.mustVisit);
+      if (prefs.specialRequirements) reqParts.push(prefs.specialRequirements);
+      if (state.budget) reqParts.push("Budget: " + state.budget);
+      if (Array.isArray(state.services) && state.services.length) {
+        reqParts.push("Services: " + state.services.join(", "));
+      }
+      if (state.package) reqParts.push("Package interest: " + state.package);
+
+      var slug = state.destination || "";
+      var enquiry = {
+        id: "enq-public-" + Date.now(),
+        customerId: null,
+        customerName: contact.name || "",
+        email: contact.email || "",
+        phone: contact.phone || "",
+        destination: DEST_DISPLAY[slug] || slug || "Undecided",
+        destinationSlug: slug,
+        travelDates: {
+          start: state.startDate || "",
+          end: state.endDate || "",
+          flexible: !!state.flexibleDates
+        },
+        travellers: {
+          adults: Number(state.adults != null ? state.adults : 2),
+          children: Number(state.children != null ? state.children : 0)
+        },
+        tripType: state.tripType || "",
+        status: "New",
+        createdAt: state.submittedAt,
+        requirements: reqParts.join(" · "),
+        message: contact.message || "",
+        source: "Plan Your Trip"
+      };
+
+      var raw = localStorage.getItem(ADMIN_ENQUIRIES_KEY);
+      var overlay = raw ? JSON.parse(raw) : { statusById: {}, appended: [] };
+      if (!overlay || typeof overlay !== "object") {
+        overlay = { statusById: {}, appended: [] };
+      }
+      if (!Array.isArray(overlay.appended)) overlay.appended = [];
+      if (!overlay.statusById || typeof overlay.statusById !== "object") {
+        overlay.statusById = {};
+      }
+      overlay.appended.push(enquiry);
+      localStorage.setItem(ADMIN_ENQUIRIES_KEY, JSON.stringify(overlay));
+    } catch (e) {
+      /* ignore quota / private mode / parse errors */
     }
   }
 
@@ -758,6 +846,7 @@
         }
         state.submittedAt = new Date().toISOString();
         saveState(state);
+        pushEnquiryToAdmin(state);
         window.location.href = SUMMARY_PATH;
       });
     }

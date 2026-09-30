@@ -1,0 +1,191 @@
+[
+  {
+    "id": "quote-001",
+    "quoteNumber": "QT-2026-001",
+    "tripId": "trip-001",
+    "enquiryId": "enq-005",
+    "customerId": "cust-rahul",
+    "customerName": "Rahul Sharma",
+    "tripLabel": "Kerala Backwater Retreat — Family (5D)",
+    "amount": 78500,
+    "currency": "INR",
+    "status": "Approved",
+    "date": "2026-02-18",
+    "lineItems": [
+      { "description": "Hotels (twin + extra bed) — 4 nights illustrative", "amount": 42000 },
+      { "description": "Private vehicle & driver — circuit days", "amount": 18000 },
+      { "description": "Backwater day experience (illustrative)", "amount": 12000 },
+      { "description": "Planning & handling (demo)", "amount": 6500 }
+    ],
+    "inclusions": [
+      "Accommodation as per illustrative outline",
+      "Daily breakfast",
+      "Private transfers as listed",
+      "Backwater day segment"
+    ],
+    "exclusions": [
+      "Flights",
+      "Lunches and dinners unless noted",
+      "Entrance fees",
+      "Personal expenses"
+    ],
+    "demoDisclaimer": "Illustrative demo pricing — not a live quote."
+  },
+  {
+    "id": "quote-002",
+    "quoteNumber": "QT-2026-002",
+    "tripId": "trip-002",
+    "enquiryId": "enq-006",
+    "customerId": "cust-amit",
+    "customerName": "Amit Roy",
+    "tripLabel": "Thailand Highlights — Family (6D)",
+    "amount": 145000,
+    "currency": "INR",
+    "status": "Approved",
+    "date": "2026-02-05",
+    "lineItems": [
+      { "description": "Hotels Bangkok + coast — 5 nights illustrative", "amount": 72000 },
+      { "description": "Private transfers & city transport block", "amount": 28000 },
+      { "description": "Temple & city sightseeing package (demo)", "amount": 25000 },
+      { "description": "Planning & handling (demo)", "amount": 20000 }
+    ],
+    "inclusions": [
+      "Hotels as per outline",
+      "Daily breakfast",
+      "Selected sightseeing transfers",
+      "Illustrative temple circuit day"
+    ],
+    "exclusions": [
+      "International flights",
+      "Visa fees",
+      "Meals not listed",
+      "Optional island tours"
+    ],
+    "demoDisclaimer": "Illustrative demo pricing — not a live quote."
+  },
+  {
+    "id": "quote-003",
+    "quoteNumber": "QT-2025-018",
+    "tripId": "trip-003",
+    "enquiryId": "enq-007",
+    "customerId": "cust-amit",
+    "customerName": "Amit Roy",
+    "tripLabel": "Kashmir Family Escape (6D)",
+    "amount": 92000,
+    "currency": "INR",
+    "status": "Approved",
+    "date": "2025-07-20",
+    "lineItems": [
+      { "description": "Hotels Srinagar + Pahalgam — 5 nights", "amount": 48000 },
+      { "description": "Innova Crysta circuit with driver", "amount": 26000 },
+      { "description": "Shikara & sightseeing allowances (demo)", "amount": 10000 },
+      { "description": "Planning & handling (demo)", "amount": 8000 }
+    ],
+    "inclusions": [
+      "Accommodation twin/family basis (illustrative)",
+      "Daily breakfast",
+      "Private vehicle for circuit",
+      "Shikara ride (illustrative)"
+    ],
+    "exclusions": [
+      "Flights / trains",
+      "Gondola tickets",
+      "Lunches and dinners",
+      "Tips and personal expenses"
+    ],
+    "demoDisclaimer": "Illustrative demo pricing — not a live quote."
+  },
+  {
+    "id": "quote-004",
+    "quoteNumber": "QT-2026-004",
+    "tripId": "trip-004",
+    "enquiryId": "enq-004",
+    "customerId": "cust-arjun",
+    "customerName": "Arjun Mehta",
+    "tripLabel": "Dubai Discovery — Solo (5D)",
+    "amount": 118000,
+    "currency": "INR",
+    "status": "Sent",
+    "date": "2026-02-20",
+    "lineItems": [
+      { "description": "Downtown hotel — 4 nights illustrative", "amount": 65000 },
+      { "description": "Private transfers & city hops", "amount": 22000 },
+      { "description": "Desert evening experience (demo)", "amount": 18000 },
+      { "description": "Planning & handling (demo)", "amount": 13000 }
+    ],
+    "inclusions": [
+      "Hotel stay as outlined",
+      "Daily breakfast",
+      "Arrival / departure transfers",
+      "Desert evening experience (illustrative)"
+    ],
+    "exclusions": [
+      "International flights",
+      "Visa",
+      "Attraction tickets not listed",
+      "Personal shopping"
+    ],
+    "demoDisclaimer": "Illustrative demo pricing — not a live quote."
+  },
+  {
+    "id": "quote-005",
+    "quoteNumber": "QT-2026-005",
+    "tripId": "trip-005",
+    "enquiryId": "enq-003",
+    "customerId": "cust-sneha",
+    "customerName": "Sneha Kapoor",
+    "tripLabel": "Rajasthan Heritage Journey — draft",
+    "amount": 98000,
+    "currency": "INR",
+    "status": "Draft",
+    "date": "2026-02-28",
+    "lineItems": [
+      { "description": "Heritage hotels — nights TBC", "amount": 52000 },
+      { "description": "Private vehicle multi-day", "amount": 28000 },
+      { "description": "Guide blocks (illustrative)", "amount": 10000 },
+      { "description": "Planning & handling (demo)", "amount": 8000 }
+    ],
+    "inclusions": [
+      "Accommodation outline (draft)",
+      "Breakfast",
+      "Private vehicle for listed days"
+    ],
+    "exclusions": [
+      "Flights / trains",
+      "Camel / desert add-ons unless confirmed",
+      "Entrance fees",
+      "Meals not listed"
+    ],
+    "demoDisclaimer": "Illustrative demo pricing — not a live quote."
+  },
+  {
+    "id": "quote-006",
+    "quoteNumber": "QT-2026-006",
+    "tripId": "trip-004",
+    "enquiryId": "enq-004",
+    "customerId": "cust-arjun",
+    "customerName": "Arjun Mehta",
+    "tripLabel": "Dubai Discovery — alternate lean option",
+    "amount": 99000,
+    "currency": "INR",
+    "status": "Declined",
+    "date": "2026-02-16",
+    "lineItems": [
+      { "description": "3-star downtown hotel — 4 nights", "amount": 48000 },
+      { "description": "Shared / lean transfer block (demo)", "amount": 18000 },
+      { "description": "City sightseeing without desert", "amount": 20000 },
+      { "description": "Planning & handling (demo)", "amount": 13000 }
+    ],
+    "inclusions": [
+      "Leaner hotel category",
+      "Arrival transfer",
+      "Selected city sightseeing"
+    ],
+    "exclusions": [
+      "Desert evening",
+      "Flights / visa",
+      "Most meals"
+    ],
+    "demoDisclaimer": "Illustrative demo pricing — not a live quote."
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "rev-001",
+    "customerId": "cust-amit",
+    "customerName": "Amit Roy",
+    "tripId": "trip-003",
+    "tripLabel": "Kashmir Family Escape (Sep 2025)",
+    "rating": 5,
+    "review": "Smooth family pacing, reliable driver, and lovely lakeside evenings. Kids especially loved the shikara ride. Would travel with Imagineairy again.",
+    "date": "2025-09-22",
+    "status": "Approved"
+  },
+  {
+    "id": "rev-002",
+    "customerId": "cust-rahul",
+    "customerName": "Rahul Sharma",
+    "tripId": "trip-001",
+    "tripLabel": "Kerala Backwater Retreat (upcoming)",
+    "rating": 4,
+    "review": "Planning calls have been clear so far. Looking forward to the backwaters day — posting a full review after travel.",
+    "date": "2026-03-01",
+    "status": "Pending"
+  },
+  {
+    "id": "rev-003",
+    "customerId": "cust-sneha",
+    "customerName": "Sneha Kapoor",
+    "tripId": "trip-005",
+    "tripLabel": "Rajasthan Heritage Journey (planning)",
+    "rating": 3,
+    "review": "Draft itinerary looks good but we need clearer hotel category options before approving.",
+    "date": "2026-03-05",
+    "status": "Pending"
+  },
+  {
+    "id": "rev-004",
+    "customerId": "cust-amit",
+    "customerName": "Amit Roy",
+    "tripId": "trip-003",
+    "tripLabel": "Kashmir Family Escape (duplicate draft)",
+    "rating": 4,
+    "review": "Duplicate/test review kept hidden for demo moderation UI.",
+    "date": "2025-09-23",
+    "status": "Hidden"
+  }
+]

@@ -12,6 +12,14 @@ Demo-only JSON for the Travel Agency Digital Platform static site. **Not** a pro
 | `guides.json` | Travel guide articles | 1 |
 | `experiences.json` | Experiences (placeholders) | 4 |
 | `testimonials.json` | Testimonials (placeholders) | 3 |
+| `admin-customers.json` | Admin demo customers | 5 named demo guests |
+| `admin-enquiries.json` | Admin demo enquiries | 8 — all lifecycle statuses |
+| `admin-trips.json` | Admin demo trips + itineraries | 5 |
+| `admin-quotations.json` | Admin demo quotations | 6 |
+| `admin-bookings.json` | Admin demo bookings | 4 |
+| `admin-reviews.json` | Admin demo reviews | 4 |
+
+Admin seed files are **illustrative / demo-only** for the Stage-1 Admin Demo. Runtime overlays and planner-submitted enquiries live in `localStorage` via `js/admin-store.js` (`taAdmin:*` keys). They are not a CRM, CMS, or live booking source.
 
 ## URL / slug alignment
 
@@ -135,3 +143,5 @@ See `assets/images/README.md`. JSON fields use `imagePlaceholder` filenames only
 ## Trip planner state (client-only)
 
 Planner logic lives in `/js/planner.js` (not in JSON). Client state key: `taDemoPlanner` in `sessionStorage`. Prefill query params (planner page): `destination`, `package`, `vehicle`, `tripType`, `adults`, `children`, `startDate`, `endDate`, `flexibleDates`.
+
+On successful submit, planner also appends an enquiry into `localStorage` key `taAdmin:enquiries` (`appended[]`), shape-aligned with `admin-enquiries.json`, so the Admin Demo can list it after reload. Admin merge/API: `js/admin-store.js` → `window.TAAdminStore`.

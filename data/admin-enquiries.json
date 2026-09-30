@@ -1,0 +1,170 @@
+[
+  {
+    "id": "enq-001",
+    "customerId": "cust-rahul",
+    "customerName": "Rahul Sharma",
+    "email": "rahul.sharma@example.com",
+    "phone": "+91 98100 11223",
+    "destination": "Kashmir",
+    "destinationSlug": "kashmir",
+    "travelDates": {
+      "start": "2026-11-10",
+      "end": "2026-11-15",
+      "flexible": true
+    },
+    "travellers": { "adults": 2, "children": 2 },
+    "tripType": "Family",
+    "status": "New",
+    "createdAt": "2026-03-18T08:12:00.000Z",
+    "requirements": "Family-paced; lakeside stay preferred; Innova Crysta.",
+    "message": "Looking for a Kashmir family circuit around mid-April.",
+    "source": "Website"
+  },
+  {
+    "id": "enq-002",
+    "customerId": "cust-priya",
+    "customerName": "Priya Das",
+    "email": "priya.das@example.com",
+    "phone": "+91 98200 44556",
+    "destination": "Bali",
+    "destinationSlug": "bali",
+    "travelDates": {
+      "start": "2026-12-02",
+      "end": "2026-12-08",
+      "flexible": true
+    },
+    "travellers": { "adults": 2, "children": 0 },
+    "tripType": "Honeymoon",
+    "status": "Contacted",
+    "createdAt": "2026-01-08T11:20:00.000Z",
+    "requirements": "Ubud + coastal mix; mid-range hotels; private transfers.",
+    "message": "Interested in the Bali Escape outline with quieter evenings.",
+    "source": "Plan Your Trip"
+  },
+  {
+    "id": "enq-003",
+    "customerId": "cust-sneha",
+    "customerName": "Sneha Kapoor",
+    "email": "sneha.kapoor@example.com",
+    "phone": "+91 98400 22334",
+    "destination": "Rajasthan",
+    "destinationSlug": "rajasthan",
+    "travelDates": {
+      "start": "2026-03-20",
+      "end": "2026-03-26",
+      "flexible": false
+    },
+    "travellers": { "adults": 2, "children": 0 },
+    "tripType": "Culture",
+    "status": "Planning",
+    "createdAt": "2025-12-05T09:40:00.000Z",
+    "requirements": "Jaipur-led heritage circuit; desert evening if possible.",
+    "message": "Please build from Rajasthan Heritage Journey pacing.",
+    "source": "Phone"
+  },
+  {
+    "id": "enq-004",
+    "customerId": "cust-arjun",
+    "customerName": "Arjun Mehta",
+    "email": "arjun.mehta@example.com",
+    "phone": "+91 98500 55667",
+    "destination": "Dubai",
+    "destinationSlug": "dubai",
+    "travelDates": {
+      "start": "2026-04-03",
+      "end": "2026-04-07",
+      "flexible": false
+    },
+    "travellers": { "adults": 1, "children": 0 },
+    "tripType": "Solo",
+    "status": "Quotation Sent",
+    "createdAt": "2026-02-14T10:10:00.000Z",
+    "requirements": "Downtown-focused; efficient sightseeing; 4N/5D style.",
+    "message": "Need a short Dubai Discovery-style itinerary for April.",
+    "source": "Email"
+  },
+  {
+    "id": "enq-005",
+    "customerId": "cust-rahul",
+    "customerName": "Rahul Sharma",
+    "email": "rahul.sharma@example.com",
+    "phone": "+91 98100 11223",
+    "destination": "Kerala",
+    "destinationSlug": "kerala",
+    "travelDates": {
+      "start": "2026-06-12",
+      "end": "2026-06-16",
+      "flexible": false
+    },
+    "travellers": { "adults": 2, "children": 1 },
+    "tripType": "Family",
+    "status": "Approved",
+    "createdAt": "2026-02-01T13:00:00.000Z",
+    "requirements": "Backwaters day included; child-friendly hotels.",
+    "message": "Approved outline for Kerala Backwater Retreat style trip.",
+    "source": "Website"
+  },
+  {
+    "id": "enq-006",
+    "customerId": "cust-amit",
+    "customerName": "Amit Roy",
+    "email": "amit.roy@example.com",
+    "phone": "+91 98300 77889",
+    "destination": "Thailand",
+    "destinationSlug": "thailand",
+    "travelDates": {
+      "start": "2026-05-15",
+      "end": "2026-05-20",
+      "flexible": false
+    },
+    "travellers": { "adults": 2, "children": 1 },
+    "tripType": "Family",
+    "status": "Booked",
+    "createdAt": "2026-01-22T16:30:00.000Z",
+    "requirements": "Bangkok + coastal mix; family pacing.",
+    "message": "Booking confirmed against Thailand Highlights quotation.",
+    "source": "WhatsApp"
+  },
+  {
+    "id": "enq-007",
+    "customerId": "cust-amit",
+    "customerName": "Amit Roy",
+    "email": "amit.roy@example.com",
+    "phone": "+91 98300 77889",
+    "destination": "Kashmir",
+    "destinationSlug": "kashmir",
+    "travelDates": {
+      "start": "2025-09-10",
+      "end": "2025-09-15",
+      "flexible": false
+    },
+    "travellers": { "adults": 2, "children": 2 },
+    "tripType": "Family",
+    "status": "Completed",
+    "createdAt": "2025-07-02T08:00:00.000Z",
+    "requirements": "Srinagar–Gulmarg–Pahalgam family circuit.",
+    "message": "Completed Kashmir Family Escape style trip.",
+    "source": "Referral"
+  },
+  {
+    "id": "enq-008",
+    "customerId": "cust-sneha",
+    "customerName": "Sneha Kapoor",
+    "email": "sneha.kapoor@example.com",
+    "phone": "+91 98400 22334",
+    "destination": "Singapore",
+    "destinationSlug": "singapore",
+    "travelDates": {
+      "start": "2027-02-04",
+      "end": "2027-02-08",
+      "flexible": true
+    },
+    "travellers": { "adults": 2, "children": 0 },
+    "tripType": "Leisure",
+    "status": "New",
+    "createdAt": "2026-03-20T07:55:00.000Z",
+    "requirements": "City break; gardens and harbour focus.",
+    "message": "Exploring Singapore Explorer dates for July.",
+    "source": "Plan Your Trip"
+  }
+]
