@@ -1,0 +1,15 @@
+---
+alwaysApply: true
+---
+
+Always minimize token usage:
+
+- Only open necessary files (avoid scanning entire project)
+- Do not rewrite full files unless required
+- Modify only the exact relevant section
+- Avoid verbose explanations unless asked
+
+Prefer:
+- Diffs over full rewrites
+- Direct answers over explanations
+- Step-by-step only when complex

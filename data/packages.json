@@ -1,0 +1,206 @@
+[
+  {
+    "id": "pkg-kashmir-family",
+    "slug": "kashmir-family-tour",
+    "title": "Kashmir Family Escape",
+    "destinationId": "dest-kashmir",
+    "destinationSlug": "kashmir",
+    "durationDays": 6,
+    "durationNights": 5,
+    "travelStyle": "Family",
+    "startingPriceLabel": "From ₹XX,XXX (illustrative)",
+    "shortDescription": "Illustrative family-paced Kashmir circuit with lakeside time, easy sightseeing, and comfortable transfers.",
+    "imagePlaceholder": "package-kashmir-family-tour.jpg",
+    "highlights": [
+      "Lakeside Srinagar stay with shikara time",
+      "Gulmarg meadow day with easy pacing",
+      "Pahalgam valley outing suited to families",
+      "Chauffeur-driven transfers between hubs",
+      "Balanced sightseeing without rushed early starts"
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrive Srinagar",
+        "description": "Illustrative arrival, hotel check-in, and a gentle lakeside evening orientation."
+      },
+      {
+        "day": 2,
+        "title": "Dal Lake & local sights",
+        "description": "Shikara ride and selected Srinagar sightseeing at a family-friendly pace."
+      },
+      {
+        "day": 3,
+        "title": "Gulmarg day trip",
+        "description": "Drive to Gulmarg for meadow views and optional gondola outlooks, returning to Srinagar."
+      },
+      {
+        "day": 4,
+        "title": "Transfer to Pahalgam",
+        "description": "Scenic transfer to Pahalgam with time for short walks and valley views."
+      },
+      {
+        "day": 5,
+        "title": "Pahalgam leisure & return",
+        "description": "Easy morning in Pahalgam, then return toward Srinagar for a relaxed evening."
+      },
+      {
+        "day": 6,
+        "title": "Departure",
+        "description": "Illustrative checkout and departure transfer — timings adjustable in a real enquiry."
+      }
+    ],
+    "includes": [
+      "Accommodation on illustrative twin/double sharing basis",
+      "Daily breakfast (illustrative)",
+      "Chauffeur-driven transfers as per itinerary outline",
+      "Sightseeing stops listed in the day plan",
+      "Driver allowances for demo circuit days"
+    ],
+    "excludes": [
+      "Flights or train tickets",
+      "Lunches and dinners unless noted",
+      "Entrance fees and activity tickets",
+      "Personal expenses and tips",
+      "Anything not listed under includes"
+    ],
+    "accommodation": "Illustrative mid-range hotels in Srinagar and Pahalgam (category confirmed at enquiry).",
+    "transportation": "Private chauffeur-driven vehicle for the circuit (Sedan / Innova / SUV options).",
+    "placesCovered": ["Srinagar", "Dal Lake", "Gulmarg", "Pahalgam"]
+  },
+  {
+    "id": "pkg-rajasthan-heritage",
+    "slug": "rajasthan-heritage-tour",
+    "title": "Rajasthan Heritage Journey",
+    "destinationId": "dest-rajasthan",
+    "destinationSlug": "rajasthan",
+    "durationDays": 7,
+    "durationNights": 6,
+    "travelStyle": "Culture",
+    "startingPriceLabel": "From ₹XX,XXX (illustrative)",
+    "shortDescription": "Illustrative heritage-focused Rajasthan journey through forts, palaces, and desert evenings.",
+    "imagePlaceholder": "package-rajasthan-heritage-tour.jpg",
+    "highlights": [
+      "Fort and palace sightseeing in signature cities",
+      "Culture-first pacing with photo stops",
+      "Desert evening experience (illustrative)",
+      "Private vehicle for intercity hops",
+      "Local market time built into the outline"
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrive Jaipur",
+        "description": "Arrival, hotel check-in, and an unhurried evening in the Pink City."
+      },
+      {
+        "day": 2,
+        "title": "Jaipur forts & viewpoints",
+        "description": "Illustrative fort circuit with viewpoints and palace precinct time."
+      },
+      {
+        "day": 3,
+        "title": "Jaipur markets & heritage lanes",
+        "description": "Bazaar walks and selected heritage stops at a comfortable culture pace."
+      },
+      {
+        "day": 4,
+        "title": "Onward heritage city",
+        "description": "Transfer to the next heritage stop on the illustrative circuit."
+      },
+      {
+        "day": 5,
+        "title": "Palaces & local culture",
+        "description": "Palace precincts, photo stops, and optional cultural evening."
+      },
+      {
+        "day": 6,
+        "title": "Desert evening outing",
+        "description": "Illustrative desert viewpoint or dune-edge evening, then return to hotel."
+      },
+      {
+        "day": 7,
+        "title": "Departure",
+        "description": "Checkout and departure transfer — final city depends on enquiry routing."
+      }
+    ],
+    "includes": [
+      "Accommodation on illustrative twin/double sharing basis",
+      "Daily breakfast (illustrative)",
+      "Private transfers between listed circuit cities",
+      "Sightseeing as outlined in the day plan"
+    ],
+    "excludes": [
+      "Flights or train tickets",
+      "Meals other than breakfast",
+      "Monument entrance fees",
+      "Camel rides or paid desert activities",
+      "Personal expenses"
+    ],
+    "accommodation": "Illustrative heritage-leaning or mid-range hotels (category confirmed at enquiry).",
+    "transportation": "Private chauffeur-driven vehicle suitable for multi-city Rajasthan hops.",
+    "placesCovered": ["Jaipur", "Heritage city stop", "Desert evening viewpoint"]
+  },
+  {
+    "id": "pkg-kerala-backwaters",
+    "slug": "kerala-backwaters-escape",
+    "title": "Kerala Backwater Retreat",
+    "destinationId": "dest-kerala",
+    "destinationSlug": "kerala",
+    "durationDays": 5,
+    "durationNights": 4,
+    "travelStyle": "Relaxation",
+    "startingPriceLabel": "From ₹XX,XXX (illustrative)",
+    "shortDescription": "Illustrative Kerala escape mixing backwater calm, coastal air, and unhurried sightseeing.",
+    "imagePlaceholder": "package-kerala-backwaters-escape.jpg",
+    "highlights": [
+      "Backwater cruise or houseboat-style stretch",
+      "Unhurried coastal or canal-side pacing",
+      "Comfortable private transfers",
+      "Relaxed mornings with optional light sightseeing",
+      "Suitable for couples and calm family trips"
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrive Kerala hub",
+        "description": "Arrival transfer and check-in near the backwater or coastal start point."
+      },
+      {
+        "day": 2,
+        "title": "Backwater day",
+        "description": "Illustrative canal cruise or houseboat stretch with quiet village waterways."
+      },
+      {
+        "day": 3,
+        "title": "Leisure & local sights",
+        "description": "Optional light sightseeing, coastal air, or spa-style downtime (illustrative)."
+      },
+      {
+        "day": 4,
+        "title": "Easy transfer day",
+        "description": "Short hop to a second calm base with evening at leisure."
+      },
+      {
+        "day": 5,
+        "title": "Departure",
+        "description": "Checkout and departure transfer — timings confirmed at enquiry."
+      }
+    ],
+    "includes": [
+      "Accommodation on illustrative twin/double sharing basis",
+      "Daily breakfast (illustrative)",
+      "Backwater cruise segment as outlined",
+      "Private transfers for the retreat days"
+    ],
+    "excludes": [
+      "Flights",
+      "Meals other than breakfast / houseboat inclusions if any",
+      "Ayurveda or spa treatments",
+      "Personal expenses and tips"
+    ],
+    "accommodation": "Illustrative backwater-adjacent or coastal hotels; houseboat night optional by enquiry.",
+    "transportation": "Private chauffeur-driven sedan or MPV for transfers.",
+    "placesCovered": ["Alleppey backwaters", "Coastal / canal leisure stop"]
+  }
+]

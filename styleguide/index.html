@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Design System Showcase — IMAGINEAIRY</title>
+    <meta
+      name="description"
+      content="Component and token showcase for design review. Not a product marketing page."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/tokens.css" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/utilities.css" />
+    <style>
+      .sg-section {
+        padding-block: var(--space-12);
+        border-bottom: 1px solid var(--color-border-default);
+      }
+      .sg-label {
+        margin: 0 0 var(--space-4);
+        font-size: var(--text-xs);
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+      }
+      .sg-swatches {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+      }
+      .sg-swatch {
+        width: 6.5rem;
+      }
+      .sg-swatch__chip {
+        height: 3.5rem;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--color-border-default);
+      }
+      .sg-swatch__name {
+        margin-top: var(--space-2);
+        font-size: var(--text-xs);
+        color: var(--color-text-secondary);
+      }
+      .sg-type-sample {
+        margin-bottom: var(--space-4);
+      }
+      .sg-type-sample span {
+        display: block;
+        font-size: var(--text-xs);
+        font-family: var(--font-body);
+        font-weight: 500;
+        color: var(--color-text-muted);
+        margin-bottom: var(--space-1);
+      }
+      /* Visual H1 scale sample — not a second document H1 */
+      .sg-type-h1 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: var(--text-4xl);
+        font-weight: 400;
+        line-height: 1.1;
+        color: var(--color-text-primary);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header" role="banner">
+      <div class="container site-header__inner">
+        <a class="site-wordmark" href="/">IMAGINEAIRY</a>
+        <nav class="site-nav is-open" aria-label="Primary">
+          <ul class="site-nav__list">
+            <li><a class="site-nav__link" href="/">Home shell</a></li>
+            <li>
+              <a class="site-nav__link" href="/styleguide/" aria-current="page"
+                >Styleguide</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main" id="main" role="main">
+      <div class="container">
+        <header class="section-heading u-mb-8">
+          <p class="section-heading__eyebrow">Design system</p>
+          <h1 class="section-heading__title">Component showcase</h1>
+          <p class="section-heading__lead">
+            Review-only primitives from the Visual Style Guide. Not a marketing page.
+          </p>
+        </header>
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol class="breadcrumb__list">
+            <li class="breadcrumb__item">
+              <a class="breadcrumb__link" href="/">Home</a>
+            </li>
+            <li class="breadcrumb__item">
+              <span class="breadcrumb__current" aria-current="page">Styleguide</span>
+            </li>
+          </ol>
+        </nav>
+
+        <!-- Colour -->
+        <section class="sg-section" aria-labelledby="sg-colour">
+          <h2 id="sg-colour">Colour tokens</h2>
+          <p class="sg-label">Primary</p>
+          <div class="sg-swatches u-mb-6">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip" style="background:#173B35"></div>
+              <p class="sg-swatch__name">primary-900</p>
+            </div>
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip" style="background:#1F4A42"></div>
+              <p class="sg-swatch__name">primary-800</p>
+            </div>
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip" style="background:#28584E"></div>
+              <p class="sg-swatch__name">primary-700</p>
+            </div>
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip" style="background:#32695E"></div>
+              <p class="sg-swatch__name">primary-600</p>
+            </div>
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip" style="background:#3F786B"></div>
+              <p class="sg-swatch__name">primary-500</p>
+            </div>
+          </div>
+          <p class="sg-label">Accent</p>
+          <div class="sg-swatches u-mb-6">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip" style="background:#A85F3D"></div>
+              <p class="sg-swatch__name">accent-700</p>
+            </div>
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip" style="background:#B86D49"></div>
+              <p class="sg-swatch__name">accent-600</p>
+            </div>
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip" style="background:#C77A52"></div>
+              <p class="sg-swatch__name">accent-500</p>
+            </div>
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip" style="background:#F3E3D9"></div>
+              <p class="sg-swatch__name">accent-100</p>
+            </div>
+          </div>
+          <p class="sg-label">Semantic</p>
+          <div class="sg-swatches">
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip" style="background:#3F7051"></div>
+              <p class="sg-swatch__name">success</p>
+            </div>
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip" style="background:#A97932"></div>
+              <p class="sg-swatch__name">warning</p>
+            </div>
+            <div class="sg-swatch">
+              <div class="sg-swatch__chip" style="background:#A8493F"></div>
+              <p class="sg-swatch__name">error</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Typography -->
+        <section class="sg-section" aria-labelledby="sg-type">
+          <h2 id="sg-type">Typography</h2>
+          <div class="sg-type-sample">
+            <span>Display — DM Serif Display / H1 visual scale</span>
+            <p class="sg-type-h1">Editorial destination headline</p>
+          </div>
+          <div class="sg-type-sample">
+            <span>Display — H2</span>
+            <h2 class="u-mb-0">Section heading sample</h2>
+          </div>
+          <div class="sg-type-sample">
+            <span>Display — H3</span>
+            <h3 class="u-mb-0">Subsection heading</h3>
+          </div>
+          <div class="sg-type-sample">
+            <span>Body — Manrope</span>
+            <p>
+              Body copy uses Manrope at a readable measure (~65–75ch). Secondary text and
+              muted metadata follow the neutral text tokens for hierarchy without heavy
+              UI chrome.
+            </p>
+          </div>
+        </section>
+
+        <!-- Buttons -->
+        <section class="sg-section" aria-labelledby="sg-buttons">
+          <h2 id="sg-buttons">Buttons</h2>
+          <p class="sg-label">Primary / secondary / ghost — default</p>
+          <div class="u-row u-mb-6">
+            <button type="button" class="btn btn--primary">Plan Your Trip</button>
+            <button type="button" class="btn btn--secondary">Explore Destinations</button>
+            <button type="button" class="btn btn--ghost">Explore Rajasthan →</button>
+          </div>
+          <p class="sg-label">Disabled</p>
+          <div class="u-row">
+            <button type="button" class="btn btn--primary" disabled>Primary disabled</button>
+            <button type="button" class="btn btn--secondary" disabled>Secondary disabled</button>
+            <button type="button" class="btn btn--ghost" disabled>Ghost disabled</button>
+          </div>
+        </section>
+
+        <!-- Badges -->
+        <section class="sg-section" aria-labelledby="sg-badges">
+          <h2 id="sg-badges">Badges</h2>
+          <div class="u-row">
+            <span class="badge">7 Days · 6 Nights</span>
+            <span class="badge badge--primary">Family</span>
+            <span class="badge badge--accent">Heritage</span>
+          </div>
+        </section>
+
+        <!-- Forms -->
+        <section class="sg-section" aria-labelledby="sg-forms">
+          <h2 id="sg-forms">Form controls</h2>
+          <div class="form-field">
+            <label class="form-label" for="sg-name">Full name</label>
+            <input class="form-input" id="sg-name" type="text" name="name" autocomplete="name" />
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="sg-destination">Preferred destination</label>
+            <select class="form-select" id="sg-destination" name="destination">
+              <option value="">Select…</option>
+              <option value="kashmir">Kashmir</option>
+              <option value="rajasthan">Rajasthan</option>
+              <option value="kerala">Kerala</option>
+              <option value="sikkim">Sikkim</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="sg-notes">Notes</label>
+            <textarea class="form-textarea" id="sg-notes" name="notes" rows="4"></textarea>
+            <p class="form-hint">Illustrative field — no submission backend.</p>
+          </div>
+          <p class="sg-label">Checkbox / radio chips</p>
+          <div class="choice-chip-group u-mb-4" role="group" aria-label="Travel style">
+            <label class="choice-chip">
+              <input class="choice-chip__input" type="radio" name="style" value="family" />
+              <span class="choice-chip__label">Family</span>
+            </label>
+            <label class="choice-chip">
+              <input class="choice-chip__input" type="radio" name="style" value="couple" />
+              <span class="choice-chip__label">Couple</span>
+            </label>
+            <label class="choice-chip">
+              <input class="choice-chip__input" type="checkbox" name="pref" value="guide" />
+              <span class="choice-chip__label">Need a guide</span>
+            </label>
+          </div>
+        </section>
+
+        <!-- Selection cards -->
+        <section class="sg-section" aria-labelledby="sg-selection">
+          <h2 id="sg-selection">Selection cards</h2>
+          <p class="sg-label">Selected = border + tint + check (not colour-only)</p>
+          <div class="selection-card-group" role="group" aria-label="Traveller type">
+            <button
+              type="button"
+              class="selection-card is-selected"
+              data-selection-card
+              data-selection-group="traveller"
+              aria-pressed="true"
+            >
+              <span class="selection-card__indicator" aria-hidden="true">✓</span>
+              <span class="selection-card__title">Family</span>
+              <span class="selection-card__desc">Multi-generational comfort pace</span>
+            </button>
+            <button
+              type="button"
+              class="selection-card"
+              data-selection-card
+              data-selection-group="traveller"
+              aria-pressed="false"
+            >
+              <span class="selection-card__indicator" aria-hidden="true">✓</span>
+              <span class="selection-card__title">Couple</span>
+              <span class="selection-card__desc">Quiet stays and scenic drives</span>
+            </button>
+            <button
+              type="button"
+              class="selection-card"
+              data-selection-card
+              data-selection-group="traveller"
+              aria-pressed="false"
+            >
+              <span class="selection-card__indicator" aria-hidden="true">✓</span>
+              <span class="selection-card__title">Friends</span>
+              <span class="selection-card__desc">Shared experiences, flexible days</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Card -->
+        <section class="sg-section" aria-labelledby="sg-card">
+          <h2 id="sg-card">Card base</h2>
+          <article class="card" style="max-width: 22rem">
+            <div class="card__media" aria-hidden="true"></div>
+            <div class="card__body">
+              <p class="card__meta">Rajasthan</p>
+              <h3 class="card__title">Royal Rajasthan Escape</h3>
+              <p class="card__text">
+                Forts, colours, and desert landscapes — illustrative card content only.
+              </p>
+              <div class="card__footer">
+                <a class="btn btn--ghost" href="/tours/rajasthan-heritage-tour/"
+                  >View Journey →</a
+                >
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <!-- Section heading sample -->
+        <section class="sg-section" aria-labelledby="sg-section-heading">
+          <h2 id="sg-section-heading">Section heading</h2>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">Destinations</p>
+            <h3 class="section-heading__title">Journeys shaped by place</h3>
+            <p class="section-heading__lead">
+              One purpose per section: headline, short lead, then content.
+            </p>
+          </div>
+        </section>
+
+        <!-- Dark surface contrast -->
+        <section
+          class="sg-section surface-dark"
+          style="padding: var(--space-10); border-radius: var(--radius-lg); border: none"
+          aria-labelledby="sg-dark"
+        >
+          <h2 id="sg-dark">Dark surface — inverse text</h2>
+          <p>
+            Inverse text on <code style="color: inherit">surface-dark</code> (#173B35) for
+            contrast check (02.11). Primary buttons invert to light fill on dark sections.
+          </p>
+          <div class="u-row u-mt-4">
+            <button type="button" class="btn btn--primary">Request Quote</button>
+            <button type="button" class="btn btn--secondary">View Package</button>
+            <button type="button" class="btn btn--ghost">Learn more →</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <p>IMAGINEAIRY design system showcase — Epic 02 review only.</p>
+      </div>
+    </footer>
+
+    <script src="/js/main.js" defer></script>
+  </body>
+</html>

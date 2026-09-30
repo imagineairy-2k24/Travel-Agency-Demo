@@ -1,0 +1,54 @@
+---
+description: Requires a structured report after any implementation, fix, or refactor.
+alwaysApply: true
+---
+
+After completing any implementation, modification, bug fix, or refactor, ALWAYS provide a structured implementation report.
+
+The report must contain:
+
+1. Modified files
+
+* List every modified/created/deleted file.
+
+2. Exact behavior changes
+
+* Describe only actual user-visible or system-visible behavior changes.
+* Do not include assumptions or generic statements.
+
+3. Architecture impact
+
+* Mention:
+
+  * static data shape changes (`data/` JSON or equivalent)
+  * JS module / progressive-enhancement contract changes
+  * page URL / slug / routing structure changes
+  * CSS design-token or shared layout impact
+  * SEO markup impact (titles, headings, alt, structured links)
+* If none:
+
+  * explicitly state “No architectural changes.”
+
+4. Backward compatibility
+
+* Explain whether existing pages, shared includes/patterns, data files, or UI flows remain compatible.
+
+5. Risks / edge cases
+
+* Mention unresolved risks, limitations, responsive/a11y gaps, content placeholder issues, or known edge cases.
+
+6. Scope discipline validation
+
+* Confirm:
+
+  * no unrelated refactors
+  * no parallel systems introduced
+  * no architecture redesign unless explicitly requested
+  * no accidental production-backend/framework scaffolding
+
+Rules:
+
+* Be concise and factual.
+* Do not include code unless explicitly requested.
+* Do not omit risks or limitations.
+* Do not claim validation/testing that was not actually performed.

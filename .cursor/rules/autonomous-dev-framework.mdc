@@ -1,0 +1,49 @@
+---
+description: Travel Agency demo autonomous multi-agent gates (planning approval, reuse, escalation, git safety).
+alwaysApply: true
+---
+
+# Autonomous Development Framework Gates
+
+Read `AGENTS.md` for the full topology. Existing `.cursor/rules/` and `.cursor/skills/` remain authoritative.
+
+## Planning → Approval → Implementation
+
+1. **Planning phase**: discovery and plan only. No implementation code changes for the planned feature.
+2. **Approval**: do not implement until ChatGPT (or the user acting as planning authority) gives an explicit **GO**.
+3. **Silence is not approval.** **NO-GO** and **REFINEMENT REQUIRED** block implementation.
+4. After **GO**, the approved plan is the implementation contract. Do not silently expand scope, redesign architecture, invent business rules, or add unrelated refactors.
+
+## Emergent work classification
+
+During implementation, classify new items as: **IN-SCOPE** | **OUT-OF-SCOPE** | **ARCHITECTURAL DECISION REQUIRED** | **BUSINESS DECISION REQUIRED** | **BLOCKED**.
+
+Only **IN-SCOPE** may proceed automatically. Escalate the rest.
+
+## Reuse principle
+
+**REUSE > ADAPT > BUILD.** Prefer existing CSS/JS patterns, page shells, data shapes, and UI components. Do not create parallel systems.
+
+## Delegation
+
+For large approved tasks, prefer:
+
+- `planning-agent` before GO
+- `lead-orchestrator` after GO
+- `frontend-agent` for HTML/CSS/UI
+- `backend-agent` for illustrative `data/` models and non-UI JS logic (planner, data loading)
+- `qa-agent` for independent verification
+
+Pass only role-relevant context (see `AGENTS.md`).
+
+## High-risk / out-of-demo domains
+
+Escalate (do not invent) anything that implies production booking, payments, tax, live inventory, CRM, auth, WhatsApp/API integrations, or admin operations platforms — unless the approved plan explicitly includes a static conceptual screen only.
+
+## Release Hardening
+
+When the user supplies multiple manual QA findings, batch-fix via Lead Orchestrator. Escalate findings that require new business rules, architecture changes, or demo-scope expansion.
+
+## Git
+
+No commit / push / history rewriting unless the user explicitly requests it.

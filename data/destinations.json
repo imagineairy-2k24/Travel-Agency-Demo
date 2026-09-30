@@ -1,0 +1,145 @@
+[
+  {
+    "id": "dest-kashmir",
+    "slug": "kashmir",
+    "name": "Kashmir",
+    "region": "North India",
+    "tagline": "Valleys, lakes, and mountain calm",
+    "shortDescription": "Illustrative destination profile for Kashmir — lakeside stays, mountain views, and slow travel moments for families and couples.",
+    "overview": "Kashmir is an illustrative demo destination framed around Dal Lake, meadow drives, and cool mountain air. Travellers typically balance Srinagar’s lakeside pace with day trips to Gulmarg, Pahalgam, or Sonamarg — choosing seasons for gardens and mild weather, or for snow-focused scenery.",
+    "whyVisit": [
+      "Lakeside stays and shikara moments on Dal Lake",
+      "Easy family-paced sightseeing with mountain backdrops",
+      "Seasonal contrast — spring gardens through winter snow scenes",
+      "Comfortable circuit options linking Srinagar, Gulmarg, and Pahalgam",
+      "Calm evenings suited to couples and multi-generational groups"
+    ],
+    "placesToVisit": [
+      {
+        "name": "Dal Lake & Boulevard",
+        "note": "Shikara rides, lakeside walks, and sunset views"
+      },
+      {
+        "name": "Mughal Gardens",
+        "note": "Nishat, Shalimar, and related garden stops in season"
+      },
+      {
+        "name": "Gulmarg",
+        "note": "Meadow views, gondola outlooks, and cooler hill air"
+      },
+      {
+        "name": "Pahalgam",
+        "note": "River valleys, short walks, and quieter stays"
+      },
+      {
+        "name": "Sonamarg",
+        "note": "Illustrative high-meadow day trip when road conditions allow"
+      },
+      {
+        "name": "Old Srinagar lanes",
+        "note": "Local markets and heritage neighbourhood glimpses"
+      }
+    ],
+    "bestTime": "Illustrative: March–June for mild valley weather and gardens; July–August for lush greens (expect rain spells); December–February for snow-focused scenery — exact timing depends on travel style.",
+    "recommendedDuration": "5–7 days for a balanced Srinagar + Gulmarg + Pahalgam style circuit",
+    "popularExperiences": [
+      "Dal Lake Shikara Ride",
+      "Gulmarg Meadow Views"
+    ],
+    "imagePlaceholder": "destination-kashmir-hero.jpg",
+    "packageIds": ["pkg-kashmir-family"],
+    "vehicleIds": ["veh-sedan", "veh-innova-crysta", "veh-suv"],
+    "guideIds": ["guide-best-time-kashmir"],
+    "experienceIds": ["exp-dal-lake-shikara", "exp-gulmarg-meadows"]
+  },
+  {
+    "id": "dest-rajasthan",
+    "slug": "rajasthan",
+    "name": "Rajasthan",
+    "region": "West India",
+    "tagline": "Forts, deserts, and royal cities",
+    "shortDescription": "Illustrative destination profile for Rajasthan — heritage cities, desert landscapes, and cultural evenings.",
+    "overview": "Rajasthan is presented in this demo as a heritage-forward circuit of forts, palaces, and desert evenings. Typical illustrative routes move through Jaipur and neighbouring cities at a culture-first pace.",
+    "whyVisit": [
+      "Forts and palace architecture with strong photo moments",
+      "Colourful bazaars and cultural evenings",
+      "Desert landscapes for sunset outings",
+      "Flexible city-hopping with chauffeur-driven comfort"
+    ],
+    "placesToVisit": [
+      "Jaipur fort circuit",
+      "City palace precincts",
+      "Local bazaars",
+      "Desert evening viewpoints"
+    ],
+    "bestTime": "Illustrative: October–March for cooler sightseeing days; summer months are hotter for outdoor circuits.",
+    "recommendedDuration": "6–8 days for a heritage-focused multi-city sample",
+    "popularExperiences": [
+      "Jaipur Fort Circuit"
+    ],
+    "imagePlaceholder": "destination-rajasthan-hero.jpg",
+    "packageIds": ["pkg-rajasthan-heritage"],
+    "vehicleIds": ["veh-sedan", "veh-innova-crysta", "veh-suv", "veh-tempo-traveller"],
+    "guideIds": [],
+    "experienceIds": ["exp-jaipur-forts"]
+  },
+  {
+    "id": "dest-kerala",
+    "slug": "kerala",
+    "name": "Kerala",
+    "region": "South India",
+    "tagline": "Backwaters, coast, and green hills",
+    "shortDescription": "Illustrative destination profile for Kerala — houseboats, coastal towns, and tea-country drives.",
+    "overview": "Kerala in this demo centres on backwater calm, coastal air, and unhurried sightseeing. Travellers often combine a houseboat or canal stretch with easy coastal or hillside time.",
+    "whyVisit": [
+      "Quiet backwater and canal scenery",
+      "Relaxed pace suited to couples and families",
+      "Coastal towns and green inland drives",
+      "Houseboat-style overnight or day cruises (illustrative)"
+    ],
+    "placesToVisit": [
+      "Alleppey backwaters",
+      "Canal village stretches",
+      "Coastal promenades",
+      "Tea-country viewpoints (optional add-on)"
+    ],
+    "bestTime": "Illustrative: October–March for comfortable sightseeing; monsoon months bring lush scenery with heavier rain.",
+    "recommendedDuration": "4–6 days for a backwater-focused retreat",
+    "popularExperiences": [
+      "Alleppey Backwater Cruise"
+    ],
+    "imagePlaceholder": "destination-kerala-hero.jpg",
+    "packageIds": ["pkg-kerala-backwaters"],
+    "vehicleIds": ["veh-sedan", "veh-innova-crysta", "veh-suv"],
+    "guideIds": [],
+    "experienceIds": ["exp-alleppey-backwaters"]
+  },
+  {
+    "id": "dest-sikkim",
+    "slug": "sikkim",
+    "name": "Sikkim",
+    "region": "Northeast India",
+    "tagline": "Himalayan trails and monastery towns",
+    "shortDescription": "Illustrative destination profile for Sikkim — mountain roads, quiet monasteries, and cool-climate escapes.",
+    "overview": "Sikkim is included as an illustrative cool-climate mountain destination with monastery towns and scenic drives. Content here is lighter than Kashmir and meant to show template reuse.",
+    "whyVisit": [
+      "Cool Himalayan air and mountain roads",
+      "Quiet monastery towns",
+      "Scenic viewpoints for short walks",
+      "Suitable for travellers who prefer elevated landscapes"
+    ],
+    "placesToVisit": [
+      "Monastery towns",
+      "Mountain viewpoints",
+      "Local markets"
+    ],
+    "bestTime": "Illustrative: March–May and October–December for clearer mountain views; monsoon months may affect road comfort.",
+    "recommendedDuration": "5–6 days for a compact mountain escape",
+    "popularExperiences": [],
+    "imagePlaceholder": "destination-sikkim-hero.jpg",
+    "packageIds": [],
+    "vehicleIds": ["veh-suv", "veh-innova-crysta"],
+    "guideIds": [],
+    "experienceIds": []
+  }
+]

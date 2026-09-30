@@ -1,0 +1,26 @@
+---
+description: Enforces the Travel Agency demo static-site folder and layering conventions.
+alwaysApply: true
+---
+
+Follow the demo project structure strictly (static site — no Node/Express/Next unless later explicitly approved):
+
+Site root (HTML pages mirroring demo URLs):
+- `/` → `index.html`
+- Page directories matching sitemap URLs (e.g. `destinations/`, `tours/`, `car-rental/`, `plan-your-trip/`, `travel-guides/`, `gallery/`, `about/`, `contact/`)
+- Detail pages under their section with slug folders or HTML files as established in the repo
+
+Shared assets & code:
+- `css/` → Global and page styles (design tokens / design system first)
+- `js/` → Progressive-enhancement scripts only (e.g. `main.js`, trip planner logic)
+- `assets/images/`, `assets/icons/` → Static media
+- `data/` → Illustrative content (destinations, packages, vehicles, guides, testimonials, etc.)
+
+Documentation:
+- `docs/` → Product, SEO, architecture-vs-demo, visual style, implementation epics
+
+Do not:
+- Scaffold `backend/`, `frontend/` Next apps, CMS, auth, or payment systems for the demo
+- Mix production-ops screens into the customer demo unless separately approved
+- Introduce new folder conventions without verifying existing ones
+- Break naming conventions already established in the repo

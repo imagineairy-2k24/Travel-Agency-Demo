@@ -1,0 +1,18 @@
+---
+alwaysApply: true
+---
+
+Do not assume any project structure, file, function, or logic.
+
+Always:
+1. Search the codebase first
+2. Read relevant files completely
+3. Confirm existing implementation before modifying
+
+If unsure, explicitly say:
+"I'm not sure based on the current codebase."
+
+Never:
+- Invent functions
+- Assume API responses
+- Create duplicate logic

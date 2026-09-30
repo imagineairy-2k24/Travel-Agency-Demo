@@ -1,0 +1,94 @@
+[
+  {
+    "id": "veh-sedan",
+    "slug": "sedan",
+    "name": "Sedan",
+    "type": "Sedan",
+    "seatingCapacity": 4,
+    "luggageNote": "Ideal for light luggage (2–3 medium bags)",
+    "shortDescription": "Illustrative chauffeur-driven sedan for couples and small families on city and highway routes.",
+    "imagePlaceholder": "vehicle-sedan.jpg",
+    "features": [
+      "Chauffeur-driven (illustrative)",
+      "Comfortable for city and highway routes",
+      "Air-conditioned cabin",
+      "Suitable for couples or small families"
+    ],
+    "idealFor": [
+      "Couples",
+      "2–3 travellers",
+      "Airport transfers",
+      "City sightseeing days"
+    ],
+    "rentalNotes": "Illustrative sedan option — final vehicle allocation confirmed at enquiry; not a live inventory claim."
+  },
+  {
+    "id": "veh-innova-crysta",
+    "slug": "innova-crysta",
+    "name": "Toyota Innova Crysta",
+    "type": "MPV",
+    "seatingCapacity": 7,
+    "luggageNote": "Comfortable for family luggage on multi-day trips",
+    "shortDescription": "Illustrative Innova Crysta option for family trips, long-distance travel, and group comfort.",
+    "imagePlaceholder": "vehicle-innova-crysta.jpg",
+    "features": [
+      "Spacious MPV seating",
+      "Strong choice for multi-day circuits",
+      "Comfortable for family luggage",
+      "Chauffeur-driven (illustrative)"
+    ],
+    "idealFor": [
+      "Families",
+      "Long-distance travel",
+      "Mixed city and highway routes",
+      "Travellers wanting extra cabin space"
+    ],
+    "rentalNotes": "Popular illustrative family vehicle — category preference can be noted in the trip planner."
+  },
+  {
+    "id": "veh-suv",
+    "slug": "suv",
+    "name": "SUV",
+    "type": "SUV",
+    "seatingCapacity": 6,
+    "luggageNote": "Suitable for hill routes with moderate luggage",
+    "shortDescription": "Illustrative SUV option for hill destinations and travellers who prefer higher clearance.",
+    "imagePlaceholder": "vehicle-suv.jpg",
+    "features": [
+      "Higher ground clearance feel",
+      "Comfortable for hill routes",
+      "Air-conditioned cabin",
+      "Chauffeur-driven (illustrative)"
+    ],
+    "idealFor": [
+      "Hill destinations",
+      "Kashmir / Sikkim style roads",
+      "Travellers preferring elevated seating",
+      "Small groups with moderate luggage"
+    ],
+    "rentalNotes": "Illustrative SUV category for hill and outstation context — not a guaranteed model assignment."
+  },
+  {
+    "id": "veh-tempo-traveller",
+    "slug": "tempo-traveller",
+    "name": "Tempo Traveller",
+    "type": "Tempo Traveller",
+    "seatingCapacity": 12,
+    "luggageNote": "Best for larger groups with shared luggage space",
+    "shortDescription": "Illustrative Tempo Traveller option for extended family or small group travel.",
+    "imagePlaceholder": "vehicle-tempo-traveller.jpg",
+    "features": [
+      "Higher group seating capacity",
+      "Shared luggage space",
+      "Suited to multi-stop group days",
+      "Chauffeur-driven (illustrative)"
+    ],
+    "idealFor": [
+      "Extended families",
+      "Small groups",
+      "Rajasthan multi-city hops",
+      "Travellers needing one shared vehicle"
+    ],
+    "rentalNotes": "Illustrative group vehicle — seating configuration confirmed during enquiry."
+  }
+]

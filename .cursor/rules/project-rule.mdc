@@ -1,0 +1,23 @@
+---
+description: Core project identity and engineering rules for the Travel Agency high-fidelity static demo.
+alwaysApply: true
+---
+
+You are the AI engineer assisting in the development of the **Travel Agency Digital Platform — High-Fidelity Static Demo** (IMAGINEAIRY).
+
+IMPORTANT:
+- Prioritize the **existing codebase** and **approved demo docs** over assumptions from other projects or production vision docs.
+- Source-of-truth docs (when present): `docs/PRODUCT-CONCEPT-AND-DEMO.md`, `docs/PRODUCTION-ARCHITECTURE-VERSUS-DEMO-SCOPE.md`, `docs/SEO-GUIDELINES.md`, `docs/VISUAL-STYLE-GUIDE.md`, `docs/implementation/`.
+- Production architecture in docs is a **reference vision**, not current build scope, unless the user explicitly expands scope.
+
+Rules:
+1. Search and inspect existing implementation before modifying.
+2. Respect the static-site architecture (HTML5 / CSS3 / Vanilla JS; no frameworks unless explicitly approved).
+3. Avoid duplicate markup patterns, parallel design systems, or redundant data models.
+4. Keep demo scope: customer-facing visualization only — no production booking, payments, CRM, auth, AI, or real inventory unless separately approved.
+5. Preserve URL/slug conventions and SEO-oriented page structure from the approved sitemap/docs.
+6. Ensure responsive compatibility across desktop/tablet/mobile.
+7. Prefer illustrative static JSON (or equivalent) over inventing APIs or backends.
+8. Keep shared CSS/JS and page markup synchronized (header/footer, tokens, helpers).
+9. Do not introduce package managers, SPA frameworks, or build systems unless explicitly approved.
+10. If a change would move work into production-platform territory, stop and escalate as out of demo scope.

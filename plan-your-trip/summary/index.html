@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trip Summary — Travel Agency</title>
+    <meta name="description" content="Review your illustrative trip enquiry details and continue on WhatsApp." />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/tokens.css" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/utilities.css" />
+    <link rel="stylesheet" href="/css/pages.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <div class="container site-header__inner">
+        <a class="site-wordmark" href="/">Travel Agency</a>
+        <div class="site-header__actions">
+          <a class="btn btn--primary site-header__cta" href="/plan-your-trip/">Plan Your Trip</a>
+          <button
+            type="button"
+            class="nav-toggle"
+            data-nav-toggle
+            aria-controls="site-nav"
+            aria-expanded="false"
+          >
+            <span class="u-sr-only">Menu</span>
+            <span aria-hidden="true">☰</span>
+          </button>
+        </div>
+        <nav class="site-nav" id="site-nav" data-site-nav aria-label="Primary">
+          <ul class="site-nav__list">
+            <li><a class="site-nav__link" href="/destinations/">Destinations</a></li>
+            <li><a class="site-nav__link" href="/tours/">Tours</a></li>
+            <li><a class="site-nav__link" href="/car-rental/">Car Rentals</a></li>
+            <li><a class="site-nav__link" href="/#experiences">Experiences</a></li>
+            <li><a class="site-nav__link" href="/travel-guides/">Travel Guides</a></li>
+            <li class="site-nav__item site-nav__item--cta">
+              <a class="btn btn--primary" href="/plan-your-trip/">Plan Your Trip</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main" id="main" role="main">
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">Trip summary</p>
+            <h1 class="section-heading__title">Your enquiry snapshot</h1>
+            <p class="section-heading__lead">
+              Review what you shared. This page is not indexed and nothing was sent to a
+              server — continue on WhatsApp if you like.
+            </p>
+          </div>
+
+          <div class="planner-shell planner-summary" data-planner-summary>
+            <div class="planner-summary__panel" data-planner-summary-empty hidden>
+              <p class="prose">
+                No enquiry details were found in this browser session.
+                <a href="/plan-your-trip/">Start Plan Your Trip</a> to build one.
+              </p>
+            </div>
+
+            <div class="planner-summary__panel" data-planner-summary-filled hidden>
+              <dl>
+                <div>
+                  <dt>Destination</dt>
+                  <dd data-summary-field="destination">—</dd>
+                </div>
+                <div>
+                  <dt>Package</dt>
+                  <dd data-summary-field="package">—</dd>
+                </div>
+                <div>
+                  <dt>Vehicle</dt>
+                  <dd data-summary-field="vehicle">—</dd>
+                </div>
+                <div>
+                  <dt>Dates</dt>
+                  <dd data-summary-field="dates">—</dd>
+                </div>
+                <div>
+                  <dt>Travellers</dt>
+                  <dd data-summary-field="travellers">—</dd>
+                </div>
+                <div>
+                  <dt>Trip type</dt>
+                  <dd data-summary-field="tripType">—</dd>
+                </div>
+                <div>
+                  <dt>Services</dt>
+                  <dd data-summary-field="services">—</dd>
+                </div>
+                <div>
+                  <dt>Hotel category</dt>
+                  <dd data-summary-field="hotelCategory">—</dd>
+                </div>
+                <div>
+                  <dt>Vehicle category</dt>
+                  <dd data-summary-field="vehicleCategory">—</dd>
+                </div>
+                <div>
+                  <dt>Pace</dt>
+                  <dd data-summary-field="pace">—</dd>
+                </div>
+                <div>
+                  <dt>Must visit</dt>
+                  <dd data-summary-field="mustVisit">—</dd>
+                </div>
+                <div>
+                  <dt>Special requirements</dt>
+                  <dd data-summary-field="specialRequirements">—</dd>
+                </div>
+                <div>
+                  <dt>Budget</dt>
+                  <dd data-summary-field="budget">—</dd>
+                </div>
+                <div>
+                  <dt>Name</dt>
+                  <dd data-summary-field="name">—</dd>
+                </div>
+                <div>
+                  <dt>Phone</dt>
+                  <dd data-summary-field="phone">—</dd>
+                </div>
+                <div>
+                  <dt>Email</dt>
+                  <dd data-summary-field="email">—</dd>
+                </div>
+                <div>
+                  <dt>Message</dt>
+                  <dd data-summary-field="message">—</dd>
+                </div>
+              </dl>
+
+              <div class="u-row u-mt-8">
+                <a class="btn btn--primary" data-planner-whatsapp href="https://wa.me/919999999999"
+                  >Talk on WhatsApp</a
+                >
+                <a class="btn btn--secondary" data-planner-back-link href="/plan-your-trip/"
+                  >Edit plan</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="site-footer__wordmark" href="/">Travel Agency</a>
+            <p class="site-footer__statement">
+              Curated journeys, comfortable travel, and local experiences designed around
+              you.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="site-footer__heading">Explore</h2>
+            <ul class="site-footer__list">
+              <li><a href="/destinations/">Destinations</a></li>
+              <li><a href="/tours/">Tours</a></li>
+              <li><a href="/car-rental/">Car Rentals</a></li>
+              <li><a href="/#experiences">Experiences</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="site-footer__heading">Plan</h2>
+            <ul class="site-footer__list">
+              <li><a href="/plan-your-trip/">Plan Your Trip</a></li>
+              <li><a href="/travel-guides/">Travel Guides</a></li>
+              <li><a href="/contact/">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="site-footer__heading">Company</h2>
+            <ul class="site-footer__list">
+              <li><a href="/about/">About</a></li>
+              <li><a href="/gallery/">Gallery</a></li>
+            </ul>
+          </div>
+
+          <div class="site-footer__contact">
+            <h2 class="site-footer__heading">Contact</h2>
+            <p><a href="tel:+919999999999">+91 99999 99999</a></p>
+            <p><a href="mailto:hello@travelagency.example">hello@travelagency.example</a></p>
+            <p>
+              <a
+                href="https://wa.me/919999999999"
+                target="_blank"
+                rel="noopener noreferrer"
+                >WhatsApp</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p>&copy; 2026 Travel Agency. Illustrative demo only.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/main.js" defer></script>
+    <script src="/js/planner.js" defer></script>
+  </body>
+</html>

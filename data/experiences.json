@@ -1,0 +1,34 @@
+[
+  {
+    "id": "exp-dal-lake-shikara",
+    "slug": "dal-lake-shikara",
+    "title": "Dal Lake Shikara Ride",
+    "destinationId": "dest-kashmir",
+    "destinationSlug": "kashmir",
+    "shortDescription": "Illustrative lakeside experience — a calm shikara ride across Dal Lake."
+  },
+  {
+    "id": "exp-gulmarg-meadows",
+    "slug": "gulmarg-meadows",
+    "title": "Gulmarg Meadow Views",
+    "destinationId": "dest-kashmir",
+    "destinationSlug": "kashmir",
+    "shortDescription": "Illustrative mountain-meadow outing with open views and easy walking time."
+  },
+  {
+    "id": "exp-jaipur-forts",
+    "slug": "jaipur-forts",
+    "title": "Jaipur Fort Circuit",
+    "destinationId": "dest-rajasthan",
+    "destinationSlug": "rajasthan",
+    "shortDescription": "Illustrative heritage experience visiting signature forts and city viewpoints."
+  },
+  {
+    "id": "exp-alleppey-backwaters",
+    "slug": "alleppey-backwaters",
+    "title": "Alleppey Backwater Cruise",
+    "destinationId": "dest-kerala",
+    "destinationSlug": "kerala",
+    "shortDescription": "Illustrative backwater cruise through quiet canals and village waterways."
+  }
+]

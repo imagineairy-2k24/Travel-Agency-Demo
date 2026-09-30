@@ -1,0 +1,20 @@
+[
+  {
+    "id": "test-01",
+    "quote": "Planning felt clear from the first conversation — destinations, pace, and vehicle choice all lined up for our family.",
+    "author": "Ananya R.",
+    "tripContext": "Kashmir family trip (illustrative)"
+  },
+  {
+    "id": "test-02",
+    "quote": "We wanted culture without rushing. The suggested Rajasthan flow gave us room to enjoy each city.",
+    "author": "Michael & Priya",
+    "tripContext": "Rajasthan heritage circuit (illustrative)"
+  },
+  {
+    "id": "test-03",
+    "quote": "Backwaters and transfers were arranged smoothly. Helpful for a first trip to Kerala.",
+    "author": "Suresh K.",
+    "tripContext": "Kerala backwaters escape (illustrative)"
+  }
+]

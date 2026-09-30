@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Plan Your Trip — Travel Agency</title>
+    <meta name="description" content="Multi-step illustrative trip planner for destinations, dates, services, and contact details." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/tokens.css" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/utilities.css" />
+    <link rel="stylesheet" href="/css/pages.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <div class="container site-header__inner">
+        <a class="site-wordmark" href="/">Travel Agency</a>
+        <div class="site-header__actions">
+          <a class="btn btn--primary site-header__cta" href="/plan-your-trip/">Plan Your Trip</a>
+          <button
+            type="button"
+            class="nav-toggle"
+            data-nav-toggle
+            aria-controls="site-nav"
+            aria-expanded="false"
+          >
+            <span class="u-sr-only">Menu</span>
+            <span aria-hidden="true">☰</span>
+          </button>
+        </div>
+        <nav class="site-nav" id="site-nav" data-site-nav aria-label="Primary">
+          <ul class="site-nav__list">
+            <li><a class="site-nav__link" href="/destinations/">Destinations</a></li>
+            <li><a class="site-nav__link" href="/tours/">Tours</a></li>
+            <li><a class="site-nav__link" href="/car-rental/">Car Rentals</a></li>
+            <li><a class="site-nav__link" href="/#experiences">Experiences</a></li>
+            <li><a class="site-nav__link" href="/travel-guides/">Travel Guides</a></li>
+            <li class="site-nav__item site-nav__item--cta">
+              <a class="btn btn--primary" href="/plan-your-trip/">Plan Your Trip</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main" id="main" role="main">
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">Plan Your Trip</p>
+            <h1 class="section-heading__title">Tell us how you want to travel</h1>
+            <p class="section-heading__lead">
+              A guided, illustrative enquiry — no booking or payment. Your answers stay in
+              this browser session until you submit.
+            </p>
+          </div>
+
+          <div class="planner-shell" data-trip-planner>
+            <div
+              class="planner-progress"
+              data-planner-progress
+              role="progressbar"
+              aria-valuemin="1"
+              aria-valuemax="8"
+              aria-valuenow="1"
+              aria-label="Trip planner progress"
+            >
+              <div class="planner-progress__track">
+                <div class="planner-progress__fill" data-planner-progress-fill></div>
+              </div>
+              <p class="planner-progress__label" data-planner-progress-label>Step 1 of 8</p>
+            </div>
+
+            <form action="/plan-your-trip/summary/" method="get" novalidate>
+              <div class="planner-step" data-planner-step="destination">
+                <h2>Where would you like to go?</h2>
+                <p class="u-mb-4" style="color: var(--color-text-secondary)">
+                  Select one destination to start your illustrative plan.
+                </p>
+                <div class="selection-card-group">
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="destination"
+                  data-value="kashmir"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Kashmir</span>
+                  <span class="selection-card__desc">Valleys, lakes, and mountain calm</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="destination"
+                  data-value="rajasthan"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Rajasthan</span>
+                  <span class="selection-card__desc">Forts, deserts, and royal cities</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="destination"
+                  data-value="kerala"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Kerala</span>
+                  <span class="selection-card__desc">Backwaters, coast, and green hills</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="destination"
+                  data-value="sikkim"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Sikkim</span>
+                  <span class="selection-card__desc">Himalayan trails and monastery towns</span>
+                </button>
+                </div>
+              </div>
+
+              <div class="planner-step" data-planner-step="dates" hidden>
+                <h2>When are you travelling?</h2>
+                <div class="form-field">
+                  <label class="form-label" for="startDate">Start date</label>
+                  <input
+                    class="form-input"
+                    type="date"
+                    id="startDate"
+                    name="startDate"
+                    data-planner-field="startDate"
+                  />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="endDate">End date (optional)</label>
+                  <input
+                    class="form-input"
+                    type="date"
+                    id="endDate"
+                    name="endDate"
+                    data-planner-field="endDate"
+                  />
+                </div>
+                <label class="choice-chip">
+                  <input
+                    class="choice-chip__input"
+                    type="checkbox"
+                    name="flexibleDates"
+                    data-planner-field="flexibleDates"
+                  />
+                  <span class="choice-chip__label">My dates are flexible</span>
+                </label>
+              </div>
+
+              <div class="planner-step" data-planner-step="travellers" hidden>
+                <h2>Who is travelling?</h2>
+                <div class="form-field">
+                  <label class="form-label" for="adults">Adults</label>
+                  <input
+                    class="form-input"
+                    type="number"
+                    id="adults"
+                    name="adults"
+                    data-planner-field="adults"
+                    min="1"
+                    value="2"
+                  />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="children">Children</label>
+                  <input
+                    class="form-input"
+                    type="number"
+                    id="children"
+                    name="children"
+                    data-planner-field="children"
+                    min="0"
+                    value="0"
+                  />
+                </div>
+              </div>
+
+              <div class="planner-step" data-planner-step="tripType" hidden>
+                <h2>What kind of trip?</h2>
+                <div class="selection-card-group">
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="tripType"
+                  data-value="family"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Family</span>
+                  <span class="selection-card__desc">Easy pacing for mixed ages</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="tripType"
+                  data-value="honeymoon"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Honeymoon</span>
+                  <span class="selection-card__desc">Unhurried and scenic</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="tripType"
+                  data-value="culture"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Culture</span>
+                  <span class="selection-card__desc">Heritage and local character</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="tripType"
+                  data-value="adventure"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Adventure</span>
+                  <span class="selection-card__desc">Active days and viewpoints</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="tripType"
+                  data-value="relaxation"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Relaxation</span>
+                  <span class="selection-card__desc">Calm stays and soft days</span>
+                </button>
+                </div>
+              </div>
+
+              <div class="planner-step" data-planner-step="services" hidden>
+                <h2>Which services do you need?</h2>
+                <p class="u-mb-4" style="color: var(--color-text-secondary)">
+                  Select all that apply.
+                </p>
+                <div class="selection-card-group">
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="services"
+                  data-value="car"
+                  aria-pressed="false" data-selection-multi="true"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Car rental</span>
+                  <span class="selection-card__desc">Chauffeur-driven vehicle</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="services"
+                  data-value="hotel"
+                  aria-pressed="false" data-selection-multi="true"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Hotels</span>
+                  <span class="selection-card__desc">Stay recommendations</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="services"
+                  data-value="transfers"
+                  aria-pressed="false" data-selection-multi="true"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Transfers</span>
+                  <span class="selection-card__desc">Airport and station hops</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="services"
+                  data-value="sightseeing"
+                  aria-pressed="false" data-selection-multi="true"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Sightseeing</span>
+                  <span class="selection-card__desc">Guided day outlines</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="services"
+                  data-value="activities"
+                  aria-pressed="false" data-selection-multi="true"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Activities</span>
+                  <span class="selection-card__desc">Experiences and outings</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="services"
+                  data-value="guide"
+                  aria-pressed="false" data-selection-multi="true"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Local guide</span>
+                  <span class="selection-card__desc">On-ground guidance</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="services"
+                  data-value="complete-package"
+                  aria-pressed="false" data-selection-multi="true"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Complete package</span>
+                  <span class="selection-card__desc">End-to-end planning</span>
+                </button>
+                </div>
+              </div>
+
+              <div class="planner-step" data-planner-step="preferences" hidden>
+                <h2>Travel preferences</h2>
+                <p class="u-mb-4" style="color: var(--color-text-secondary)">Hotel category</p>
+                <div class="selection-card-group u-mb-6">
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="hotelCategory"
+                  data-value="standard"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Standard</span>
+                  <span class="selection-card__desc">Comfortable mid-range</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="hotelCategory"
+                  data-value="premium"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Premium</span>
+                  <span class="selection-card__desc">Upscale comfort</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="hotelCategory"
+                  data-value="heritage"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Heritage</span>
+                  <span class="selection-card__desc">Character stays</span>
+                </button>
+                </div>
+                <p class="u-mb-4" style="color: var(--color-text-secondary)">Vehicle category</p>
+                <div class="selection-card-group u-mb-6">
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="vehicleCategory"
+                  data-value="sedan"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Sedan</span>
+                  <span class="selection-card__desc">Couples & small groups</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="vehicleCategory"
+                  data-value="innova-crysta"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Innova Crysta</span>
+                  <span class="selection-card__desc">Family MPV</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="vehicleCategory"
+                  data-value="suv"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">SUV</span>
+                  <span class="selection-card__desc">Hill-friendly feel</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="vehicleCategory"
+                  data-value="tempo-traveller"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Tempo Traveller</span>
+                  <span class="selection-card__desc">Larger groups</span>
+                </button>
+                </div>
+                <p class="u-mb-4" style="color: var(--color-text-secondary)">Pace</p>
+                <div class="selection-card-group u-mb-6">
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="pace"
+                  data-value="relaxed"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Relaxed</span>
+                  <span class="selection-card__desc">Fewer moves, longer stays</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="pace"
+                  data-value="balanced"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Balanced</span>
+                  <span class="selection-card__desc">A mix of days</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="pace"
+                  data-value="packed"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Packed</span>
+                  <span class="selection-card__desc">See more in fewer days</span>
+                </button>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="mustVisit">Must-visit places (optional)</label>
+                  <textarea
+                    class="form-textarea"
+                    id="mustVisit"
+                    name="mustVisit"
+                    data-planner-field="preferences.mustVisit"
+                    rows="3"
+                  ></textarea>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="specialRequirements"
+                    >Special requirements (optional)</label
+                  >
+                  <textarea
+                    class="form-textarea"
+                    id="specialRequirements"
+                    name="specialRequirements"
+                    data-planner-field="preferences.specialRequirements"
+                    rows="3"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="planner-step" data-planner-step="budget" hidden>
+                <h2>Illustrative budget range</h2>
+                <p class="u-mb-4" style="color: var(--color-text-secondary)">
+                  Ranges are demo labels only — not live quotes.
+                </p>
+                <div class="selection-card-group">
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="budget"
+                  data-value="under-50k"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">Under ₹50,000</span>
+                  <span class="selection-card__desc">Compact illustrative trip</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="budget"
+                  data-value="50k-1l"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">₹50,000 – ₹1,00,000</span>
+                  <span class="selection-card__desc">Balanced comfort</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="budget"
+                  data-value="1l-2l"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">₹1,00,000 – ₹2,00,000</span>
+                  <span class="selection-card__desc">More room to customise</span>
+                </button>
+                <button
+                  type="button"
+                  class="selection-card"
+                  data-selection-card
+                  data-selection-group="budget"
+                  data-value="2l-plus"
+                  aria-pressed="false"
+                >
+                  <span class="selection-card__indicator" aria-hidden="true">✓</span>
+                  <span class="selection-card__title">₹2,00,000+</span>
+                  <span class="selection-card__desc">Premium illustrative scope</span>
+                </button>
+                </div>
+              </div>
+
+              <div class="planner-step" data-planner-step="contact" hidden>
+                <h2>How can we reach you?</h2>
+                <div class="form-field">
+                  <label class="form-label" for="contactName">Name</label>
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="contactName"
+                    name="name"
+                    data-planner-field="contact.name"
+                    autocomplete="name"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="contactPhone">WhatsApp / mobile</label>
+                  <input
+                    class="form-input"
+                    type="tel"
+                    id="contactPhone"
+                    name="phone"
+                    data-planner-field="contact.phone"
+                    autocomplete="tel"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="contactEmail">Email (optional)</label>
+                  <input
+                    class="form-input"
+                    type="email"
+                    id="contactEmail"
+                    name="email"
+                    data-planner-field="contact.email"
+                    autocomplete="email"
+                  />
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="contactMessage">Message (optional)</label>
+                  <textarea
+                    class="form-textarea"
+                    id="contactMessage"
+                    name="message"
+                    data-planner-field="contact.message"
+                    rows="4"
+                  ></textarea>
+                </div>
+              </div>
+
+              <p class="planner-error" data-planner-error hidden role="alert"></p>
+
+              <div class="planner-actions">
+                <button type="button" class="btn btn--secondary" data-planner-back>
+                  Back
+                </button>
+                <button type="button" class="btn btn--primary" data-planner-next>Next</button>
+                <button type="submit" class="btn btn--primary" data-planner-submit hidden>
+                  Submit enquiry
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <a class="site-footer__wordmark" href="/">Travel Agency</a>
+            <p class="site-footer__statement">
+              Curated journeys, comfortable travel, and local experiences designed around
+              you.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="site-footer__heading">Explore</h2>
+            <ul class="site-footer__list">
+              <li><a href="/destinations/">Destinations</a></li>
+              <li><a href="/tours/">Tours</a></li>
+              <li><a href="/car-rental/">Car Rentals</a></li>
+              <li><a href="/#experiences">Experiences</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="site-footer__heading">Plan</h2>
+            <ul class="site-footer__list">
+              <li><a href="/plan-your-trip/">Plan Your Trip</a></li>
+              <li><a href="/travel-guides/">Travel Guides</a></li>
+              <li><a href="/contact/">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="site-footer__heading">Company</h2>
+            <ul class="site-footer__list">
+              <li><a href="/about/">About</a></li>
+              <li><a href="/gallery/">Gallery</a></li>
+            </ul>
+          </div>
+
+          <div class="site-footer__contact">
+            <h2 class="site-footer__heading">Contact</h2>
+            <p><a href="tel:+919999999999">+91 99999 99999</a></p>
+            <p><a href="mailto:hello@travelagency.example">hello@travelagency.example</a></p>
+            <p>
+              <a
+                href="https://wa.me/919999999999"
+                target="_blank"
+                rel="noopener noreferrer"
+                >WhatsApp</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p>&copy; 2026 Travel Agency. Illustrative demo only.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/main.js" defer></script>
+    <script src="/js/planner.js" defer></script>
+  </body>
+</html>
