@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="/css/utilities.css" />
     <link rel="stylesheet" href="/css/pages.css" />
   </head>
-  <body>
+  <body class="page--contact">
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header" role="banner">
@@ -41,11 +41,268 @@
         </div>
         <nav class="site-nav" id="site-nav" data-site-nav aria-label="Primary">
           <ul class="site-nav__list">
-            <li><a class="site-nav__link" href="/destinations/">Destinations</a></li>
-            <li><a class="site-nav__link" href="/tours/">Tours</a></li>
-            <li><a class="site-nav__link" href="/car-rental/">Car Rentals</a></li>
-            <li><a class="site-nav__link" href="/#experiences">Experiences</a></li>
-            <li><a class="site-nav__link" href="/travel-guides/">Travel Guides</a></li>
+            <li class="site-nav__item site-nav__item--has-panel">
+              <button
+                type="button"
+                class="site-nav__trigger"
+                id="nav-trigger-destinations"
+                aria-expanded="false"
+                aria-controls="nav-panel-destinations"
+              >
+                Destinations
+                <span class="site-nav__chevron" aria-hidden="true"></span>
+              </button>
+              <div
+                class="site-nav__panel site-nav__panel--wide"
+                id="nav-panel-destinations"
+                role="region"
+                aria-labelledby="nav-trigger-destinations"
+                hidden
+              >
+                <div class="site-nav__panel-inner site-nav__panel-inner--cols-2">
+                  <div class="site-nav__group">
+                    <p class="site-nav__group-label">India</p>
+                    <ul class="site-nav__sublist">
+                      <li><a class="site-nav__sublink" href="/destinations/kashmir/">Kashmir</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/rajasthan/">Rajasthan</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/kerala/">Kerala</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/sikkim/">Sikkim</a></li>
+                      <li>
+                        <a class="site-nav__sublink site-nav__sublink--emphasis" href="/destinations/#india"
+                          >Explore India</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="site-nav__group">
+                    <p class="site-nav__group-label">International</p>
+                    <ul class="site-nav__sublist">
+                      <li><a class="site-nav__sublink" href="/destinations/bali/">Bali</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/thailand/">Thailand</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/dubai/">Dubai</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/singapore/">Singapore</a></li>
+                      <li>
+                        <a
+                          class="site-nav__sublink site-nav__sublink--emphasis"
+                          href="/destinations/#international"
+                          >Explore International</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="site-nav__item site-nav__item--has-panel">
+              <button
+                type="button"
+                class="site-nav__trigger"
+                id="nav-trigger-tours"
+                aria-expanded="false"
+                aria-controls="nav-panel-tours"
+              >
+                Tours
+                <span class="site-nav__chevron" aria-hidden="true"></span>
+              </button>
+              <div
+                class="site-nav__panel site-nav__panel--wide"
+                id="nav-panel-tours"
+                role="region"
+                aria-labelledby="nav-trigger-tours"
+                hidden
+              >
+                <div class="site-nav__panel-inner site-nav__panel-inner--cols-2">
+                  <div class="site-nav__group">
+                    <p class="site-nav__group-label">Domestic Tours</p>
+                    <ul class="site-nav__sublist">
+                      <li><a class="site-nav__sublink" href="/destinations/kashmir/">Kashmir Tours</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/rajasthan/">Rajasthan Tours</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/kerala/">Kerala Tours</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/sikkim/">Sikkim Tours</a></li>
+                      <li>
+                        <a class="site-nav__sublink site-nav__sublink--emphasis" href="/tours/#india"
+                          >View India Tours</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="site-nav__group">
+                    <p class="site-nav__group-label">International Tours</p>
+                    <ul class="site-nav__sublist">
+                      <li><a class="site-nav__sublink" href="/destinations/bali/">Bali Tours</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/thailand/">Thailand Tours</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/dubai/">Dubai Tours</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/singapore/">Singapore Tours</a></li>
+                      <li>
+                        <a
+                          class="site-nav__sublink site-nav__sublink--emphasis"
+                          href="/tours/#international"
+                          >View International Tours</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="site-nav__item site-nav__item--has-panel">
+              <button
+                type="button"
+                class="site-nav__trigger"
+                id="nav-trigger-car-rentals"
+                aria-expanded="false"
+                aria-controls="nav-panel-car-rentals"
+              >
+                Car Rentals
+                <span class="site-nav__chevron" aria-hidden="true"></span>
+              </button>
+              <div
+                class="site-nav__panel site-nav__panel--wide"
+                id="nav-panel-car-rentals"
+                role="region"
+                aria-labelledby="nav-trigger-car-rentals"
+                hidden
+              >
+                <div class="site-nav__panel-inner site-nav__panel-inner--cols-2">
+                  <div class="site-nav__group">
+                    <p class="site-nav__group-label">Vehicles</p>
+                    <ul class="site-nav__sublist">
+                      <li><a class="site-nav__sublink" href="/car-rental/vehicles/sedan/">Sedan</a></li>
+                      <li>
+                        <a class="site-nav__sublink" href="/car-rental/vehicles/innova-crysta/"
+                          >Innova Crysta</a
+                        >
+                      </li>
+                      <li><a class="site-nav__sublink" href="/car-rental/vehicles/suv/">SUV</a></li>
+                      <li>
+                        <a class="site-nav__sublink" href="/car-rental/vehicles/tempo-traveller/"
+                          >Tempo Traveller</a
+                        >
+                      </li>
+                      <li>
+                        <a class="site-nav__sublink site-nav__sublink--emphasis" href="/car-rental/"
+                          >View All Vehicles</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="site-nav__group">
+                    <p class="site-nav__group-label">Travel by Location</p>
+                    <ul class="site-nav__sublist">
+                      <li><a class="site-nav__sublink" href="/destinations/kashmir/">Kashmir</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/rajasthan/">Rajasthan</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/kerala/">Kerala</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/sikkim/">Sikkim</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="site-nav__item site-nav__item--has-panel">
+              <button
+                type="button"
+                class="site-nav__trigger"
+                id="nav-trigger-experiences"
+                aria-expanded="false"
+                aria-controls="nav-panel-experiences"
+              >
+                Experiences
+                <span class="site-nav__chevron" aria-hidden="true"></span>
+              </button>
+              <div
+                class="site-nav__panel"
+                id="nav-panel-experiences"
+                role="region"
+                aria-labelledby="nav-trigger-experiences"
+                hidden
+              >
+                <div class="site-nav__panel-inner">
+                  <div class="site-nav__group">
+                    <p class="site-nav__group-label">Categories</p>
+                    <ul class="site-nav__sublist">
+                      <li>
+                        <a class="site-nav__sublink" href="/#experiences">Nature &amp; Outdoors</a>
+                      </li>
+                      <li>
+                        <a class="site-nav__sublink" href="/#experiences">Culture &amp; Heritage</a>
+                      </li>
+                      <li>
+                        <a class="site-nav__sublink" href="/#experiences">Food &amp; Local Life</a>
+                      </li>
+                      <li><a class="site-nav__sublink" href="/#experiences">Adventure</a></li>
+                      <li>
+                        <a class="site-nav__sublink" href="/#experiences">Wellness &amp; Leisure</a>
+                      </li>
+                      <li>
+                        <a class="site-nav__sublink site-nav__sublink--emphasis" href="/#experiences"
+                          >Explore Experiences</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="site-nav__item site-nav__item--has-panel">
+              <button
+                type="button"
+                class="site-nav__trigger"
+                id="nav-trigger-travel-guides"
+                aria-expanded="false"
+                aria-controls="nav-panel-travel-guides"
+              >
+                Travel Guides
+                <span class="site-nav__chevron" aria-hidden="true"></span>
+              </button>
+              <div
+                class="site-nav__panel site-nav__panel--guide"
+                id="nav-panel-travel-guides"
+                role="region"
+                aria-labelledby="nav-trigger-travel-guides"
+                hidden
+              >
+                <div class="site-nav__panel-inner site-nav__panel-inner--cols-3">
+                  <div class="site-nav__group">
+                    <p class="site-nav__group-label">India</p>
+                    <ul class="site-nav__sublist">
+                      <li>
+                        <a class="site-nav__sublink" href="/travel-guides/">Destination Guides</a>
+                      </li>
+                      <li>
+                        <a
+                          class="site-nav__sublink"
+                          href="/travel-guides/best-time-to-visit-kashmir/"
+                          >Best Time to Visit</a
+                        >
+                      </li>
+                      <li><a class="site-nav__sublink" href="/travel-guides/">Things to Do</a></li>
+                      <li><a class="site-nav__sublink" href="/travel-guides/">Travel Costs</a></li>
+                    </ul>
+                  </div>
+                  <div class="site-nav__group">
+                    <p class="site-nav__group-label">International</p>
+                    <ul class="site-nav__sublist">
+                      <li>
+                        <a class="site-nav__sublink" href="/travel-guides/">Destination Guides</a>
+                      </li>
+                      <li>
+                        <a class="site-nav__sublink" href="/travel-guides/">Best Time to Visit</a>
+                      </li>
+                      <li><a class="site-nav__sublink" href="/travel-guides/">Things to Do</a></li>
+                      <li><a class="site-nav__sublink" href="/travel-guides/">Travel Tips</a></li>
+                    </ul>
+                  </div>
+                  <div class="site-nav__group">
+                    <p class="site-nav__group-label">Travel Planning</p>
+                    <ul class="site-nav__sublist">
+                      <li><a class="site-nav__sublink" href="/travel-guides/">Travel Tips</a></li>
+                      <li><a class="site-nav__sublink" href="/travel-guides/">Transportation</a></li>
+                      <li><a class="site-nav__sublink" href="/travel-guides/">Budget Planning</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
             <li class="site-nav__item site-nav__item--cta">
               <a class="btn btn--primary" href="/plan-your-trip/">Plan Your Trip</a>
             </li>

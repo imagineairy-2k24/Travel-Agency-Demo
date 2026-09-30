@@ -5,6 +5,7 @@
     "title": "Kashmir Family Escape",
     "destinationId": "dest-kashmir",
     "destinationSlug": "kashmir",
+    "travelScope": "domestic",
     "durationDays": 6,
     "durationNights": 5,
     "travelStyle": "Family",
@@ -74,6 +75,7 @@
     "title": "Rajasthan Heritage Journey",
     "destinationId": "dest-rajasthan",
     "destinationSlug": "rajasthan",
+    "travelScope": "domestic",
     "durationDays": 7,
     "durationNights": 6,
     "travelStyle": "Culture",
@@ -147,6 +149,7 @@
     "title": "Kerala Backwater Retreat",
     "destinationId": "dest-kerala",
     "destinationSlug": "kerala",
+    "travelScope": "domestic",
     "durationDays": 5,
     "durationNights": 4,
     "travelStyle": "Relaxation",
@@ -202,5 +205,271 @@
     "accommodation": "Illustrative backwater-adjacent or coastal hotels; houseboat night optional by enquiry.",
     "transportation": "Private chauffeur-driven sedan or MPV for transfers.",
     "placesCovered": ["Alleppey backwaters", "Coastal / canal leisure stop"]
+  },
+  {
+    "id": "pkg-bali-escape",
+    "slug": "bali-escape",
+    "title": "Bali Escape",
+    "destinationId": "dest-bali",
+    "destinationSlug": "bali",
+    "travelScope": "international",
+    "durationDays": 6,
+    "durationNights": 5,
+    "travelStyle": "Relaxation",
+    "startingPriceLabel": "From ₹XX,XXX (illustrative)",
+    "shortDescription": "Illustrative Bali escape mixing Ubud culture days with southern coastal leisure evenings.",
+    "imagePlaceholder": "package-bali-escape.jpg",
+    "highlights": [
+      "Ubud temple and rice-terrace day",
+      "Unhurried coastal leisure stretch",
+      "Cultural evening option (illustrative)",
+      "Balanced sightseeing without rushed hops",
+      "Suitable for couples and calm family trips"
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrive Bali",
+        "description": "Illustrative arrival transfer and check-in near the first culture or coast base."
+      },
+      {
+        "day": 2,
+        "title": "Ubud temples & terraces",
+        "description": "Temple precincts, craft lanes, and rice-terrace viewpoints at an easy pace."
+      },
+      {
+        "day": 3,
+        "title": "Culture & local markets",
+        "description": "Light sightseeing, market browsing, and optional cultural evening."
+      },
+      {
+        "day": 4,
+        "title": "Transfer to coastal belt",
+        "description": "Move to a southern coastal base with sunset walk time."
+      },
+      {
+        "day": 5,
+        "title": "Coastal leisure day",
+        "description": "Beach-edge downtime, cliff outlooks, or spa-style leisure (illustrative)."
+      },
+      {
+        "day": 6,
+        "title": "Departure",
+        "description": "Checkout and departure transfer — timings confirmed at enquiry."
+      }
+    ],
+    "includes": [
+      "Accommodation on illustrative twin/double sharing basis",
+      "Daily breakfast (illustrative)",
+      "Airport / hotel transfers as outlined",
+      "Sightseeing stops listed in the day plan"
+    ],
+    "excludes": [
+      "International flights",
+      "Visa fees and travel insurance",
+      "Lunches and dinners unless noted",
+      "Entrance fees and activity tickets",
+      "Personal expenses and tips"
+    ],
+    "accommodation": "Illustrative mid-range stays in Ubud-area and southern coastal belts (category confirmed at enquiry).",
+    "transportation": "Private transfers for listed circuit days (illustrative; no international car-rental fleet).",
+    "placesCovered": ["Ubud", "Rice terraces", "Southern coastal belt"]
+  },
+  {
+    "id": "pkg-thailand-highlights",
+    "slug": "thailand-highlights",
+    "title": "Thailand Highlights",
+    "destinationId": "dest-thailand",
+    "destinationSlug": "thailand",
+    "travelScope": "international",
+    "durationDays": 6,
+    "durationNights": 5,
+    "travelStyle": "Culture",
+    "startingPriceLabel": "From ₹XX,XXX (illustrative)",
+    "shortDescription": "Illustrative Thailand journey covering Bangkok temples and markets with a short coastal leisure add-on.",
+    "imagePlaceholder": "package-thailand-highlights.jpg",
+    "highlights": [
+      "Bangkok temple and palace precinct mornings",
+      "River or night-market evenings",
+      "Short coastal leisure add-on",
+      "Food-lane sampling built into the outline",
+      "Flexible pacing for first-time travellers"
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrive Bangkok",
+        "description": "Arrival transfer, hotel check-in, and a gentle riverside or market evening."
+      },
+      {
+        "day": 2,
+        "title": "Temple circuit day",
+        "description": "Signature shrines and selected Bangkok sightseeing at a comfortable culture pace."
+      },
+      {
+        "day": 3,
+        "title": "Old town & markets",
+        "description": "Heritage lanes, market browsing, and optional river views."
+      },
+      {
+        "day": 4,
+        "title": "Transfer to coastal belt",
+        "description": "Illustrative hop to a beach or bay-side leisure base."
+      },
+      {
+        "day": 5,
+        "title": "Coastal leisure day",
+        "description": "Unhurried beach-edge time with optional light local sightseeing."
+      },
+      {
+        "day": 6,
+        "title": "Departure",
+        "description": "Checkout and departure transfer — final hub depends on enquiry routing."
+      }
+    ],
+    "includes": [
+      "Accommodation on illustrative twin/double sharing basis",
+      "Daily breakfast (illustrative)",
+      "Transfers between listed bases as outlined",
+      "Sightseeing as outlined in the day plan"
+    ],
+    "excludes": [
+      "International flights",
+      "Visa fees and travel insurance",
+      "Meals other than breakfast",
+      "Attraction tickets and optional tours",
+      "Personal expenses"
+    ],
+    "accommodation": "Illustrative mid-range hotels in Bangkok and a coastal leisure base (category confirmed at enquiry).",
+    "transportation": "Private or arranged transfers for listed hops (illustrative; no international car-rental fleet).",
+    "placesCovered": ["Bangkok", "Temple circuit", "Coastal leisure stop"]
+  },
+  {
+    "id": "pkg-dubai-discovery",
+    "slug": "dubai-discovery",
+    "title": "Dubai Discovery",
+    "destinationId": "dest-dubai",
+    "destinationSlug": "dubai",
+    "travelScope": "international",
+    "durationDays": 5,
+    "durationNights": 4,
+    "travelStyle": "Family",
+    "startingPriceLabel": "From ₹XX,XXX (illustrative)",
+    "shortDescription": "Illustrative Dubai city break with skyline walks, heritage lanes, and a desert-edge evening outing.",
+    "imagePlaceholder": "package-dubai-discovery.jpg",
+    "highlights": [
+      "Downtown skyline evening walk",
+      "Marina or waterfront promenade time",
+      "Old Dubai heritage lane visit",
+      "Desert-edge sunset outing (illustrative)",
+      "Compact pacing suited to short stays"
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrive Dubai",
+        "description": "Arrival transfer, hotel check-in, and an optional waterfront evening stroll."
+      },
+      {
+        "day": 2,
+        "title": "Downtown & skyline precinct",
+        "description": "Illustrative tower-area walks, viewpoints, and leisure time nearby."
+      },
+      {
+        "day": 3,
+        "title": "Old Dubai & markets",
+        "description": "Creek-side heritage lanes, traditional markets, and photo stops."
+      },
+      {
+        "day": 4,
+        "title": "Desert-edge evening",
+        "description": "Day leisure or beach stretch, then an illustrative desert-edge sunset outing."
+      },
+      {
+        "day": 5,
+        "title": "Departure",
+        "description": "Checkout and departure transfer — timings confirmed at enquiry."
+      }
+    ],
+    "includes": [
+      "Accommodation on illustrative twin/double sharing basis",
+      "Daily breakfast (illustrative)",
+      "Airport / hotel transfers as outlined",
+      "Desert-edge outing segment as outlined"
+    ],
+    "excludes": [
+      "International flights",
+      "Visa fees and travel insurance",
+      "Meals other than breakfast",
+      "Attraction tickets and paid desert activities",
+      "Personal expenses and tips"
+    ],
+    "accommodation": "Illustrative mid-range city hotel (category confirmed at enquiry).",
+    "transportation": "Private transfers for listed days (illustrative; no international car-rental fleet).",
+    "placesCovered": ["Downtown Dubai", "Old Dubai", "Desert-edge viewpoint"]
+  },
+  {
+    "id": "pkg-singapore-explorer",
+    "slug": "singapore-explorer",
+    "title": "Singapore Explorer",
+    "destinationId": "dest-singapore",
+    "destinationSlug": "singapore",
+    "travelScope": "international",
+    "durationDays": 5,
+    "durationNights": 4,
+    "travelStyle": "Family",
+    "startingPriceLabel": "From ₹XX,XXX (illustrative)",
+    "shortDescription": "Illustrative Singapore city break covering gardens, harbour views, and multicultural neighbourhood food walks.",
+    "imagePlaceholder": "package-singapore-explorer.jpg",
+    "highlights": [
+      "Gardens and conservatory district morning",
+      "Marina / harbour waterfront evening",
+      "Chinatown and heritage lane walks",
+      "Neighbourhood food evenings",
+      "Compact geography suited to short family stays"
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrive Singapore",
+        "description": "Arrival transfer, hotel check-in, and a gentle harbour or neighbourhood evening."
+      },
+      {
+        "day": 2,
+        "title": "Gardens day",
+        "description": "Illustrative garden landmark visit with unhurried photo and walk time."
+      },
+      {
+        "day": 3,
+        "title": "Harbour & skyline",
+        "description": "Waterfront walks, viewpoints, and optional evening light moments."
+      },
+      {
+        "day": 4,
+        "title": "Neighbourhood flavours",
+        "description": "Chinatown, Little India, or Arab Street food and heritage lanes."
+      },
+      {
+        "day": 5,
+        "title": "Departure",
+        "description": "Optional morning leisure, then checkout and departure transfer."
+      }
+    ],
+    "includes": [
+      "Accommodation on illustrative twin/double sharing basis",
+      "Daily breakfast (illustrative)",
+      "Airport / hotel transfers as outlined",
+      "Sightseeing outline for gardens and neighbourhood days"
+    ],
+    "excludes": [
+      "International flights",
+      "Visa fees and travel insurance",
+      "Meals other than breakfast",
+      "Attraction tickets and paid experiences",
+      "Personal expenses and tips"
+    ],
+    "accommodation": "Illustrative mid-range city hotel near a central or harbour-accessible base (category confirmed at enquiry).",
+    "transportation": "Airport transfers plus walkable / local transit-friendly days (illustrative; no international car-rental fleet).",
+    "placesCovered": ["Gardens district", "Marina / harbour", "Heritage neighbourhoods"]
   }
 ]

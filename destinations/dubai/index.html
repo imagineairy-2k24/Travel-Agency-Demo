@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Rajasthan Heritage Journey — Travel Agency</title>
-    <meta name="description" content="Illustrative 7-day Rajasthan heritage tour with forts, palaces, and desert evenings — plan your enquiry." />
+    <title>Dubai Tours &amp; Travel — Travel Agency</title>
+    <meta name="description" content="Illustrative international destination profile for Dubai — waterfront promenades, skyline outlooks, and desert-edge evenings." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,13 +14,13 @@
     <link rel="stylesheet" href="/css/tokens.css" />
     <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/components.css" />
-    <link rel="stylesheet" href="/css/utilities.css" />
     <link rel="stylesheet" href="/css/pages.css" />
+    <link rel="stylesheet" href="/css/utilities.css" />
   </head>
-  <body class="page--commercial">
+  <body class="page--destination">
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header" role="banner">
+    <header class="site-header site-header--over-hero" role="banner">
       <div class="container site-header__inner">
         <a class="site-wordmark" href="/">Travel Agency</a>
         <div class="site-header__actions">
@@ -44,7 +44,7 @@
                 class="site-nav__trigger"
                 id="nav-trigger-destinations"
                 aria-expanded="false"
-                aria-controls="nav-panel-destinations"
+                aria-controls="nav-panel-destinations" aria-current="page"
               >
                 Destinations
                 <span class="site-nav__chevron" aria-hidden="true"></span>
@@ -96,7 +96,7 @@
                 class="site-nav__trigger"
                 id="nav-trigger-tours"
                 aria-expanded="false"
-                aria-controls="nav-panel-tours" aria-current="page"
+                aria-controls="nav-panel-tours"
               >
                 Tours
                 <span class="site-nav__chevron" aria-hidden="true"></span>
@@ -309,155 +309,150 @@
     </header>
 
     <main class="site-main site-main--flush" id="main" role="main">
-      <div class="page-breadcrumb">
-        <div class="container">
-          <nav class="breadcrumb" aria-label="Breadcrumb">
+      <section class="page-hero page-hero--destination" aria-label="Dubai">
+        <div class="page-hero__media">
+          <img
+            src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1800&q=80"
+            alt="Modern skyline and waterfront in Dubai"
+            width="1800"
+            height="1200"
+          />
+        </div>
+        <div class="page-hero__overlay" aria-hidden="true"></div>
+        <div class="container page-hero__inner">
+          <p class="page-hero__eyebrow">UAE</p>
+          <h1>Dubai Tours &amp; Travel</h1>
+          <p class="page-hero__lead">Skyline views, desert edges, and modern city energy</p>
+          <div class="page-hero__actions">
+            <a class="btn btn--primary" href="/plan-your-trip/?destination=dubai"
+              >Plan Your Trip</a
+            >
+            <a class="btn btn--secondary" href="/tours/dubai-discovery/">View package</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="container dest-detail__breadcrumb">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
           <ol class="breadcrumb__list">
-            <li class="breadcrumb__item"><a class="breadcrumb__link" href="/">Home</a></li>
             <li class="breadcrumb__item">
-              <a class="breadcrumb__link" href="/tours/">Tours</a>
+              <a class="breadcrumb__link" href="/">Home</a>
             </li>
             <li class="breadcrumb__item">
-              <span class="breadcrumb__current" aria-current="page">Rajasthan Heritage Journey</span>
+              <a class="breadcrumb__link" href="/destinations/">Destinations</a>
+            </li>
+            <li class="breadcrumb__item">
+              <span class="breadcrumb__current" aria-current="page">Dubai</span>
             </li>
           </ol>
         </nav>
-        </div>
       </div>
 
-      <section class="page-hero" aria-label="Rajasthan Heritage Journey">
-        <div class="page-hero__media" aria-hidden="true">
-          <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1600&q=80" alt="" />
-        </div>
-        <div class="page-hero__scrim" aria-hidden="true"></div>
-        <div class="container page-hero__inner">
-          <h1 class="page-hero__title">Rajasthan Heritage Journey</h1>
-          <p class="page-hero__lead">Illustrative heritage-focused Rajasthan journey through forts, palaces, and desert evenings.</p>
-        </div>
-      </section>
-
-      <section class="section section--white">
+      <section class="section section--white section--compact" aria-labelledby="dubai-overview">
         <div class="container">
-          <ul class="meta-row u-mb-8" aria-label="Package overview">
-            <li class="meta-row__item">
-              <span class="meta-row__label">Duration</span>
-              <span class="meta-row__value"
-                >7 days / 6 nights</span
-              >
-            </li>
-            <li class="meta-row__item">
-              <span class="meta-row__label">Destination</span>
-              <span class="meta-row__value"
-                ><a href="/destinations/rajasthan/">Rajasthan</a></span
-              >
-            </li>
-            <li class="meta-row__item">
-              <span class="meta-row__label">Trip type</span>
-              <span class="meta-row__value">Culture</span>
-            </li>
-            <li class="meta-row__item">
-              <span class="meta-row__label">Starting price</span>
-              <span class="meta-row__value">From ₹XX,XXX (illustrative)</span>
-            </li>
-          </ul>
-
-          <div class="detail-media u-mb-8">
-            <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1600&q=80" alt="Sandstone fort facade and gateway in Jaipur, Rajasthan" />
-          </div>
-
-          <h2>Highlights</h2>
-          <ul class="feature-list u-mb-8">
-                <li>Fort and palace sightseeing in signature cities</li>
-                <li>Culture-first pacing with photo stops</li>
-                <li>Desert evening experience (illustrative)</li>
-                <li>Private vehicle for intercity hops</li>
-                <li>Local market time built into the outline</li>
-          </ul>
-
-          <h2>Itinerary</h2>
-          <div class="itinerary u-mb-8">
-              <div class="itinerary-day">
-                <p class="itinerary-day__day">Day 1</p>
-                <h3>Arrive Jaipur</h3>
-                <p>Arrival, hotel check-in, and an unhurried evening in the Pink City.</p>
-              </div>
-              <div class="itinerary-day">
-                <p class="itinerary-day__day">Day 2</p>
-                <h3>Jaipur forts & viewpoints</h3>
-                <p>Illustrative fort circuit with viewpoints and palace precinct time.</p>
-              </div>
-              <div class="itinerary-day">
-                <p class="itinerary-day__day">Day 3</p>
-                <h3>Jaipur markets & heritage lanes</h3>
-                <p>Bazaar walks and selected heritage stops at a comfortable culture pace.</p>
-              </div>
-              <div class="itinerary-day">
-                <p class="itinerary-day__day">Day 4</p>
-                <h3>Onward heritage city</h3>
-                <p>Transfer to the next heritage stop on the illustrative circuit.</p>
-              </div>
-              <div class="itinerary-day">
-                <p class="itinerary-day__day">Day 5</p>
-                <h3>Palaces & local culture</h3>
-                <p>Palace precincts, photo stops, and optional cultural evening.</p>
-              </div>
-              <div class="itinerary-day">
-                <p class="itinerary-day__day">Day 6</p>
-                <h3>Desert evening outing</h3>
-                <p>Illustrative desert viewpoint or dune-edge evening, then return to hotel.</p>
-              </div>
-              <div class="itinerary-day">
-                <p class="itinerary-day__day">Day 7</p>
-                <h3>Departure</h3>
-                <p>Checkout and departure transfer — final city depends on enquiry routing.</p>
-              </div>
-          </div>
-
-          <div class="split-list u-mb-8">
+          <div class="dest-detail__prose-grid">
             <div>
-              <h2>Includes</h2>
-              <ul class="feature-list">
-                  <li>Accommodation on illustrative twin/double sharing basis</li>
-                  <li>Daily breakfast (illustrative)</li>
-                  <li>Private transfers between listed circuit cities</li>
-                  <li>Sightseeing as outlined in the day plan</li>
-              </ul>
+              <h2 id="dubai-overview">Overview</h2>
+              <p class="dest-detail__overview">
+                Dubai is framed in this demo as a compact international city break with modern skyline moments, waterfront walks, and an optional desert-edge outing. Content stays illustrative — no hotel partnerships, live pricing, or availability claims.
+              </p>
             </div>
-            <div>
-              <h2>Excludes</h2>
-              <ul class="feature-list">
-                  <li>Flights or train tickets</li>
-                  <li>Meals other than breakfast</li>
-                  <li>Monument entrance fees</li>
-                  <li>Camel rides or paid desert activities</li>
-                  <li>Personal expenses</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="prose u-mb-8">
-            <h2>Accommodation</h2>
-            <p>Illustrative heritage-leaning or mid-range hotels (category confirmed at enquiry).</p>
-            <h2>Transportation</h2>
-            <p>Private chauffeur-driven vehicle suitable for multi-city Rajasthan hops.</p>
-            <h2>Places covered</h2>
-            <p>Jaipur, Heritage city stop, Desert evening viewpoint</p>
-          </div>
-
-          <div class="u-row">
-            <a class="btn btn--primary" href="/plan-your-trip/?package=rajasthan-heritage-tour&destination=rajasthan">Plan This Journey</a>
-            <a class="btn btn--secondary" href="/plan-your-trip/?package=rajasthan-heritage-tour&destination=rajasthan">Request a Quote</a>
+            <dl class="dest-meta">
+              <div class="dest-meta__item">
+                <dt class="dest-meta__label">Best time</dt>
+                <dd class="dest-meta__value">
+                  Illustrative: November–March for milder outdoor sightseeing; summer months are hotter for daytime walking circuits.
+                </dd>
+              </div>
+              <div class="dest-meta__item">
+                <dt class="dest-meta__label">Recommended duration</dt>
+                <dd class="dest-meta__value">4–6 days for a skyline + desert-edge sample break</dd>
+              </div>
+            </dl>
           </div>
         </div>
       </section>
 
-      <section class="cta-band surface-dark" aria-labelledby="tour-cta">
+      <section class="section section--editorial section--compact" aria-labelledby="why-dubai">
+        <div class="container">
+          <h2 id="why-dubai">Why Visit Dubai?</h2>
+          <ul class="why-list">
+            <li>Skyline and waterfront photo moments</li>
+            <li>Compact city sightseeing suited to short stays</li>
+            <li>Desert-edge evening outing (illustrative)</li>
+            <li>Modern malls and family-friendly leisure options</li>
+            <li>Easy pacing for couples and multi-generational groups</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section--white section--compact" aria-labelledby="places-dubai">
+        <div class="container">
+          <h2 id="places-dubai">Places to Visit in Dubai</h2>
+          <ul class="places-list">
+            <li class="places-list__item">
+              <h3 class="places-list__name">Downtown skyline precinct</h3>
+              <p class="places-list__note">Illustrative fountain / tower-area evening walks</p>
+            </li>
+            <li class="places-list__item">
+              <h3 class="places-list__name">Marina &amp; waterfront promenades</h3>
+              <p class="places-list__note">Evening strolls and skyline reflections</p>
+            </li>
+            <li class="places-list__item">
+              <h3 class="places-list__name">Old Dubai heritage lanes</h3>
+              <p class="places-list__note">Creek-side markets and traditional neighbourhood glimpses</p>
+            </li>
+            <li class="places-list__item">
+              <h3 class="places-list__name">Desert-edge viewpoint</h3>
+              <p class="places-list__note">Illustrative sunset outing beyond the city fringe</p>
+            </li>
+            <li class="places-list__item">
+              <h3 class="places-list__name">Beach or leisure club stretch</h3>
+              <p class="places-list__note">Optional downtime day for families</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section--editorial section--compact" aria-labelledby="pkg-dubai">
+        <div class="container">
+          <header class="section-heading section__header">
+            <h2 class="section-heading__title" id="pkg-dubai">Suggested package</h2>
+            <p class="section-heading__lead">
+              An illustrative outline you can refine in Plan Your Trip — prices are demo labels only.
+            </p>
+          </header>
+          <article class="card">
+            <div class="card__body">
+              <p class="card__meta">5 days · Family · Dubai</p>
+              <h3 class="card__title">
+                <a href="/tours/dubai-discovery/">Dubai Discovery</a>
+              </h3>
+              <p class="card__text">Illustrative Dubai city break with skyline walks, heritage lanes, and a desert-edge evening outing.</p>
+              <p class="card__meta">From ₹XX,XXX (illustrative)</p>
+              <div class="card__footer">
+                <a class="btn btn--secondary" href="/tours/dubai-discovery/">View package</a>
+                <a class="btn btn--primary" href="/plan-your-trip/?destination=dubai&amp;package=dubai-discovery"
+                  >Plan this journey</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta-band surface-dark" aria-labelledby="dubai-cta">
         <div class="container">
           <div class="cta-band__inner">
-            <h2 id="tour-cta">Plan This Journey</h2>
-            <p>Refine this outline in the trip planner — dates, travellers, and preferences for an illustrative enquiry.</p>
+            <h2 id="dubai-cta">Plan a Journey to Dubai</h2>
+            <p>
+              Start an illustrative enquiry with Dubai selected — adjust dates,
+              travellers, and preferences in the planner.
+            </p>
             <div class="cta-band__actions">
-              <a class="btn btn--primary" href="/plan-your-trip/">Plan This Journey</a>
+              <a class="btn btn--primary" href="/plan-your-trip/?destination=dubai"
+                >Plan a Journey to Dubai</a
+              >
             </div>
           </div>
         </div>

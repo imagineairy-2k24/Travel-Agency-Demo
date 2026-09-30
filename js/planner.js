@@ -22,11 +22,34 @@
     "contact"
   ];
 
-  var DESTINATION_SLUGS = ["kashmir", "rajasthan", "kerala", "sikkim"];
+  var DESTINATION_SLUGS = [
+    "kashmir",
+    "rajasthan",
+    "kerala",
+    "sikkim",
+    "bali",
+    "thailand",
+    "dubai",
+    "singapore"
+  ];
+
+  var TRAVEL_SCOPES = ["domestic", "international"];
+
+  var DESTINATION_SCOPE = {
+    kashmir: "domestic",
+    rajasthan: "domestic",
+    kerala: "domestic",
+    sikkim: "domestic",
+    bali: "international",
+    thailand: "international",
+    dubai: "international",
+    singapore: "international"
+  };
 
   function emptyState() {
     return {
       destination: "",
+      travelScope: "",
       package: "",
       vehicle: "",
       startDate: "",
@@ -108,18 +131,30 @@
   var PACKAGE_DESTINATION = {
     "kashmir-family-tour": "kashmir",
     "rajasthan-heritage-tour": "rajasthan",
-    "kerala-backwaters-escape": "kerala"
+    "kerala-backwaters-escape": "kerala",
+    "bali-escape": "bali",
+    "thailand-highlights": "thailand",
+    "dubai-discovery": "dubai",
+    "singapore-explorer": "singapore"
   };
 
   var PACKAGE_TITLES = {
     "kashmir-family-tour": "Kashmir Family Escape",
     "rajasthan-heritage-tour": "Rajasthan Heritage Journey",
-    "kerala-backwaters-escape": "Kerala Backwater Retreat"
+    "kerala-backwaters-escape": "Kerala Backwater Retreat",
+    "bali-escape": "Bali Escape",
+    "thailand-highlights": "Thailand Highlights",
+    "dubai-discovery": "Dubai Discovery",
+    "singapore-explorer": "Singapore Explorer"
   };
 
   function applyQueryPrefill(state) {
     var q = getQueryParams();
     if (q.destination) state.destination = String(q.destination).toLowerCase();
+    if (q.travelScope) {
+      var scope = String(q.travelScope).toLowerCase();
+      if (TRAVEL_SCOPES.indexOf(scope) !== -1) state.travelScope = scope;
+    }
     if (q.package) state.package = String(q.package);
     if (q.vehicle) state.vehicle = String(q.vehicle);
     if (q.tripType) {
@@ -145,6 +180,17 @@
     }
     if (!state.destination && state.package && PACKAGE_DESTINATION[state.package]) {
       state.destination = PACKAGE_DESTINATION[state.package];
+    }
+    if (
+      state.travelScope &&
+      state.destination &&
+      DESTINATION_SCOPE[state.destination] &&
+      DESTINATION_SCOPE[state.destination] !== state.travelScope
+    ) {
+      state.destination = "";
+    }
+    if (!state.travelScope && state.destination && DESTINATION_SCOPE[state.destination]) {
+      state.travelScope = DESTINATION_SCOPE[state.destination];
     }
     return state;
   }
@@ -191,7 +237,12 @@
       var value = card.getAttribute("data-value") || "";
       var selected = false;
 
-      if (group === "destination" || group === "tripType" || group === "budget") {
+      if (
+        group === "destination" ||
+        group === "tripType" ||
+        group === "budget" ||
+        group === "travelScope"
+      ) {
         selected = state[group] === value;
       } else if (group === "services") {
         selected = state.services.indexOf(value) !== -1;
@@ -205,6 +256,78 @@
       card.classList.toggle("is-selected", selected);
       card.setAttribute("aria-pressed", selected ? "true" : "false");
     });
+
+    filterDestinationCardsByScope(root, state);
+    filterDomesticVehicleOptions(root, state);
+  }
+
+  /**
+   * Show destinations only after India | International is chosen,
+   * and only those matching the selected travelScope.
+   */
+  function filterDestinationCardsByScope(root, state) {
+    var scope = state.travelScope || "";
+    root
+      .querySelectorAll('[data-selection-group="destination"]')
+      .forEach(function (card) {
+        var cardScope = card.getAttribute("data-travel-scope") || "";
+        var visible = !!scope && (!cardScope || cardScope === scope);
+        card.hidden = !visible;
+        if (!visible && state.destination === (card.getAttribute("data-value") || "")) {
+          state.destination = "";
+          card.classList.remove("is-selected");
+          card.setAttribute("aria-pressed", "false");
+        }
+      });
+
+    var group =
+      root.querySelector("[data-planner-destination-group]") ||
+      (function () {
+        var destCard = root.querySelector(
+          '[data-selection-group="destination"]'
+        );
+        return destCard ? destCard.closest(".selection-card-group") : null;
+      })();
+    if (group) {
+      group.hidden = !scope;
+      group.setAttribute("aria-hidden", scope ? "false" : "true");
+    }
+  }
+
+  /**
+   * International scope: hide car-rental service + vehicle preferences
+   * (demo fleet is domestic-only; vehicleIds empty on intl destinations).
+   */
+  function filterDomesticVehicleOptions(root, state) {
+    var intl =
+      state.travelScope === "international" ||
+      (!!state.destination &&
+        DESTINATION_SCOPE[state.destination] === "international");
+    root.querySelectorAll("[data-planner-domestic-vehicle]").forEach(function (el) {
+      el.hidden = intl;
+    });
+    if (!intl) return;
+
+    var carIdx = state.services.indexOf("car");
+    if (carIdx !== -1) {
+      state.services.splice(carIdx, 1);
+      var carCard = root.querySelector(
+        '[data-selection-group="services"][data-value="car"]'
+      );
+      if (carCard) {
+        carCard.classList.remove("is-selected");
+        carCard.setAttribute("aria-pressed", "false");
+      }
+    }
+    if (state.preferences.vehicleCategory) {
+      state.preferences.vehicleCategory = "";
+      root
+        .querySelectorAll('[data-selection-group="vehicleCategory"]')
+        .forEach(function (card) {
+          card.classList.remove("is-selected");
+          card.setAttribute("aria-pressed", "false");
+        });
+    }
   }
 
   function getByPath(obj, path) {
@@ -247,8 +370,27 @@
           if (field) setByPath(state, field, list);
           else state.services = list;
         } else {
-          if (group === "destination" || group === "tripType" || group === "budget") {
+          if (
+            group === "destination" ||
+            group === "tripType" ||
+            group === "budget" ||
+            group === "travelScope"
+          ) {
             state[group] = value;
+            if (group === "travelScope") {
+              if (
+                value &&
+                state.destination &&
+                DESTINATION_SCOPE[state.destination] &&
+                DESTINATION_SCOPE[state.destination] !== value
+              ) {
+                state.destination = "";
+              }
+            } else if (group === "destination" && value) {
+              if (DESTINATION_SCOPE[value]) {
+                state.travelScope = DESTINATION_SCOPE[value];
+              }
+            }
           } else if (
             group === "hotelCategory" ||
             group === "vehicleCategory" ||
@@ -455,7 +597,16 @@
     var id = stepId(stepEl);
 
     if (id === "destination") {
+      if (!state.travelScope) {
+        return "Please choose India or International.";
+      }
       if (!state.destination) return "Please select a destination.";
+      if (
+        DESTINATION_SCOPE[state.destination] &&
+        DESTINATION_SCOPE[state.destination] !== state.travelScope
+      ) {
+        return "Please select a destination that matches India or International.";
+      }
       if (
         DESTINATION_SLUGS.indexOf(state.destination) === -1 &&
         !root.querySelector(

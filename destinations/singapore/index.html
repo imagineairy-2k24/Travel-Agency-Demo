@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Rajasthan Heritage Journey — Travel Agency</title>
-    <meta name="description" content="Illustrative 7-day Rajasthan heritage tour with forts, palaces, and desert evenings — plan your enquiry." />
+    <title>Singapore Tours &amp; Travel — Travel Agency</title>
+    <meta name="description" content="Illustrative international destination profile for Singapore — garden districts, waterfront outlooks, and easy neighbourhood food walks." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,13 +14,13 @@
     <link rel="stylesheet" href="/css/tokens.css" />
     <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/components.css" />
-    <link rel="stylesheet" href="/css/utilities.css" />
     <link rel="stylesheet" href="/css/pages.css" />
+    <link rel="stylesheet" href="/css/utilities.css" />
   </head>
-  <body class="page--commercial">
+  <body class="page--destination">
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header" role="banner">
+    <header class="site-header site-header--over-hero" role="banner">
       <div class="container site-header__inner">
         <a class="site-wordmark" href="/">Travel Agency</a>
         <div class="site-header__actions">
@@ -44,7 +44,7 @@
                 class="site-nav__trigger"
                 id="nav-trigger-destinations"
                 aria-expanded="false"
-                aria-controls="nav-panel-destinations"
+                aria-controls="nav-panel-destinations" aria-current="page"
               >
                 Destinations
                 <span class="site-nav__chevron" aria-hidden="true"></span>
@@ -96,7 +96,7 @@
                 class="site-nav__trigger"
                 id="nav-trigger-tours"
                 aria-expanded="false"
-                aria-controls="nav-panel-tours" aria-current="page"
+                aria-controls="nav-panel-tours"
               >
                 Tours
                 <span class="site-nav__chevron" aria-hidden="true"></span>
@@ -309,155 +309,150 @@
     </header>
 
     <main class="site-main site-main--flush" id="main" role="main">
-      <div class="page-breadcrumb">
-        <div class="container">
-          <nav class="breadcrumb" aria-label="Breadcrumb">
+      <section class="page-hero page-hero--destination" aria-label="Singapore">
+        <div class="page-hero__media">
+          <img
+            src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1800&q=80"
+            alt="Gardens and harbour skyline in Singapore"
+            width="1800"
+            height="1200"
+          />
+        </div>
+        <div class="page-hero__overlay" aria-hidden="true"></div>
+        <div class="container page-hero__inner">
+          <p class="page-hero__eyebrow">Singapore</p>
+          <h1>Singapore Tours &amp; Travel</h1>
+          <p class="page-hero__lead">Gardens, harbour views, and neighbourhood flavours</p>
+          <div class="page-hero__actions">
+            <a class="btn btn--primary" href="/plan-your-trip/?destination=singapore"
+              >Plan Your Trip</a
+            >
+            <a class="btn btn--secondary" href="/tours/singapore-explorer/">View package</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="container dest-detail__breadcrumb">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
           <ol class="breadcrumb__list">
-            <li class="breadcrumb__item"><a class="breadcrumb__link" href="/">Home</a></li>
             <li class="breadcrumb__item">
-              <a class="breadcrumb__link" href="/tours/">Tours</a>
+              <a class="breadcrumb__link" href="/">Home</a>
             </li>
             <li class="breadcrumb__item">
-              <span class="breadcrumb__current" aria-current="page">Rajasthan Heritage Journey</span>
+              <a class="breadcrumb__link" href="/destinations/">Destinations</a>
+            </li>
+            <li class="breadcrumb__item">
+              <span class="breadcrumb__current" aria-current="page">Singapore</span>
             </li>
           </ol>
         </nav>
-        </div>
       </div>
 
-      <section class="page-hero" aria-label="Rajasthan Heritage Journey">
-        <div class="page-hero__media" aria-hidden="true">
-          <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1600&q=80" alt="" />
-        </div>
-        <div class="page-hero__scrim" aria-hidden="true"></div>
-        <div class="container page-hero__inner">
-          <h1 class="page-hero__title">Rajasthan Heritage Journey</h1>
-          <p class="page-hero__lead">Illustrative heritage-focused Rajasthan journey through forts, palaces, and desert evenings.</p>
-        </div>
-      </section>
-
-      <section class="section section--white">
+      <section class="section section--white section--compact" aria-labelledby="singapore-overview">
         <div class="container">
-          <ul class="meta-row u-mb-8" aria-label="Package overview">
-            <li class="meta-row__item">
-              <span class="meta-row__label">Duration</span>
-              <span class="meta-row__value"
-                >7 days / 6 nights</span
-              >
-            </li>
-            <li class="meta-row__item">
-              <span class="meta-row__label">Destination</span>
-              <span class="meta-row__value"
-                ><a href="/destinations/rajasthan/">Rajasthan</a></span
-              >
-            </li>
-            <li class="meta-row__item">
-              <span class="meta-row__label">Trip type</span>
-              <span class="meta-row__value">Culture</span>
-            </li>
-            <li class="meta-row__item">
-              <span class="meta-row__label">Starting price</span>
-              <span class="meta-row__value">From ₹XX,XXX (illustrative)</span>
-            </li>
-          </ul>
-
-          <div class="detail-media u-mb-8">
-            <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1600&q=80" alt="Sandstone fort facade and gateway in Jaipur, Rajasthan" />
-          </div>
-
-          <h2>Highlights</h2>
-          <ul class="feature-list u-mb-8">
-                <li>Fort and palace sightseeing in signature cities</li>
-                <li>Culture-first pacing with photo stops</li>
-                <li>Desert evening experience (illustrative)</li>
-                <li>Private vehicle for intercity hops</li>
-                <li>Local market time built into the outline</li>
-          </ul>
-
-          <h2>Itinerary</h2>
-          <div class="itinerary u-mb-8">
-              <div class="itinerary-day">
-                <p class="itinerary-day__day">Day 1</p>
-                <h3>Arrive Jaipur</h3>
-                <p>Arrival, hotel check-in, and an unhurried evening in the Pink City.</p>
-              </div>
-              <div class="itinerary-day">
-                <p class="itinerary-day__day">Day 2</p>
-                <h3>Jaipur forts & viewpoints</h3>
-                <p>Illustrative fort circuit with viewpoints and palace precinct time.</p>
-              </div>
-              <div class="itinerary-day">
-                <p class="itinerary-day__day">Day 3</p>
-                <h3>Jaipur markets & heritage lanes</h3>
-                <p>Bazaar walks and selected heritage stops at a comfortable culture pace.</p>
-              </div>
-              <div class="itinerary-day">
-                <p class="itinerary-day__day">Day 4</p>
-                <h3>Onward heritage city</h3>
-                <p>Transfer to the next heritage stop on the illustrative circuit.</p>
-              </div>
-              <div class="itinerary-day">
-                <p class="itinerary-day__day">Day 5</p>
-                <h3>Palaces & local culture</h3>
-                <p>Palace precincts, photo stops, and optional cultural evening.</p>
-              </div>
-              <div class="itinerary-day">
-                <p class="itinerary-day__day">Day 6</p>
-                <h3>Desert evening outing</h3>
-                <p>Illustrative desert viewpoint or dune-edge evening, then return to hotel.</p>
-              </div>
-              <div class="itinerary-day">
-                <p class="itinerary-day__day">Day 7</p>
-                <h3>Departure</h3>
-                <p>Checkout and departure transfer — final city depends on enquiry routing.</p>
-              </div>
-          </div>
-
-          <div class="split-list u-mb-8">
+          <div class="dest-detail__prose-grid">
             <div>
-              <h2>Includes</h2>
-              <ul class="feature-list">
-                  <li>Accommodation on illustrative twin/double sharing basis</li>
-                  <li>Daily breakfast (illustrative)</li>
-                  <li>Private transfers between listed circuit cities</li>
-                  <li>Sightseeing as outlined in the day plan</li>
-              </ul>
+              <h2 id="singapore-overview">Overview</h2>
+              <p class="dest-detail__overview">
+                Singapore is included as a compact international city destination with garden landmarks, harbour views, and multicultural neighbourhoods. Demo itineraries emphasise walkable sightseeing and food-lane evenings without inventing attraction tickets or hotel inventory.
+              </p>
             </div>
-            <div>
-              <h2>Excludes</h2>
-              <ul class="feature-list">
-                  <li>Flights or train tickets</li>
-                  <li>Meals other than breakfast</li>
-                  <li>Monument entrance fees</li>
-                  <li>Camel rides or paid desert activities</li>
-                  <li>Personal expenses</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="prose u-mb-8">
-            <h2>Accommodation</h2>
-            <p>Illustrative heritage-leaning or mid-range hotels (category confirmed at enquiry).</p>
-            <h2>Transportation</h2>
-            <p>Private chauffeur-driven vehicle suitable for multi-city Rajasthan hops.</p>
-            <h2>Places covered</h2>
-            <p>Jaipur, Heritage city stop, Desert evening viewpoint</p>
-          </div>
-
-          <div class="u-row">
-            <a class="btn btn--primary" href="/plan-your-trip/?package=rajasthan-heritage-tour&destination=rajasthan">Plan This Journey</a>
-            <a class="btn btn--secondary" href="/plan-your-trip/?package=rajasthan-heritage-tour&destination=rajasthan">Request a Quote</a>
+            <dl class="dest-meta">
+              <div class="dest-meta__item">
+                <dt class="dest-meta__label">Best time</dt>
+                <dd class="dest-meta__value">
+                  Illustrative: February–April for relatively drier windows; year-round travel is common with short tropical showers — exact timing depends on preference.
+                </dd>
+              </div>
+              <div class="dest-meta__item">
+                <dt class="dest-meta__label">Recommended duration</dt>
+                <dd class="dest-meta__value">4–5 days for gardens, harbour, and neighbourhood highlights</dd>
+              </div>
+            </dl>
           </div>
         </div>
       </section>
 
-      <section class="cta-band surface-dark" aria-labelledby="tour-cta">
+      <section class="section section--editorial section--compact" aria-labelledby="why-singapore">
+        <div class="container">
+          <h2 id="why-singapore">Why Visit Singapore?</h2>
+          <ul class="why-list">
+            <li>Garden and nature-in-the-city landmarks</li>
+            <li>Harbour and skyline viewpoints</li>
+            <li>Multicultural food neighbourhoods</li>
+            <li>Compact geography suited to short stays</li>
+            <li>Family-friendly pacing with clear day themes</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section--white section--compact" aria-labelledby="places-singapore">
+        <div class="container">
+          <h2 id="places-singapore">Places to Visit in Singapore</h2>
+          <ul class="places-list">
+            <li class="places-list__item">
+              <h3 class="places-list__name">Gardens &amp; conservatory districts</h3>
+              <p class="places-list__note">Illustrative garden landmark mornings</p>
+            </li>
+            <li class="places-list__item">
+              <h3 class="places-list__name">Marina / harbour waterfront</h3>
+              <p class="places-list__note">Skyline walks and evening light shows (illustrative)</p>
+            </li>
+            <li class="places-list__item">
+              <h3 class="places-list__name">Chinatown &amp; heritage lanes</h3>
+              <p class="places-list__note">Temples, shophouses, and food stops</p>
+            </li>
+            <li class="places-list__item">
+              <h3 class="places-list__name">Little India &amp; Arab Street flavours</h3>
+              <p class="places-list__note">Neighbourhood walks and spice-lane browsing</p>
+            </li>
+            <li class="places-list__item">
+              <h3 class="places-list__name">Sentosa or coastal leisure</h3>
+              <p class="places-list__note">Optional beach-edge downtime for families</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section--editorial section--compact" aria-labelledby="pkg-singapore">
+        <div class="container">
+          <header class="section-heading section__header">
+            <h2 class="section-heading__title" id="pkg-singapore">Suggested package</h2>
+            <p class="section-heading__lead">
+              An illustrative outline you can refine in Plan Your Trip — prices are demo labels only.
+            </p>
+          </header>
+          <article class="card">
+            <div class="card__body">
+              <p class="card__meta">5 days · Family · Singapore</p>
+              <h3 class="card__title">
+                <a href="/tours/singapore-explorer/">Singapore Explorer</a>
+              </h3>
+              <p class="card__text">Illustrative Singapore city break covering gardens, harbour views, and multicultural neighbourhood food walks.</p>
+              <p class="card__meta">From ₹XX,XXX (illustrative)</p>
+              <div class="card__footer">
+                <a class="btn btn--secondary" href="/tours/singapore-explorer/">View package</a>
+                <a class="btn btn--primary" href="/plan-your-trip/?destination=singapore&amp;package=singapore-explorer"
+                  >Plan this journey</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta-band surface-dark" aria-labelledby="singapore-cta">
         <div class="container">
           <div class="cta-band__inner">
-            <h2 id="tour-cta">Plan This Journey</h2>
-            <p>Refine this outline in the trip planner — dates, travellers, and preferences for an illustrative enquiry.</p>
+            <h2 id="singapore-cta">Plan a Journey to Singapore</h2>
+            <p>
+              Start an illustrative enquiry with Singapore selected — adjust dates,
+              travellers, and preferences in the planner.
+            </p>
             <div class="cta-band__actions">
-              <a class="btn btn--primary" href="/plan-your-trip/">Plan This Journey</a>
+              <a class="btn btn--primary" href="/plan-your-trip/?destination=singapore"
+                >Plan a Journey to Singapore</a
+              >
             </div>
           </div>
         </div>

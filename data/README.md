@@ -6,8 +6,8 @@ Demo-only JSON for the Travel Agency Digital Platform static site. **Not** a pro
 
 | File | Entity | Count (seed) |
 | --- | --- | --- |
-| `destinations.json` | Destinations | 4 — Kashmir, Rajasthan, Kerala, Sikkim |
-| `packages.json` | Tour packages | 3 |
+| `destinations.json` | Destinations | 8 — 4 domestic (Kashmir, Rajasthan, Kerala, Sikkim) + 4 international (Bali, Thailand, Dubai, Singapore) |
+| `packages.json` | Tour packages | 7 — 3 domestic + 4 international |
 | `vehicles.json` | Vehicles | 4 — Sedan, Innova Crysta, SUV, Tempo Traveller |
 | `guides.json` | Travel guide articles | 1 |
 | `experiences.json` | Experiences (placeholders) | 4 |
@@ -41,25 +41,41 @@ Keep ID and slug pairs in sync when editing (e.g. package `destinationId` must m
 ### Seed graph (summary)
 
 ```text
-dest-kashmir
+dest-kashmir (domestic / India)
   packages: pkg-kashmir-family (kashmir-family-tour)
   vehicles: sedan, innova-crysta, suv
   guides:   guide-best-time-kashmir (best-time-to-visit-kashmir)
   experiences: dal-lake-shikara, gulmarg-meadows
 
-dest-rajasthan
+dest-rajasthan (domestic / India)
   packages: pkg-rajasthan-heritage
   vehicles: sedan, innova-crysta, suv, tempo-traveller
   experiences: jaipur-forts
 
-dest-kerala
+dest-kerala (domestic / India)
   packages: pkg-kerala-backwaters
   vehicles: sedan, innova-crysta, suv
   experiences: alleppey-backwaters
 
-dest-sikkim
+dest-sikkim (domestic / India)
   packages: (none yet)
   vehicles: suv, innova-crysta
+
+dest-bali (international / Indonesia)
+  packages: pkg-bali-escape (bali-escape)
+  vehicles / guides / experiences: (none)
+
+dest-thailand (international / Thailand)
+  packages: pkg-thailand-highlights (thailand-highlights)
+  vehicles / guides / experiences: (none)
+
+dest-dubai (international / UAE)
+  packages: pkg-dubai-discovery (dubai-discovery)
+  vehicles / guides / experiences: (none)
+
+dest-singapore (international / Singapore)
+  packages: pkg-singapore-explorer (singapore-explorer)
+  vehicles / guides / experiences: (none)
 ```
 
 ## Field extensions (Epics 05–09 support)
@@ -68,17 +84,22 @@ dest-sikkim
 
 | Field | Type | Notes |
 | --- | --- | --- |
+| `travelScope` | `"domestic"` \| `"international"` | India vs overseas demo destinations |
+| `country` | string | e.g. `India`, `Indonesia`, `Thailand`, `UAE`, `Singapore` |
 | `overview` | string | Longer destination narrative |
 | `whyVisit` | string[] | Bullet reasons |
-| `placesToVisit` | `string[]` **or** `{name, note}[]` | Kashmir uses objects; others may use strings |
+| `placesToVisit` | `string[]` **or** `{name, note}[]` | Kashmir / international often use objects; others may use strings |
 | `bestTime` | string | Illustrative seasonal copy |
 | `recommendedDuration` | string | e.g. `5–7 days…` |
 | `popularExperiences` | string[] | Often mirrors experience `title` values |
+
+International destinations keep `vehicleIds` / `guideIds` / `experienceIds` empty in seed (no international car rental or experience pages yet).
 
 ### `packages.json` (tour detail)
 
 | Field | Type | Notes |
 | --- | --- | --- |
+| `travelScope` | `"domestic"` \| `"international"` | Mirrors linked destination scope |
 | `highlights` | string[] | Tour highlights |
 | `itinerary` | `{day, title, description}[]` | Day-by-day outline |
 | `includes` / `excludes` | string[] | What’s in / out |
@@ -86,7 +107,7 @@ dest-sikkim
 | `transportation` | string (optional) | Illustrative transfer note |
 | `placesCovered` | string[] (optional) | Named stops |
 
-Package titles (epic-aligned): Kashmir Family Escape, Rajasthan Heritage Journey, Kerala Backwater Retreat. **Slugs unchanged.**
+Package titles (epic-aligned domestic): Kashmir Family Escape, Rajasthan Heritage Journey, Kerala Backwater Retreat. International: Bali Escape, Thailand Highlights, Dubai Discovery, Singapore Explorer. **Domestic slugs unchanged.**
 
 ### `vehicles.json`
 

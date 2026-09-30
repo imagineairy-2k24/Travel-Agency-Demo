@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Travel Agency — Curated journeys across India</title>
+    <title>Travel Agency — Journeys in India and abroad</title>
     <meta
       name="description"
-      content="Plan curated destinations, tours, car rentals, and travel experiences across India."
+      content="Plan destinations, tours, car rentals, and travel experiences across India and selected international getaways."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="/css/pages.css" />
     <link rel="stylesheet" href="/css/utilities.css" />
   </head>
-  <body>
+  <body class="page--home">
     <!--
       CANONICAL SHARED CHROME (Epic 03)
       Copy the skip-link + header + footer blocks below onto other pages.
@@ -60,11 +60,268 @@
         </div>
         <nav class="site-nav" id="site-nav" data-site-nav aria-label="Primary">
           <ul class="site-nav__list">
-            <li><a class="site-nav__link" href="/destinations/">Destinations</a></li>
-            <li><a class="site-nav__link" href="/tours/">Tours</a></li>
-            <li><a class="site-nav__link" href="/car-rental/">Car Rentals</a></li>
-            <li><a class="site-nav__link" href="/#experiences">Experiences</a></li>
-            <li><a class="site-nav__link" href="/travel-guides/">Travel Guides</a></li>
+            <li class="site-nav__item site-nav__item--has-panel">
+              <button
+                type="button"
+                class="site-nav__trigger"
+                id="nav-trigger-destinations"
+                aria-expanded="false"
+                aria-controls="nav-panel-destinations"
+              >
+                Destinations
+                <span class="site-nav__chevron" aria-hidden="true"></span>
+              </button>
+              <div
+                class="site-nav__panel site-nav__panel--wide"
+                id="nav-panel-destinations"
+                role="region"
+                aria-labelledby="nav-trigger-destinations"
+                hidden
+              >
+                <div class="site-nav__panel-inner site-nav__panel-inner--cols-2">
+                  <div class="site-nav__group">
+                    <p class="site-nav__group-label">India</p>
+                    <ul class="site-nav__sublist">
+                      <li><a class="site-nav__sublink" href="/destinations/kashmir/">Kashmir</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/rajasthan/">Rajasthan</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/kerala/">Kerala</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/sikkim/">Sikkim</a></li>
+                      <li>
+                        <a class="site-nav__sublink site-nav__sublink--emphasis" href="/destinations/#india"
+                          >Explore India</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="site-nav__group">
+                    <p class="site-nav__group-label">International</p>
+                    <ul class="site-nav__sublist">
+                      <li><a class="site-nav__sublink" href="/destinations/bali/">Bali</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/thailand/">Thailand</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/dubai/">Dubai</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/singapore/">Singapore</a></li>
+                      <li>
+                        <a
+                          class="site-nav__sublink site-nav__sublink--emphasis"
+                          href="/destinations/#international"
+                          >Explore International</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="site-nav__item site-nav__item--has-panel">
+              <button
+                type="button"
+                class="site-nav__trigger"
+                id="nav-trigger-tours"
+                aria-expanded="false"
+                aria-controls="nav-panel-tours"
+              >
+                Tours
+                <span class="site-nav__chevron" aria-hidden="true"></span>
+              </button>
+              <div
+                class="site-nav__panel site-nav__panel--wide"
+                id="nav-panel-tours"
+                role="region"
+                aria-labelledby="nav-trigger-tours"
+                hidden
+              >
+                <div class="site-nav__panel-inner site-nav__panel-inner--cols-2">
+                  <div class="site-nav__group">
+                    <p class="site-nav__group-label">Domestic Tours</p>
+                    <ul class="site-nav__sublist">
+                      <li><a class="site-nav__sublink" href="/destinations/kashmir/">Kashmir Tours</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/rajasthan/">Rajasthan Tours</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/kerala/">Kerala Tours</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/sikkim/">Sikkim Tours</a></li>
+                      <li>
+                        <a class="site-nav__sublink site-nav__sublink--emphasis" href="/tours/#india"
+                          >View India Tours</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="site-nav__group">
+                    <p class="site-nav__group-label">International Tours</p>
+                    <ul class="site-nav__sublist">
+                      <li><a class="site-nav__sublink" href="/destinations/bali/">Bali Tours</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/thailand/">Thailand Tours</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/dubai/">Dubai Tours</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/singapore/">Singapore Tours</a></li>
+                      <li>
+                        <a
+                          class="site-nav__sublink site-nav__sublink--emphasis"
+                          href="/tours/#international"
+                          >View International Tours</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="site-nav__item site-nav__item--has-panel">
+              <button
+                type="button"
+                class="site-nav__trigger"
+                id="nav-trigger-car-rentals"
+                aria-expanded="false"
+                aria-controls="nav-panel-car-rentals"
+              >
+                Car Rentals
+                <span class="site-nav__chevron" aria-hidden="true"></span>
+              </button>
+              <div
+                class="site-nav__panel site-nav__panel--wide"
+                id="nav-panel-car-rentals"
+                role="region"
+                aria-labelledby="nav-trigger-car-rentals"
+                hidden
+              >
+                <div class="site-nav__panel-inner site-nav__panel-inner--cols-2">
+                  <div class="site-nav__group">
+                    <p class="site-nav__group-label">Vehicles</p>
+                    <ul class="site-nav__sublist">
+                      <li><a class="site-nav__sublink" href="/car-rental/vehicles/sedan/">Sedan</a></li>
+                      <li>
+                        <a class="site-nav__sublink" href="/car-rental/vehicles/innova-crysta/"
+                          >Innova Crysta</a
+                        >
+                      </li>
+                      <li><a class="site-nav__sublink" href="/car-rental/vehicles/suv/">SUV</a></li>
+                      <li>
+                        <a class="site-nav__sublink" href="/car-rental/vehicles/tempo-traveller/"
+                          >Tempo Traveller</a
+                        >
+                      </li>
+                      <li>
+                        <a class="site-nav__sublink site-nav__sublink--emphasis" href="/car-rental/"
+                          >View All Vehicles</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="site-nav__group">
+                    <p class="site-nav__group-label">Travel by Location</p>
+                    <ul class="site-nav__sublist">
+                      <li><a class="site-nav__sublink" href="/destinations/kashmir/">Kashmir</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/rajasthan/">Rajasthan</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/kerala/">Kerala</a></li>
+                      <li><a class="site-nav__sublink" href="/destinations/sikkim/">Sikkim</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="site-nav__item site-nav__item--has-panel">
+              <button
+                type="button"
+                class="site-nav__trigger"
+                id="nav-trigger-experiences"
+                aria-expanded="false"
+                aria-controls="nav-panel-experiences"
+              >
+                Experiences
+                <span class="site-nav__chevron" aria-hidden="true"></span>
+              </button>
+              <div
+                class="site-nav__panel"
+                id="nav-panel-experiences"
+                role="region"
+                aria-labelledby="nav-trigger-experiences"
+                hidden
+              >
+                <div class="site-nav__panel-inner">
+                  <div class="site-nav__group">
+                    <p class="site-nav__group-label">Categories</p>
+                    <ul class="site-nav__sublist">
+                      <li>
+                        <a class="site-nav__sublink" href="/#experiences">Nature &amp; Outdoors</a>
+                      </li>
+                      <li>
+                        <a class="site-nav__sublink" href="/#experiences">Culture &amp; Heritage</a>
+                      </li>
+                      <li>
+                        <a class="site-nav__sublink" href="/#experiences">Food &amp; Local Life</a>
+                      </li>
+                      <li><a class="site-nav__sublink" href="/#experiences">Adventure</a></li>
+                      <li>
+                        <a class="site-nav__sublink" href="/#experiences">Wellness &amp; Leisure</a>
+                      </li>
+                      <li>
+                        <a class="site-nav__sublink site-nav__sublink--emphasis" href="/#experiences"
+                          >Explore Experiences</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="site-nav__item site-nav__item--has-panel">
+              <button
+                type="button"
+                class="site-nav__trigger"
+                id="nav-trigger-travel-guides"
+                aria-expanded="false"
+                aria-controls="nav-panel-travel-guides"
+              >
+                Travel Guides
+                <span class="site-nav__chevron" aria-hidden="true"></span>
+              </button>
+              <div
+                class="site-nav__panel site-nav__panel--guide"
+                id="nav-panel-travel-guides"
+                role="region"
+                aria-labelledby="nav-trigger-travel-guides"
+                hidden
+              >
+                <div class="site-nav__panel-inner site-nav__panel-inner--cols-3">
+                  <div class="site-nav__group">
+                    <p class="site-nav__group-label">India</p>
+                    <ul class="site-nav__sublist">
+                      <li>
+                        <a class="site-nav__sublink" href="/travel-guides/">Destination Guides</a>
+                      </li>
+                      <li>
+                        <a
+                          class="site-nav__sublink"
+                          href="/travel-guides/best-time-to-visit-kashmir/"
+                          >Best Time to Visit</a
+                        >
+                      </li>
+                      <li><a class="site-nav__sublink" href="/travel-guides/">Things to Do</a></li>
+                      <li><a class="site-nav__sublink" href="/travel-guides/">Travel Costs</a></li>
+                    </ul>
+                  </div>
+                  <div class="site-nav__group">
+                    <p class="site-nav__group-label">International</p>
+                    <ul class="site-nav__sublist">
+                      <li>
+                        <a class="site-nav__sublink" href="/travel-guides/">Destination Guides</a>
+                      </li>
+                      <li>
+                        <a class="site-nav__sublink" href="/travel-guides/">Best Time to Visit</a>
+                      </li>
+                      <li><a class="site-nav__sublink" href="/travel-guides/">Things to Do</a></li>
+                      <li><a class="site-nav__sublink" href="/travel-guides/">Travel Tips</a></li>
+                    </ul>
+                  </div>
+                  <div class="site-nav__group">
+                    <p class="site-nav__group-label">Travel Planning</p>
+                    <ul class="site-nav__sublist">
+                      <li><a class="site-nav__sublink" href="/travel-guides/">Travel Tips</a></li>
+                      <li><a class="site-nav__sublink" href="/travel-guides/">Transportation</a></li>
+                      <li><a class="site-nav__sublink" href="/travel-guides/">Budget Planning</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
             <li class="site-nav__item site-nav__item--cta">
               <a class="btn btn--primary" href="/plan-your-trip/">Plan Your Trip</a>
             </li>
@@ -88,10 +345,9 @@
         <div class="container page-hero__inner">
           <div class="home-hero__copy">
             <p class="page-hero__eyebrow">Travel Agency</p>
-            <h1>Your journey. Your way. We handle the details.</h1>
+            <h1>Journeys shaped around you.</h1>
             <p class="page-hero__lead">
-              Curated destinations, comfortable travel, and local experiences designed
-              around how you like to explore India.
+              Destinations, travel style, and comfort — planned around how you explore India and abroad.
             </p>
             <div class="page-hero__actions">
               <a class="btn btn--primary" href="/plan-your-trip/">Plan Your Trip</a>
@@ -101,15 +357,16 @@
         </div>
       </section>
 
-      <!-- 2. Quick planning entry (floating panel — preferred over in-hero card) -->
+      <!-- 2. Quick planning entry (premium invitation — overlaps hero on desktop) -->
       <section class="quick-plan" aria-labelledby="quick-plan-title">
         <div class="container">
           <div class="quick-plan__panel">
-            <h2 class="quick-plan__title" id="quick-plan-title">Start planning</h2>
-            <p class="quick-plan__hint">
-              Choose a destination, dates, and style — we’ll open the trip planner with
-              your preferences filled in.
-            </p>
+            <div class="quick-plan__intro">
+              <h2 class="quick-plan__title" id="quick-plan-title">Start planning your trip</h2>
+              <p class="quick-plan__hint">
+                Share a destination, dates, and style — then continue in the trip planner.
+              </p>
+            </div>
             <form class="quick-plan__form" action="/plan-your-trip/" method="get">
               <div class="form-field">
                 <label class="form-label" for="qp-destination">Destination</label>
@@ -119,6 +376,10 @@
                   <option value="rajasthan">Rajasthan</option>
                   <option value="kerala">Kerala</option>
                   <option value="sikkim">Sikkim</option>
+                  <option value="bali">Bali</option>
+                  <option value="thailand">Thailand</option>
+                  <option value="dubai">Dubai</option>
+                  <option value="singapore">Singapore</option>
                 </select>
               </div>
               <div class="form-field">
@@ -172,8 +433,12 @@
         </div>
       </section>
 
-      <!-- 3. Featured destinations -->
-      <section class="section home-destinations" aria-labelledby="featured-destinations-title">
+      <!-- 3. Featured destinations — India / International tabs -->
+      <section
+        class="section section--editorial home-destinations"
+        aria-labelledby="featured-destinations-title"
+        data-destination-tabs
+      >
         <div class="container">
           <header class="section-heading section__header">
             <p class="section-heading__eyebrow">Where to go</p>
@@ -181,78 +446,189 @@
               Explore Destinations
             </h2>
             <p class="section-heading__lead">
-              Four illustrative regions — valleys, heritage cities, backwaters, and mountain
-              towns — ready to shape into a trip.
+              Journeys across India and selected international getaways — shape a trip around pace and place.
             </p>
           </header>
-          <div class="home-destinations__mosaic">
-            <a
-              class="home-destinations__item home-destinations__item--featured"
-              href="/destinations/kashmir/"
+          <div
+            class="home-destinations__tabs"
+            role="tablist"
+            aria-label="Destination regions"
+          >
+            <button
+              type="button"
+              class="home-destinations__tab is-active"
+              role="tab"
+              id="tab-dest-india"
+              aria-selected="true"
+              aria-controls="panel-dest-india"
+              tabindex="0"
             >
-              <img
-                src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1200&q=80"
-                alt="Mountain valley and lake landscape in Kashmir"
-                width="1200"
-                height="900"
-              />
-              <div class="home-destinations__caption">
-                <p class="home-destinations__meta">North India</p>
-                <h3 class="home-destinations__title">Kashmir</h3>
-                <p class="home-destinations__text">Valleys, lakes, and mountain calm</p>
-              </div>
-            </a>
-            <a
-              class="home-destinations__item home-destinations__item--support"
-              href="/destinations/rajasthan/"
+              India
+            </button>
+            <button
+              type="button"
+              class="home-destinations__tab"
+              role="tab"
+              id="tab-dest-international"
+              aria-selected="false"
+              aria-controls="panel-dest-international"
+              tabindex="-1"
             >
-              <img
-                src="https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=80"
-                alt="Amber Fort and palace architecture in Rajasthan"
-                width="900"
-                height="675"
-                loading="lazy"
-              />
-              <div class="home-destinations__caption">
-                <p class="home-destinations__meta">West India</p>
-                <h3 class="home-destinations__title">Rajasthan</h3>
-                <p class="home-destinations__text">Forts, deserts, and royal cities</p>
-              </div>
-            </a>
-            <a
-              class="home-destinations__item home-destinations__item--support"
-              href="/destinations/kerala/"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=80"
-                alt="Houseboat on quiet Kerala backwaters"
-                width="900"
-                height="675"
-                loading="lazy"
-              />
-              <div class="home-destinations__caption">
-                <p class="home-destinations__meta">South India</p>
-                <h3 class="home-destinations__title">Kerala</h3>
-                <p class="home-destinations__text">Backwaters, coast, and green hills</p>
-              </div>
-            </a>
-            <a
-              class="home-destinations__item home-destinations__item--support"
-              href="/destinations/sikkim/"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=900&q=80"
-                alt="Himalayan mountain peaks above clouds in Sikkim"
-                width="900"
-                height="675"
-                loading="lazy"
-              />
-              <div class="home-destinations__caption">
-                <p class="home-destinations__meta">Northeast India</p>
-                <h3 class="home-destinations__title">Sikkim</h3>
-                <p class="home-destinations__text">Himalayan trails and monastery towns</p>
-              </div>
-            </a>
+              International
+            </button>
+          </div>
+          <div
+            class="home-destinations__panel is-active"
+            role="tabpanel"
+            id="panel-dest-india"
+            aria-labelledby="tab-dest-india"
+          >
+            <div class="home-destinations__mosaic">
+              <a
+                class="home-destinations__item home-destinations__item--featured"
+                href="/destinations/kashmir/"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1200&q=80"
+                  alt="Mountain valley and lake landscape in Kashmir"
+                  width="1200"
+                  height="900"
+                />
+                <div class="home-destinations__caption">
+                  <p class="home-destinations__meta">North India</p>
+                  <h3 class="home-destinations__title">Kashmir</h3>
+                  <p class="home-destinations__text">Valleys, lakes, and mountain calm</p>
+                </div>
+              </a>
+              <a
+                class="home-destinations__item home-destinations__item--support"
+                href="/destinations/rajasthan/"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=80"
+                  alt="Amber Fort and palace architecture in Rajasthan"
+                  width="900"
+                  height="675"
+                  loading="lazy"
+                />
+                <div class="home-destinations__caption">
+                  <p class="home-destinations__meta">West India</p>
+                  <h3 class="home-destinations__title">Rajasthan</h3>
+                  <p class="home-destinations__text">Forts, deserts, and royal cities</p>
+                </div>
+              </a>
+              <a
+                class="home-destinations__item home-destinations__item--support"
+                href="/destinations/kerala/"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=80"
+                  alt="Houseboat on quiet Kerala backwaters"
+                  width="900"
+                  height="675"
+                  loading="lazy"
+                />
+                <div class="home-destinations__caption">
+                  <p class="home-destinations__meta">South India</p>
+                  <h3 class="home-destinations__title">Kerala</h3>
+                  <p class="home-destinations__text">Backwaters, coast, and green hills</p>
+                </div>
+              </a>
+              <a
+                class="home-destinations__item home-destinations__item--support"
+                href="/destinations/sikkim/"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=900&q=80"
+                  alt="Himalayan mountain peaks above clouds in Sikkim"
+                  width="900"
+                  height="675"
+                  loading="lazy"
+                />
+                <div class="home-destinations__caption">
+                  <p class="home-destinations__meta">Northeast India</p>
+                  <h3 class="home-destinations__title">Sikkim</h3>
+                  <p class="home-destinations__text">Himalayan trails and monastery towns</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div
+            class="home-destinations__panel"
+            role="tabpanel"
+            id="panel-dest-international"
+            aria-labelledby="tab-dest-international"
+            hidden
+          >
+            <div class="home-destinations__mosaic">
+              <a
+                class="home-destinations__item home-destinations__item--featured"
+                href="/destinations/bali/"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=80"
+                  alt="Temple and green hillside landscape in Bali"
+                  width="1200"
+                  height="900"
+                />
+                <div class="home-destinations__caption">
+                  <p class="home-destinations__meta">Indonesia</p>
+                  <h3 class="home-destinations__title">Bali</h3>
+                  <p class="home-destinations__text">Temples, rice terraces, and coastal calm</p>
+                </div>
+              </a>
+              <a
+                class="home-destinations__item home-destinations__item--support"
+                href="/destinations/thailand/"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?auto=format&fit=crop&w=900&q=80"
+                  alt="Temple spires and city skyline in Thailand"
+                  width="900"
+                  height="675"
+                  loading="lazy"
+                />
+                <div class="home-destinations__caption">
+                  <p class="home-destinations__meta">Thailand</p>
+                  <h3 class="home-destinations__title">Thailand</h3>
+                  <p class="home-destinations__text">Temples, markets, and easy city-to-coast hops</p>
+                </div>
+              </a>
+              <a
+                class="home-destinations__item home-destinations__item--support"
+                href="/destinations/dubai/"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80"
+                  alt="Modern skyline and waterfront in Dubai"
+                  width="900"
+                  height="675"
+                  loading="lazy"
+                />
+                <div class="home-destinations__caption">
+                  <p class="home-destinations__meta">UAE</p>
+                  <h3 class="home-destinations__title">Dubai</h3>
+                  <p class="home-destinations__text">Skyline views, desert edges, and modern city energy</p>
+                </div>
+              </a>
+              <a
+                class="home-destinations__item home-destinations__item--support"
+                href="/destinations/singapore/"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=900&q=80"
+                  alt="Gardens and harbour skyline in Singapore"
+                  width="900"
+                  height="675"
+                  loading="lazy"
+                />
+                <div class="home-destinations__caption">
+                  <p class="home-destinations__meta">Singapore</p>
+                  <h3 class="home-destinations__title">Singapore</h3>
+                  <p class="home-destinations__text">Gardens, harbour views, and neighbourhood flavours</p>
+                </div>
+              </a>
+            </div>
           </div>
           <div class="section__actions">
             <a class="btn btn--secondary" href="/destinations/">View all destinations</a>
@@ -260,8 +636,8 @@
         </div>
       </section>
 
-      <!-- 4. Popular tour packages -->
-      <section class="section section--soft home-packages" aria-labelledby="popular-packages-title">
+      <!-- 4. Popular tour packages — clean white commercial catalogue -->
+      <section class="section section--white home-packages" aria-labelledby="popular-packages-title">
         <div class="container">
           <header class="section-heading section__header">
             <p class="section-heading__eyebrow">Ready-made outlines</p>
@@ -269,8 +645,7 @@
               Popular Tour Packages
             </h2>
             <p class="section-heading__lead">
-              Illustrative itineraries you can refine in the trip planner — pacing, stays,
-              and vehicle preference included in the enquiry flow.
+              Illustrative itineraries you can refine — pacing, stays, and vehicle preference included.
             </p>
           </header>
           <div class="card-grid card-grid--3">
@@ -360,8 +735,8 @@
         </div>
       </section>
 
-      <!-- 5. Car rental intro -->
-      <section class="section home-rental" aria-labelledby="car-rental-title">
+      <!-- 5. Car rental intro — clean practical + strong imagery -->
+      <section class="section section--editorial home-rental" aria-labelledby="car-rental-title">
         <div class="container">
           <div class="rental-intro">
             <div class="rental-intro__copy">
@@ -371,8 +746,8 @@
                   Travel comfortably across your destination
                 </h2>
                 <p class="section-heading__lead">
-                  Chauffeur-driven options for couples, families, and small groups —
-                  illustrative categories you can note when planning your trip.
+                  Chauffeur-driven categories for couples, families, and small groups —
+                  note your preference when planning.
                 </p>
               </header>
               <ul class="vehicle-chip-list">
@@ -385,8 +760,8 @@
             </div>
             <div class="rental-intro__visual">
               <img
-                src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1200&q=80"
-                alt="Scenic highway drive through mountain landscape"
+                src="/assets/images/vehicle-innova-crysta.jpg"
+                alt="Illustrative chauffeur-driven vehicle for multi-day travel"
                 width="1200"
                 height="800"
                 loading="lazy"
@@ -396,9 +771,9 @@
         </div>
       </section>
 
-      <!-- 6. Experiences -->
+      <!-- 6. Experiences — image-led mosaic -->
       <section
-        class="section section--soft home-experiences"
+        class="section section--white home-experiences"
         id="experiences"
         aria-labelledby="experiences-title"
       >
@@ -409,8 +784,7 @@
               Travel Experiences
             </h2>
             <p class="section-heading__lead">
-              Place-led moments you can weave into a journey — lakeside calm, meadow views,
-              fort circuits, and quiet backwaters.
+              Place-led moments — lakeside calm, meadow views, forts, and quiet backwaters.
             </p>
           </header>
           <div class="home-experiences__mosaic">
@@ -478,69 +852,91 @@
         </div>
       </section>
 
-      <!-- 7. Why travel with us -->
-      <section class="section home-principles" aria-labelledby="why-us-title">
+      <!-- 7. Why travel with us — editorial trust split -->
+      <section class="section section--editorial home-principles" aria-labelledby="why-us-title">
         <div class="container">
-          <header class="section-heading section__header">
-            <p class="section-heading__eyebrow">Our approach</p>
-            <h2 class="section-heading__title" id="why-us-title">Why Travel With Us</h2>
-            <p class="section-heading__lead">
-              Principles that shape every illustrative journey on this demo — not fabricated
-              ratings or customer counts.
-            </p>
-          </header>
-          <ul class="home-principles__list">
-            <li class="home-principles__item">
-              <h3 class="home-principles__title">Local Knowledge</h3>
-              <p class="home-principles__text">
-                Destinations framed around place, season, and realistic day pacing.
-              </p>
-            </li>
-            <li class="home-principles__item">
-              <h3 class="home-principles__title">Thoughtful Planning</h3>
-              <p class="home-principles__text">
-                Itineraries built around how you travel — family, couple, or group.
-              </p>
-            </li>
-            <li class="home-principles__item">
-              <h3 class="home-principles__title">Reliable Travel</h3>
-              <p class="home-principles__text">
-                Chauffeur-driven vehicle categories chosen for route comfort and luggage.
-              </p>
-            </li>
-            <li class="home-principles__item">
-              <h3 class="home-principles__title">Personal Support</h3>
-              <p class="home-principles__text">
-                Clear enquiry flow so preferences and must-visits are captured early.
-              </p>
-            </li>
-          </ul>
+          <div class="home-principles__layout">
+            <div class="home-principles__media">
+              <img
+                src="/assets/images/principles-travel.jpg"
+                alt="Traveller with a map planning a journey outdoors"
+                width="1200"
+                height="948"
+                loading="lazy"
+              />
+            </div>
+            <div class="home-principles__content">
+              <header class="section-heading">
+                <p class="section-heading__eyebrow">Our approach</p>
+                <h2 class="section-heading__title" id="why-us-title">Why Travel With Us</h2>
+                <p class="section-heading__lead">
+                  Principles that shape how we plan travel — not ratings or customer counts.
+                </p>
+              </header>
+              <ol class="home-principles__list">
+                <li class="home-principles__item">
+                  <h3 class="home-principles__title">Local Knowledge</h3>
+                  <p class="home-principles__text">
+                    Place, season, and realistic day pacing.
+                  </p>
+                </li>
+                <li class="home-principles__item">
+                  <h3 class="home-principles__title">Thoughtful Planning</h3>
+                  <p class="home-principles__text">
+                    Built around how you travel — family, couple, or group.
+                  </p>
+                </li>
+                <li class="home-principles__item">
+                  <h3 class="home-principles__title">Reliable Travel</h3>
+                  <p class="home-principles__text">
+                    Vehicle categories chosen for route comfort and luggage.
+                  </p>
+                </li>
+                <li class="home-principles__item">
+                  <h3 class="home-principles__title">Personal Support</h3>
+                  <p class="home-principles__text">
+                    Clear enquiry so preferences are captured early.
+                  </p>
+                </li>
+              </ol>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- 8. Traveller stories -->
-      <section class="section section--soft home-stories" aria-labelledby="stories-title">
+      <!-- 8. Traveller stories — featured visual storytelling -->
+      <section class="section section--white home-stories" aria-labelledby="stories-title">
         <div class="container">
           <header class="section-heading section__header">
             <p class="section-heading__eyebrow">From travellers</p>
             <h2 class="section-heading__title" id="stories-title">Traveller Stories</h2>
             <p class="section-heading__lead">
-              Sample voices for the demo. These quotes are illustrative placeholders, not
-              verified reviews.
+              Sample voices for the demo — illustrative placeholders, not verified reviews.
             </p>
           </header>
           <p class="demo-note">Illustrative demo content only.</p>
           <div class="home-stories__layout">
-            <blockquote class="home-stories__featured">
-              <p class="home-stories__quote">
-                Planning felt clear from the first conversation — destinations, pace, and
-                vehicle choice all lined up for our family.
-              </p>
-              <footer>
-                <cite class="home-stories__author">Ananya R.</cite>
-                <p class="home-stories__context">Kashmir family trip (illustrative)</p>
-              </footer>
-            </blockquote>
+            <figure class="home-stories__featured">
+              <div class="home-stories__media">
+                <img
+                  src="/assets/images/story-traveller-featured.jpg"
+                  alt="Travellers paused at a scenic overlook during a road journey"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                />
+              </div>
+              <blockquote class="home-stories__quote-block">
+                <p class="home-stories__quote">
+                  Planning felt clear from the first conversation — destinations, pace, and
+                  vehicle choice all lined up for our family.
+                </p>
+                <footer>
+                  <cite class="home-stories__author">Ananya R.</cite>
+                  <p class="home-stories__context">Kashmir family trip (illustrative)</p>
+                </footer>
+              </blockquote>
+            </figure>
             <div class="home-stories__support">
               <blockquote class="home-stories__item">
                 <p class="home-stories__quote home-stories__quote--compact">
@@ -567,14 +963,14 @@
         </div>
       </section>
 
-      <!-- 9. Travel guides -->
-      <section class="section home-guide" aria-labelledby="guides-title">
+      <!-- 9. Travel guides — editorial reading cue -->
+      <section class="section section--editorial home-guide" aria-labelledby="guides-title">
         <div class="container">
           <header class="section-heading section__header">
             <p class="section-heading__eyebrow">Inspiration</p>
             <h2 class="section-heading__title" id="guides-title">Travel Guides</h2>
             <p class="section-heading__lead">
-              Editorial pointers to help you match season and pace before you plan.
+              Editorial pointers to match season and pace before you plan.
             </p>
           </header>
           <article class="home-guide__feature">
@@ -593,8 +989,8 @@
                 <a href="/travel-guides/best-time-to-visit-kashmir/">Best Time to Visit Kashmir</a>
               </h3>
               <p class="home-guide__text">
-                Illustrative seasonal overview for Kashmir — when valleys feel mild, when
-                snow scenes peak, and how to match travel style to the month.
+                Seasonal overview — when valleys feel mild, when snow scenes peak, and how to
+                match travel style to the month.
               </p>
               <a class="btn btn--ghost" href="/travel-guides/best-time-to-visit-kashmir/"
                 >Read guide</a
@@ -604,19 +1000,16 @@
         </div>
       </section>
 
-      <!-- 10. Final CTA -->
-      <section class="cta-band surface-dark home-cta" aria-labelledby="final-cta-title">
+      <!-- 10. Final CTA — premium dark green, distinct from footer -->
+      <section class="cta-band cta-band--home surface-dark home-cta" aria-labelledby="final-cta-title">
         <div class="container">
           <div class="cta-band__inner">
-            <h2 id="final-cta-title">
-              Tell us where you want to go. We’ll help you plan the rest.
-            </h2>
+            <h2 id="final-cta-title">Plan Your Trip</h2>
             <p>
-              Share your destination, dates, and travel style — the demo planner captures
-              preferences for an illustrative enquiry.
+              Share where you want to go — destination, dates, and style for an illustrative enquiry.
             </p>
             <div class="cta-band__actions">
-              <a class="btn btn--primary" href="/plan-your-trip/">Plan Your Trip</a>
+              <a class="btn btn--primary" href="/plan-your-trip/">Start Planning</a>
             </div>
           </div>
         </div>

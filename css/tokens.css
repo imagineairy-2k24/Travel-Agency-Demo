@@ -36,6 +36,15 @@
   --color-surface-soft: #F1F1EB;
   --color-surface-dark: #173B35;
   --color-surface-dark-deep: #102B27;
+  /* Near-black structural close — distinct from CTA green */
+  --color-surface-footer: #0B1614;
+
+  /* Surface rhythm aliases (purpose-led, not mechanical alternation) */
+  --surface-editorial: var(--color-surface-page);
+  --surface-white: var(--color-surface-primary);
+  --surface-dark: var(--color-surface-dark);
+  --surface-deep: var(--color-surface-dark-deep);
+  --surface-footer: var(--color-surface-footer);
 
   /* Text */
   --color-text-primary: #202220;
