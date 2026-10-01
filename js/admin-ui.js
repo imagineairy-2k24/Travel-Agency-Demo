@@ -49,6 +49,22 @@
     return Array.prototype.slice.call((root || document).querySelectorAll(sel));
   }
 
+  function siteUrl(path) {
+    return window.TA && typeof window.TA.url === "function" ? window.TA.url(path) : path;
+  }
+
+  function rewriteUrls(root) {
+    if (!root || !root.querySelectorAll) return;
+    qsa("[href^='/'], [src^='/']", root).forEach(function (el) {
+      if (el.hasAttribute("href")) {
+        el.setAttribute("href", siteUrl(el.getAttribute("href")));
+      }
+      if (el.hasAttribute("src")) {
+        el.setAttribute("src", siteUrl(el.getAttribute("src")));
+      }
+    });
+  }
+
   function param(name) {
     return new URLSearchParams(window.location.search).get(name);
   }
@@ -231,6 +247,15 @@
 
     var toggle = qs("#admin-nav-toggle");
     var backdrop = qs("#admin-backdrop");
+    rewriteUrls(app);
+    var pageRoot = qs("#admin-page-root");
+    if (pageRoot && !pageRoot.getAttribute("data-url-observer")) {
+      pageRoot.setAttribute("data-url-observer", "1");
+      var mo = new MutationObserver(function () {
+        rewriteUrls(pageRoot);
+      });
+      mo.observe(pageRoot, { childList: true, subtree: true });
+    }
     function closeNav() {
       app.classList.remove("is-nav-open");
       if (toggle) toggle.setAttribute("aria-expanded", "false");
@@ -287,7 +312,8 @@
         stats.counts.newEnquiries +
           " new enquir" +
           (stats.counts.newEnquiries === 1 ? "y" : "ies") +
-          " require response"
+          (stats.counts.newEnquiries === 1 ? " requires" : " require") +
+          " response"
       );
     }
     if (awaitingResponse) {
@@ -475,7 +501,9 @@
         Store.setEnquiryStatus(enquiry.id, "Planning");
       }
       toast("Trip created");
-      window.location.href = "/admin/trips.html?id=" + encodeURIComponent(trip.id);
+      window.location.href = siteUrl(
+        "/admin/trips.html?id=" + encodeURIComponent(trip.id)
+      );
     });
   }
 
@@ -483,125 +511,9 @@
     var all = Store.getEnquiries();
     var filter = param("status") || "All";
     var q = (param("q") || "").toLowerCase();
-
-    function applyFilters() {
-      var status = qs("#enq-filter-active")
-        ? qs("#enq-filter-active").getAttribute("data-status")
-        : filter;
-      var query = (qs("#enq-search") && qs("#enq-search").value) || "";
-      query = query.toLowerCase();
-      return all.filter(function (e) {
-        if (status && status !== "All" && e.status !== status) return false;
-        if (!query) return true;
-        var hay =
-          (e.customerName || "") +
-          " " +
-          (e.destination || "") +
-          " " +
-          (e.tripType || "") +
-          " " +
-          (e.email || "");
-        return hay.toLowerCase().indexOf(query) !== -1;
-      });
-    }
+    var state = { status: filter, q: q };
 
     function paint() {
-      var rows = applyFilters();
-      var statuses = ["All"].concat(Store.ENQUIRY_STATUSES);
-      var filtersHtml = statuses
-        .map(function (s) {
-          var active =
-            (qs("#enq-filter-active")
-              ? qs("#enq-filter-active").getAttribute("data-status")
-              : filter) === s;
-          return (
-            '<button type="button" class="admin-filter' +
-            (active ? " is-active" : "") +
-            '" data-status="' +
-            escapeHtml(s) +
-            '">' +
-            escapeHtml(s) +
-            "</button>"
-          );
-        })
-        .join("");
-
-      var table =
-        rows.length === 0
-          ? '<p class="admin-empty">No enquiries match this filter.</p>'
-          : '<div class="admin-table-wrap"><table class="admin-table"><thead><tr>' +
-            "<th>Customer</th><th>Destination</th><th>Travel Dates</th><th>Travellers</th><th>Trip Type</th><th>Status</th><th>Created</th><th>Action</th>" +
-            "</tr></thead><tbody>" +
-            rows
-              .map(function (e) {
-                return (
-                  "<tr><td>" +
-                  escapeHtml(e.customerName) +
-                  "</td><td>" +
-                  escapeHtml(e.destination) +
-                  "</td><td>" +
-                  formatDateRange(e.travelDates) +
-                  "</td><td>" +
-                  travellerLabel(e.travellers) +
-                  "</td><td>" +
-                  escapeHtml(e.tripType || "—") +
-                  "</td><td>" +
-                  badge(e.status) +
-                  "</td><td>" +
-                  formatDate(e.createdAt) +
-                  '</td><td><a href="/admin/enquiries.html?id=' +
-                  encodeURIComponent(e.id) +
-                  '">Open</a></td></tr>'
-                );
-              })
-              .join("") +
-            "</tbody></table></div>";
-
-      root.innerHTML =
-        '<div class="admin-page-header"><div><h1>Enquiries</h1><p>Lifecycle from new lead through booked and completed.</p></div></div>' +
-        '<div class="admin-toolbar">' +
-        '<label class="form-field" style="margin:0"><span class="visually-hidden">Search</span>' +
-        '<input class="form-input" id="enq-search" type="search" placeholder="Search customer, destination…" value="' +
-        escapeHtml(qs("#enq-search") ? qs("#enq-search").value : param("q") || "") +
-        '" /></label>' +
-        "</div>" +
-        '<div class="admin-filters" id="enq-filters" data-status="' +
-        escapeHtml(
-          qs("#enq-filter-active")
-            ? qs("#enq-filter-active").getAttribute("data-status")
-            : filter
-        ) +
-        '"><span id="enq-filter-active" hidden data-status="' +
-        escapeHtml(
-          qs("#enq-filter-active")
-            ? qs("#enq-filter-active").getAttribute("data-status")
-            : filter
-        ) +
-        '"></span>' +
-        filtersHtml +
-        "</div>" +
-        '<div style="margin-top:1rem">' +
-        table +
-        "</div>";
-
-      qsa("#enq-filters .admin-filter").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          qs("#enq-filter-active").setAttribute("data-status", btn.getAttribute("data-status"));
-          paint();
-        });
-      });
-      var search = qs("#enq-search");
-      if (search) {
-        search.addEventListener("input", function () {
-          paint();
-        });
-      }
-    }
-
-    // Hold active filter in a hidden node pattern — simplify:
-    root.innerHTML = "";
-    var state = { status: filter, q: q };
-    function paint2() {
       var rows = all.filter(function (e) {
         if (state.status !== "All" && e.status !== state.status) return false;
         if (!state.q) return true;
@@ -676,15 +588,15 @@
       qsa("#enq-filters .admin-filter").forEach(function (btn) {
         btn.addEventListener("click", function () {
           state.status = btn.getAttribute("data-status");
-          paint2();
+          paint();
         });
       });
       qs("#enq-search").addEventListener("input", function (ev) {
         state.q = ev.target.value.toLowerCase();
-        paint2();
+        paint();
       });
     }
-    paint2();
+    paint();
   }
 
   function renderEnquiries(root) {
@@ -950,8 +862,9 @@
       qs("#trip-create-quote").addEventListener("click", function () {
         var quote = Store.createQuotationFromTrip(trip.id);
         toast("Quotation created (illustrative)");
-        window.location.href =
-          "/admin/quotations.html?id=" + encodeURIComponent(quote.id);
+        window.location.href = siteUrl(
+          "/admin/quotations.html?id=" + encodeURIComponent(quote.id)
+        );
       });
       qsa(".js-edit-day").forEach(function (btn) {
         btn.addEventListener("click", function () {
@@ -1142,11 +1055,17 @@
 
     qs("#quote-send").addEventListener("click", function () {
       Store.setQuotationStatus(quote.id, "Sent");
+      if (quote.enquiryId) {
+        Store.advanceEnquiryStatus(quote.enquiryId, "Quotation Sent");
+      }
       toast("Quote marked as Sent (simulated)");
       renderQuotationDetail(root, Store.getQuotation(quote.id));
     });
     qs("#quote-approve").addEventListener("click", function () {
       Store.setQuotationStatus(quote.id, "Approved");
+      if (quote.enquiryId) {
+        Store.advanceEnquiryStatus(quote.enquiryId, "Approved");
+      }
       toast("Quote approved");
       renderQuotationDetail(root, Store.getQuotation(quote.id));
     });
@@ -1155,9 +1074,13 @@
       bookBtn.addEventListener("click", function () {
         try {
           var booking = Store.createBookingFromQuotation(quote.id);
+          if (quote.enquiryId) {
+            Store.advanceEnquiryStatus(quote.enquiryId, "Booked");
+          }
           toast("Booking created");
-          window.location.href =
-            "/admin/bookings.html?id=" + encodeURIComponent(booking.id);
+          window.location.href = siteUrl(
+            "/admin/bookings.html?id=" + encodeURIComponent(booking.id)
+          );
         } catch (err) {
           toast(err.message || "Could not create booking");
         }
@@ -1203,6 +1126,20 @@
 
   /* ---------- Bookings ---------- */
 
+  function resolveEnquiryIdForBooking(booking) {
+    if (!booking) return null;
+    if (booking.enquiryId) return booking.enquiryId;
+    if (booking.quotationId) {
+      var quote = Store.getQuotation(booking.quotationId);
+      if (quote && quote.enquiryId) return quote.enquiryId;
+    }
+    if (booking.tripId) {
+      var trip = Store.getTrip(booking.tripId);
+      if (trip && trip.enquiryId) return trip.enquiryId;
+    }
+    return null;
+  }
+
   function renderBookingDetail(root, booking) {
     if (!booking) {
       root.innerHTML =
@@ -1220,6 +1157,21 @@
         "</option>"
       );
     }).join("");
+
+    var reviewPanel =
+      booking.status === "Completed"
+        ? '<section class="admin-panel" style="margin-top:1rem"><h2 class="admin-panel__title">Log demo review</h2>' +
+          '<p class="admin-muted">Creates a pending review in localStorage only.</p>' +
+          '<form id="booking-review-form" class="admin-edit-form" novalidate>' +
+          '<label class="form-field" for="review-rating"><span class="form-label">Rating (1–5)</span>' +
+          '<select class="form-select" id="review-rating" name="rating" required>' +
+          '<option value="5">5</option><option value="4">4</option><option value="3">3</option><option value="2">2</option><option value="1">1</option>' +
+          "</select></label>" +
+          '<label class="form-field" for="review-text"><span class="form-label">Review</span>' +
+          '<textarea class="form-textarea" id="review-text" name="review" rows="3" required placeholder="Short demo review…"></textarea></label>' +
+          '<div class="admin-actions"><button type="submit" class="btn btn--primary">Save review</button>' +
+          '<a class="btn btn--ghost" href="/admin/reviews.html">Open reviews</a></div></form></section>'
+        : "";
 
     root.innerHTML =
       '<p class="admin-muted"><a href="/admin/bookings.html">← All bookings</a></p>' +
@@ -1261,13 +1213,42 @@
       options +
       "</select></label>" +
       '<div class="admin-actions"><button type="button" class="btn btn--primary" id="booking-save">Update status</button></div>' +
-      "</section></div>";
+      "</section></div>" +
+      reviewPanel;
 
     qs("#booking-save").addEventListener("click", function () {
-      Store.setBookingStatus(booking.id, qs("#booking-status").value);
+      var nextStatus = qs("#booking-status").value;
+      Store.setBookingStatus(booking.id, nextStatus);
+      if (nextStatus === "Completed") {
+        var enquiryId = resolveEnquiryIdForBooking(booking);
+        if (enquiryId) Store.advanceEnquiryStatus(enquiryId, "Completed");
+      }
       toast("Booking status updated");
       renderBookingDetail(root, Store.getBooking(booking.id));
     });
+
+    var reviewForm = qs("#booking-review-form");
+    if (reviewForm) {
+      reviewForm.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        var rating = Number(qs("#review-rating").value);
+        var text = (qs("#review-text").value || "").trim();
+        if (!rating || rating < 1 || rating > 5 || !text) {
+          toast("Enter a rating and short review");
+          return;
+        }
+        Store.addReview({
+          customerId: booking.customerId || null,
+          customerName: booking.customerName || "",
+          tripId: booking.tripId || null,
+          tripLabel: booking.destination || booking.itinerarySummary || "",
+          rating: rating,
+          review: text
+        });
+        toast("Demo review saved");
+        qs("#review-text").value = "";
+      });
+    }
   }
 
   function renderBookings(root) {
@@ -1309,9 +1290,95 @@
   /* ---------- Content ---------- */
 
   function fetchJson(url) {
-    return fetch(url, { credentials: "same-origin" }).then(function (res) {
+    return fetch(siteUrl(url), { credentials: "same-origin" }).then(function (res) {
       if (!res.ok) throw new Error("Failed " + url);
       return res.json();
+    });
+  }
+
+  function mergeContentItem(type, item) {
+    var overlay = Store.getContentFields(type, item.id) || {};
+    var merged = {};
+    var key;
+    for (key in item) {
+      if (Object.prototype.hasOwnProperty.call(item, key)) merged[key] = item[key];
+    }
+    for (key in overlay) {
+      if (Object.prototype.hasOwnProperty.call(overlay, key)) merged[key] = overlay[key];
+    }
+    return merged;
+  }
+
+  function vehicleLocationLabel(item) {
+    var loc = item && item.location != null ? String(item.location).trim() : "";
+    return loc || "Catalogue";
+  }
+
+  function contentFieldInput(id, label, value, opts) {
+    opts = opts || {};
+    var tag = opts.multiline ? "textarea" : "input";
+    var typeAttr = opts.type ? ' type="' + escapeHtml(opts.type) + '"' : ' type="text"';
+    var extra = opts.multiline
+      ? ' rows="' + (opts.rows || 3) + '"'
+      : typeAttr + (opts.min != null ? ' min="' + opts.min + '"' : "");
+    var open =
+      "<" +
+      tag +
+      ' class="' +
+      (opts.multiline ? "form-textarea" : "form-input") +
+      '" id="' +
+      escapeHtml(id) +
+      '" name="' +
+      escapeHtml(id) +
+      '"' +
+      extra +
+      (opts.required ? " required" : "");
+    var labelOpen =
+      '<label class="form-field" for="' +
+      escapeHtml(id) +
+      '"><span class="form-label">' +
+      escapeHtml(label) +
+      "</span>";
+    if (opts.multiline) {
+      return (
+        labelOpen +
+        open +
+        ">" +
+        escapeHtml(value == null ? "" : value) +
+        "</" +
+        tag +
+        "></label>"
+      );
+    }
+    return (
+      labelOpen +
+      open +
+      ' value="' +
+      escapeHtml(value == null ? "" : value) +
+      '" /></label>'
+    );
+  }
+
+  function wireContentEditForm(root, type, itemId, readFields) {
+    var editBtn = qs("#content-edit");
+    var form = qs("#content-edit-form");
+    var cancelBtn = qs("#content-edit-cancel");
+    if (!editBtn || !form) return;
+    editBtn.addEventListener("click", function () {
+      form.hidden = false;
+      editBtn.setAttribute("aria-expanded", "true");
+    });
+    if (cancelBtn) {
+      cancelBtn.addEventListener("click", function () {
+        form.hidden = true;
+        editBtn.setAttribute("aria-expanded", "false");
+      });
+    }
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      Store.setContentFields(type, itemId, readFields());
+      toast("Content saved in localStorage (demo) — source JSON not rewritten");
+      renderContent(root);
     });
   }
 
@@ -1325,9 +1392,15 @@
       fetchJson("/data/vehicles.json")
     ])
       .then(function (parts) {
-        var destinations = parts[0];
-        var packages = parts[1];
-        var vehicles = parts[2];
+        var destinations = parts[0].map(function (d) {
+          return mergeContentItem("destinations", d);
+        });
+        var packages = parts[1].map(function (p) {
+          return mergeContentItem("packages", p);
+        });
+        var vehicles = parts[2].map(function (v) {
+          return mergeContentItem("vehicles", v);
+        });
 
         function pubBadge(type, itemId) {
           var meta = Store.getContentMeta(type, itemId);
@@ -1360,6 +1433,9 @@
           '" href="/admin/content.html?tab=vehicles">Vehicles</a>' +
           "</div>";
 
+        var demoBanner =
+          '<p class="admin-muted" style="margin-top:1rem">Edits persist in localStorage only — source JSON is not rewritten.</p>';
+
         if (tab === "destinations") {
           if (id) {
             var dest = destinations.filter(function (d) {
@@ -1389,16 +1465,30 @@
               "</dd></dl>" +
               '<div class="admin-actions">' +
               '<button type="button" class="btn btn--secondary" id="content-toggle">Publish / Unpublish</button>' +
-              '<button type="button" class="btn btn--ghost" id="content-edit">Edit (demo)</button>' +
+              '<button type="button" class="btn btn--ghost" id="content-edit" aria-expanded="false" aria-controls="content-edit-form">Edit</button>' +
               "</div>" +
-              '<p class="admin-muted" id="edit-note" hidden>Demo edit only — source JSON is not rewritten. Use Publish to persist status in localStorage.</p>' +
-              "</section>";
+              '<form id="content-edit-form" class="admin-edit-form" hidden novalidate>' +
+              "<h3 class=\"admin-panel__title\">Edit destination (demo)</h3>" +
+              contentFieldInput("cf-name", "Name", dest.name, { required: true }) +
+              contentFieldInput("cf-tagline", "Tagline", dest.tagline || "") +
+              contentFieldInput("cf-shortDescription", "Short description", dest.shortDescription || "", {
+                multiline: true
+              }) +
+              contentFieldInput("cf-region", "Region", dest.region || "") +
+              '<div class="admin-actions"><button type="submit" class="btn btn--primary">Save</button>' +
+              '<button type="button" class="btn btn--ghost" id="content-edit-cancel">Cancel</button></div>' +
+              demoBanner +
+              "</form></section>";
             qs("#content-toggle").addEventListener("click", function () {
               togglePublish("destinations", dest.id);
             });
-            qs("#content-edit").addEventListener("click", function () {
-              qs("#edit-note").hidden = false;
-              toast("Demo edit panel — field edits are illustrative only");
+            wireContentEditForm(root, "destinations", dest.id, function () {
+              return {
+                name: qs("#cf-name").value,
+                tagline: qs("#cf-tagline").value,
+                shortDescription: qs("#cf-shortDescription").value,
+                region: qs("#cf-region").value
+              };
             });
             return;
           }
@@ -1465,7 +1555,9 @@
               escapeHtml(pkg.destinationSlug) +
               " · " +
               escapeHtml(String(pkg.durationDays)) +
-              " days</p></div>" +
+              " days / " +
+              escapeHtml(String(pkg.durationNights)) +
+              " nights</p></div>" +
               pubBadge("packages", pkg.id) +
               "</div>" +
               '<section class="admin-panel"><p>' +
@@ -1474,12 +1566,39 @@
               escapeHtml(pkg.startingPriceLabel || "Illustrative") +
               '</p><div class="admin-actions">' +
               '<button type="button" class="btn btn--secondary" id="content-toggle">Publish / Unpublish</button>' +
-              '<button type="button" class="btn btn--ghost" id="content-edit">Edit (demo)</button></div></section>';
+              '<button type="button" class="btn btn--ghost" id="content-edit" aria-expanded="false" aria-controls="content-edit-form">Edit</button></div>' +
+              '<form id="content-edit-form" class="admin-edit-form" hidden novalidate>' +
+              "<h3 class=\"admin-panel__title\">Edit package (demo)</h3>" +
+              contentFieldInput("cf-title", "Title", pkg.title, { required: true }) +
+              contentFieldInput("cf-shortDescription", "Short description", pkg.shortDescription || "", {
+                multiline: true
+              }) +
+              contentFieldInput("cf-startingPriceLabel", "Starting price label", pkg.startingPriceLabel || "") +
+              '<div class="admin-edit-form__grid">' +
+              contentFieldInput("cf-durationDays", "Duration (days)", pkg.durationDays, {
+                type: "number",
+                min: 1
+              }) +
+              contentFieldInput("cf-durationNights", "Duration (nights)", pkg.durationNights, {
+                type: "number",
+                min: 0
+              }) +
+              "</div>" +
+              '<div class="admin-actions"><button type="submit" class="btn btn--primary">Save</button>' +
+              '<button type="button" class="btn btn--ghost" id="content-edit-cancel">Cancel</button></div>' +
+              demoBanner +
+              "</form></section>";
             qs("#content-toggle").addEventListener("click", function () {
               togglePublish("packages", pkg.id);
             });
-            qs("#content-edit").addEventListener("click", function () {
-              toast("Demo edit — source JSON not rewritten");
+            wireContentEditForm(root, "packages", pkg.id, function () {
+              return {
+                title: qs("#cf-title").value,
+                shortDescription: qs("#cf-shortDescription").value,
+                startingPriceLabel: qs("#cf-startingPriceLabel").value,
+                durationDays: Number(qs("#cf-durationDays").value),
+                durationNights: Number(qs("#cf-durationNights").value)
+              };
             });
             return;
           }
@@ -1534,6 +1653,7 @@
           var img = veh.imagePlaceholder
             ? "/assets/images/" + veh.imagePlaceholder
             : "";
+          var locLabel = vehicleLocationLabel(veh);
           root.innerHTML =
             tabs +
             '<p class="admin-muted"><a href="/admin/content.html?tab=vehicles">← Vehicles</a></p>' +
@@ -1554,15 +1674,37 @@
             escapeHtml(veh.type || "") +
             "</dd><dt>Description</dt><dd>" +
             escapeHtml(veh.shortDescription || "") +
-            "</dd><dt>Location</dt><dd>Catalogue (demo)</dd></dl>" +
+            "</dd><dt>Location</dt><dd>" +
+            escapeHtml(locLabel) +
+            "</dd></dl>" +
             '<div class="admin-actions">' +
             '<button type="button" class="btn btn--secondary" id="content-toggle">Publish / Unpublish</button>' +
-            '<button type="button" class="btn btn--ghost" id="content-edit">Edit (demo)</button></div></section>';
+            '<button type="button" class="btn btn--ghost" id="content-edit" aria-expanded="false" aria-controls="content-edit-form">Edit</button></div>' +
+            '<form id="content-edit-form" class="admin-edit-form" hidden novalidate>' +
+            "<h3 class=\"admin-panel__title\">Edit vehicle (demo)</h3>" +
+            contentFieldInput("cf-name", "Name", veh.name, { required: true }) +
+            contentFieldInput("cf-shortDescription", "Short description", veh.shortDescription || "", {
+              multiline: true
+            }) +
+            contentFieldInput("cf-seatingCapacity", "Seating capacity", veh.seatingCapacity, {
+              type: "number",
+              min: 1
+            }) +
+            contentFieldInput("cf-location", "Location", veh.location || "") +
+            '<div class="admin-actions"><button type="submit" class="btn btn--primary">Save</button>' +
+            '<button type="button" class="btn btn--ghost" id="content-edit-cancel">Cancel</button></div>' +
+            demoBanner +
+            "</form></section>";
           qs("#content-toggle").addEventListener("click", function () {
             togglePublish("vehicles", veh.id);
           });
-          qs("#content-edit").addEventListener("click", function () {
-            toast("Demo edit — catalogue fields are illustrative");
+          wireContentEditForm(root, "vehicles", veh.id, function () {
+            return {
+              name: qs("#cf-name").value,
+              shortDescription: qs("#cf-shortDescription").value,
+              seatingCapacity: Number(qs("#cf-seatingCapacity").value),
+              location: qs("#cf-location").value
+            };
           });
           return;
         }
@@ -1589,7 +1731,9 @@
                 escapeHtml(String(v.seatingCapacity)) +
                 "</td><td>" +
                 escapeHtml(v.shortDescription || "") +
-                "</td><td>Catalogue</td><td>" +
+                "</td><td>" +
+                escapeHtml(vehicleLocationLabel(v)) +
+                "</td><td>" +
                 pubBadge("vehicles", v.id) +
                 '</td><td><a href="/admin/content.html?tab=vehicles&id=' +
                 encodeURIComponent(v.id) +
@@ -1680,6 +1824,7 @@
     else if (page === "content") renderContent(root);
     else if (page === "reviews") renderReviews(root);
     else root.innerHTML = '<p class="admin-empty">Unknown admin page.</p>';
+    rewriteUrls(root);
   }
 
   function init() {

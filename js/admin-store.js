@@ -9,12 +9,17 @@
  * Demo choice: any of these statuses may be selected (not forward-only).
  *
  * localStorage keys (prefix taAdmin):
- *   taAdmin:enquiries   — { statusById: {}, appended: [] }
- *   taAdmin:trips       — { byId: { [id]: trip } }
- *   taAdmin:quotations  — { statusById: {}, appended: [] }
- *   taAdmin:bookings    — { statusById: {}, appended: [] }
- *   taAdmin:reviews     — { statusById: {} }
- *   taAdmin:content     — { destinations:{}, packages:{}, vehicles:{} } values published|unpublished
+ *   taAdmin:enquiries     — { statusById: {}, appended: [] }
+ *   taAdmin:trips         — { byId: { [id]: trip } }
+ *   taAdmin:quotations    — { statusById: {}, appended: [] }
+ *   taAdmin:bookings      — { statusById: {}, appended: [] }
+ *   taAdmin:reviews       — { statusById: {}, appended: [] }
+ *   taAdmin:content       — { destinations:{}, packages:{}, vehicles:{} } values published|unpublished
+ *   taAdmin:contentFields — { destinations:{[id]:{...}}, packages:{[id]:{...}}, vehicles:{[id]:{...}} }
+ *     Editable demo fields only:
+ *       destinations: name, tagline, shortDescription, region
+ *       packages: title, shortDescription, startingPriceLabel, durationDays, durationNights
+ *       vehicles: name, shortDescription, seatingCapacity, location
  */
 (function (global) {
   "use strict";
@@ -25,7 +30,8 @@
     quotations: "taAdmin:quotations",
     bookings: "taAdmin:bookings",
     reviews: "taAdmin:reviews",
-    content: "taAdmin:content"
+    content: "taAdmin:content",
+    contentFields: "taAdmin:contentFields"
   };
 
   var ENQUIRY_STATUSES = [
@@ -43,6 +49,17 @@
   var REVIEW_STATUSES = ["Pending", "Approved", "Hidden"];
   var PUBLISH_STATUSES = ["published", "unpublished"];
   var CONTENT_TYPES = ["destinations", "packages", "vehicles"];
+  var CONTENT_EDITABLE_FIELDS = {
+    destinations: ["name", "tagline", "shortDescription", "region"],
+    packages: [
+      "title",
+      "shortDescription",
+      "startingPriceLabel",
+      "durationDays",
+      "durationNights"
+    ],
+    vehicles: ["name", "shortDescription", "seatingCapacity", "location"]
+  };
 
   var SEED_URLS = {
     customers: "/data/admin-customers.json",
@@ -117,17 +134,23 @@
   }
 
   function emptyReviewOverlay() {
-    return { statusById: {} };
+    return { statusById: {}, appended: [] };
   }
 
   function emptyContentOverlay() {
     return { destinations: {}, packages: {}, vehicles: {} };
   }
 
+  function emptyContentFieldsOverlay() {
+    return { destinations: {}, packages: {}, vehicles: {} };
+  }
+
   /* ---------- seed loading ---------- */
 
   function loadSeed(url) {
-    return fetch(url, {
+    var resolved =
+      global.TA && typeof global.TA.url === "function" ? global.TA.url(url) : url;
+    return fetch(resolved, {
       credentials: "same-origin",
       cache: "no-store"
     }).then(function (res) {
@@ -351,12 +374,18 @@
   function mergeReviews() {
     var seed = Array.isArray(cache.reviews) ? clone(cache.reviews) : [];
     var overlay = readStore(KEYS.reviews, emptyReviewOverlay());
-    return seed.map(function (r) {
-      var copy = clone(r);
-      if (overlay.statusById && overlay.statusById[r.id]) {
-        copy.status = overlay.statusById[r.id];
-      }
-      return copy;
+    var byId = {};
+    seed.forEach(function (r) {
+      byId[r.id] = r;
+    });
+    (overlay.appended || []).forEach(function (r) {
+      if (r && r.id) byId[r.id] = clone(r);
+    });
+    Object.keys(overlay.statusById || {}).forEach(function (id) {
+      if (byId[id]) byId[id].status = overlay.statusById[id];
+    });
+    return Object.keys(byId).map(function (id) {
+      return byId[id];
     });
   }
 
@@ -409,6 +438,15 @@
     overlay.statusById[id] = status;
     writeStore(KEYS.enquiries, overlay);
     return getEnquiry(id);
+  }
+
+  /**
+   * Thin workflow helper: set enquiry status only if the enquiry exists.
+   * Returns null when missing (no throw). Used after quote/booking UI actions.
+   */
+  function advanceEnquiryStatus(enquiryId, status) {
+    if (!enquiryId || !getEnquiry(enquiryId)) return null;
+    return setEnquiryStatus(enquiryId, status);
   }
 
   function addEnquiry(enquiry) {
@@ -735,12 +773,49 @@
     return mergeReviews();
   }
 
+  function addReview(reviewPayload) {
+    if (!reviewPayload || typeof reviewPayload !== "object") return null;
+    var overlay = readStore(KEYS.reviews, emptyReviewOverlay());
+    if (!Array.isArray(overlay.appended)) overlay.appended = [];
+    if (!overlay.statusById || typeof overlay.statusById !== "object") {
+      overlay.statusById = {};
+    }
+
+    var status =
+      reviewPayload.status && REVIEW_STATUSES.indexOf(reviewPayload.status) !== -1
+        ? reviewPayload.status
+        : "Pending";
+
+    var review = {
+      id: reviewPayload.id || "rev-" + Date.now(),
+      customerId: reviewPayload.customerId || null,
+      customerName: reviewPayload.customerName || "",
+      tripId: reviewPayload.tripId || null,
+      tripLabel: reviewPayload.tripLabel || "",
+      rating: Number(reviewPayload.rating != null ? reviewPayload.rating : 0),
+      review: reviewPayload.review || "",
+      date: reviewPayload.date || new Date().toISOString().slice(0, 10),
+      status: status
+    };
+
+    overlay.appended.push(review);
+    writeStore(KEYS.reviews, overlay);
+    return clone(review);
+  }
+
   function setReviewStatus(id, status) {
     if (REVIEW_STATUSES.indexOf(status) === -1) {
       throw new Error("Invalid review status: " + status);
     }
     var overlay = readStore(KEYS.reviews, emptyReviewOverlay());
     if (!overlay.statusById) overlay.statusById = {};
+    if (!Array.isArray(overlay.appended)) overlay.appended = [];
+    for (var i = 0; i < overlay.appended.length; i++) {
+      if (overlay.appended[i].id === id) {
+        overlay.appended[i].status = status;
+        break;
+      }
+    }
     overlay.statusById[id] = status;
     writeStore(KEYS.reviews, overlay);
     return findById(mergeReviews(), id);
@@ -772,6 +847,43 @@
     overlay[type][id] = status;
     writeStore(KEYS.content, overlay);
     return getContentMeta(type, id);
+  }
+
+  /* ---------- content field overlays (demo edit persistence) ---------- */
+
+  function getContentFields(type, id) {
+    if (CONTENT_TYPES.indexOf(type) === -1) {
+      throw new Error("Invalid content type: " + type);
+    }
+    var overlay = readStore(KEYS.contentFields, emptyContentFieldsOverlay());
+    var map = overlay[type] || {};
+    var fields = map[id];
+    return fields && typeof fields === "object" ? clone(fields) : {};
+  }
+
+  function setContentFields(type, id, fields) {
+    if (CONTENT_TYPES.indexOf(type) === -1) {
+      throw new Error("Invalid content type: " + type);
+    }
+    if (!id) throw new Error("Content id required");
+    var allowed = CONTENT_EDITABLE_FIELDS[type] || [];
+    var overlay = readStore(KEYS.contentFields, emptyContentFieldsOverlay());
+    CONTENT_TYPES.forEach(function (t) {
+      if (!overlay[t] || typeof overlay[t] !== "object") overlay[t] = {};
+    });
+    var existing =
+      overlay[type][id] && typeof overlay[type][id] === "object"
+        ? clone(overlay[type][id])
+        : {};
+    var incoming = fields && typeof fields === "object" ? fields : {};
+    allowed.forEach(function (key) {
+      if (Object.prototype.hasOwnProperty.call(incoming, key)) {
+        existing[key] = incoming[key];
+      }
+    });
+    overlay[type][id] = existing;
+    writeStore(KEYS.contentFields, overlay);
+    return clone(existing);
   }
 
   /* ---------- dashboard ---------- */
@@ -892,6 +1004,7 @@
     getEnquiries: getEnquiries,
     getEnquiry: getEnquiry,
     setEnquiryStatus: setEnquiryStatus,
+    advanceEnquiryStatus: advanceEnquiryStatus,
     addEnquiry: addEnquiry,
 
     getTrips: getTrips,
@@ -916,10 +1029,13 @@
     setBookingStatus: setBookingStatus,
 
     getReviews: getReviews,
+    addReview: addReview,
     setReviewStatus: setReviewStatus,
 
     getContentMeta: getContentMeta,
     setContentPublishStatus: setContentPublishStatus,
+    getContentFields: getContentFields,
+    setContentFields: setContentFields,
 
     getDashboardStats: getDashboardStats,
     resetDemo: resetDemo

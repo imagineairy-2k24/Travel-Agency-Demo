@@ -12,6 +12,10 @@
   var PLANNER_PATH = "/plan-your-trip/";
   var WA_NUMBER = "919999999999";
 
+  function siteUrl(path) {
+    return window.TA && typeof window.TA.url === "function" ? window.TA.url(path) : path;
+  }
+
   var DEST_DISPLAY = {
     kashmir: "Kashmir",
     rajasthan: "Rajasthan",
@@ -847,7 +851,7 @@
         state.submittedAt = new Date().toISOString();
         saveState(state);
         pushEnquiryToAdmin(state);
-        window.location.href = SUMMARY_PATH;
+        window.location.href = siteUrl(SUMMARY_PATH);
       });
     }
 
@@ -962,7 +966,7 @@
 
     var backLink = root.querySelector("[data-planner-back-link]");
     if (backLink && !backLink.getAttribute("href")) {
-      backLink.setAttribute("href", PLANNER_PATH);
+      backLink.setAttribute("href", siteUrl(PLANNER_PATH));
     }
   }
 

@@ -284,6 +284,22 @@ body.admin-body {
   min-width: 12rem;
 }
 
+.admin-edit-form {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-default);
+}
+
+.admin-edit-form .form-field {
+  margin-bottom: var(--space-3);
+}
+
+.admin-edit-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
 .admin-filters {
   display: flex;
   flex-wrap: wrap;
@@ -601,6 +617,10 @@ body.admin-body {
 
   .admin-grid-2,
   .admin-detail__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-edit-form__grid {
     grid-template-columns: 1fr;
   }
 }

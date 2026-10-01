@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      /* Site base for GitHub Pages project path /Travel-Agency-Demo/ (no-op at domain root) */
+      (function () {
+        var base = "/";
+        var repo = "Travel-Agency-Demo";
+        var path = location.pathname || "/";
+        if (path === "/" + repo || path.indexOf("/" + repo + "/") === 0) {
+          base = "/" + repo + "/";
+        } else if (/\.github\.io$/i.test(location.hostname)) {
+          var seg = path.split("/").filter(Boolean)[0];
+          if (seg) base = "/" + seg + "/";
+        }
+        document.write('<base href="' + base + '">');
+      })();
+    </script>
+
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kashmir Tours &amp; Travel — Travel Agency</title>
@@ -14,20 +31,20 @@
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/tokens.css" />
-    <link rel="stylesheet" href="/css/base.css" />
-    <link rel="stylesheet" href="/css/components.css" />
-    <link rel="stylesheet" href="/css/pages.css" />
-    <link rel="stylesheet" href="/css/utilities.css" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
   </head>
   <body class="page--destination">
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header site-header--over-hero" role="banner">
       <div class="container site-header__inner">
-        <a class="site-wordmark" href="/">Travel Agency</a>
+        <a class="site-wordmark" href="./">Travel Agency</a>
         <div class="site-header__actions">
-          <a class="btn btn--primary site-header__cta" href="/plan-your-trip/">Plan Your Trip</a>
+          <a class="btn btn--primary site-header__cta" href="plan-your-trip/">Plan Your Trip</a>
           <button
             type="button"
             class="nav-toggle"
@@ -63,12 +80,12 @@
                   <div class="site-nav__group">
                     <p class="site-nav__group-label">India</p>
                     <ul class="site-nav__sublist">
-                      <li><a class="site-nav__sublink" href="/destinations/kashmir/">Kashmir</a></li>
-                      <li><a class="site-nav__sublink" href="/destinations/rajasthan/">Rajasthan</a></li>
-                      <li><a class="site-nav__sublink" href="/destinations/kerala/">Kerala</a></li>
-                      <li><a class="site-nav__sublink" href="/destinations/sikkim/">Sikkim</a></li>
+                      <li><a class="site-nav__sublink" href="destinations/kashmir/">Kashmir</a></li>
+                      <li><a class="site-nav__sublink" href="destinations/rajasthan/">Rajasthan</a></li>
+                      <li><a class="site-nav__sublink" href="destinations/kerala/">Kerala</a></li>
+                      <li><a class="site-nav__sublink" href="destinations/sikkim/">Sikkim</a></li>
                       <li>
-                        <a class="site-nav__sublink site-nav__sublink--emphasis" href="/destinations/#india"
+                        <a class="site-nav__sublink site-nav__sublink--emphasis" href="destinations/#india"
                           >Explore India</a
                         >
                       </li>
@@ -77,14 +94,14 @@
                   <div class="site-nav__group">
                     <p class="site-nav__group-label">International</p>
                     <ul class="site-nav__sublist">
-                      <li><a class="site-nav__sublink" href="/destinations/bali/">Bali</a></li>
-                      <li><a class="site-nav__sublink" href="/destinations/thailand/">Thailand</a></li>
-                      <li><a class="site-nav__sublink" href="/destinations/dubai/">Dubai</a></li>
-                      <li><a class="site-nav__sublink" href="/destinations/singapore/">Singapore</a></li>
+                      <li><a class="site-nav__sublink" href="destinations/bali/">Bali</a></li>
+                      <li><a class="site-nav__sublink" href="destinations/thailand/">Thailand</a></li>
+                      <li><a class="site-nav__sublink" href="destinations/dubai/">Dubai</a></li>
+                      <li><a class="site-nav__sublink" href="destinations/singapore/">Singapore</a></li>
                       <li>
                         <a
                           class="site-nav__sublink site-nav__sublink--emphasis"
-                          href="/destinations/#international"
+                          href="destinations/#international"
                           >Explore International</a
                         >
                       </li>
@@ -115,12 +132,12 @@
                   <div class="site-nav__group">
                     <p class="site-nav__group-label">Domestic Tours</p>
                     <ul class="site-nav__sublist">
-                      <li><a class="site-nav__sublink" href="/destinations/kashmir/">Kashmir Tours</a></li>
-                      <li><a class="site-nav__sublink" href="/destinations/rajasthan/">Rajasthan Tours</a></li>
-                      <li><a class="site-nav__sublink" href="/destinations/kerala/">Kerala Tours</a></li>
-                      <li><a class="site-nav__sublink" href="/destinations/sikkim/">Sikkim Tours</a></li>
+                      <li><a class="site-nav__sublink" href="destinations/kashmir/">Kashmir Tours</a></li>
+                      <li><a class="site-nav__sublink" href="destinations/rajasthan/">Rajasthan Tours</a></li>
+                      <li><a class="site-nav__sublink" href="destinations/kerala/">Kerala Tours</a></li>
+                      <li><a class="site-nav__sublink" href="destinations/sikkim/">Sikkim Tours</a></li>
                       <li>
-                        <a class="site-nav__sublink site-nav__sublink--emphasis" href="/tours/#india"
+                        <a class="site-nav__sublink site-nav__sublink--emphasis" href="tours/#india"
                           >View India Tours</a
                         >
                       </li>
@@ -129,14 +146,14 @@
                   <div class="site-nav__group">
                     <p class="site-nav__group-label">International Tours</p>
                     <ul class="site-nav__sublist">
-                      <li><a class="site-nav__sublink" href="/destinations/bali/">Bali Tours</a></li>
-                      <li><a class="site-nav__sublink" href="/destinations/thailand/">Thailand Tours</a></li>
-                      <li><a class="site-nav__sublink" href="/destinations/dubai/">Dubai Tours</a></li>
-                      <li><a class="site-nav__sublink" href="/destinations/singapore/">Singapore Tours</a></li>
+                      <li><a class="site-nav__sublink" href="destinations/bali/">Bali Tours</a></li>
+                      <li><a class="site-nav__sublink" href="destinations/thailand/">Thailand Tours</a></li>
+                      <li><a class="site-nav__sublink" href="destinations/dubai/">Dubai Tours</a></li>
+                      <li><a class="site-nav__sublink" href="destinations/singapore/">Singapore Tours</a></li>
                       <li>
                         <a
                           class="site-nav__sublink site-nav__sublink--emphasis"
-                          href="/tours/#international"
+                          href="tours/#international"
                           >View International Tours</a
                         >
                       </li>
@@ -167,20 +184,20 @@
                   <div class="site-nav__group">
                     <p class="site-nav__group-label">Vehicles</p>
                     <ul class="site-nav__sublist">
-                      <li><a class="site-nav__sublink" href="/car-rental/vehicles/sedan/">Sedan</a></li>
+                      <li><a class="site-nav__sublink" href="car-rental/vehicles/sedan/">Sedan</a></li>
                       <li>
-                        <a class="site-nav__sublink" href="/car-rental/vehicles/innova-crysta/"
+                        <a class="site-nav__sublink" href="car-rental/vehicles/innova-crysta/"
                           >Innova Crysta</a
                         >
                       </li>
-                      <li><a class="site-nav__sublink" href="/car-rental/vehicles/suv/">SUV</a></li>
+                      <li><a class="site-nav__sublink" href="car-rental/vehicles/suv/">SUV</a></li>
                       <li>
-                        <a class="site-nav__sublink" href="/car-rental/vehicles/tempo-traveller/"
+                        <a class="site-nav__sublink" href="car-rental/vehicles/tempo-traveller/"
                           >Tempo Traveller</a
                         >
                       </li>
                       <li>
-                        <a class="site-nav__sublink site-nav__sublink--emphasis" href="/car-rental/"
+                        <a class="site-nav__sublink site-nav__sublink--emphasis" href="car-rental/"
                           >View All Vehicles</a
                         >
                       </li>
@@ -189,10 +206,10 @@
                   <div class="site-nav__group">
                     <p class="site-nav__group-label">Travel by Location</p>
                     <ul class="site-nav__sublist">
-                      <li><a class="site-nav__sublink" href="/destinations/kashmir/">Kashmir</a></li>
-                      <li><a class="site-nav__sublink" href="/destinations/rajasthan/">Rajasthan</a></li>
-                      <li><a class="site-nav__sublink" href="/destinations/kerala/">Kerala</a></li>
-                      <li><a class="site-nav__sublink" href="/destinations/sikkim/">Sikkim</a></li>
+                      <li><a class="site-nav__sublink" href="destinations/kashmir/">Kashmir</a></li>
+                      <li><a class="site-nav__sublink" href="destinations/rajasthan/">Rajasthan</a></li>
+                      <li><a class="site-nav__sublink" href="destinations/kerala/">Kerala</a></li>
+                      <li><a class="site-nav__sublink" href="destinations/sikkim/">Sikkim</a></li>
                     </ul>
                   </div>
                 </div>
@@ -221,20 +238,20 @@
                     <p class="site-nav__group-label">Categories</p>
                     <ul class="site-nav__sublist">
                       <li>
-                        <a class="site-nav__sublink" href="/#experiences">Nature &amp; Outdoors</a>
+                        <a class="site-nav__sublink" href="#experiences">Nature &amp; Outdoors</a>
                       </li>
                       <li>
-                        <a class="site-nav__sublink" href="/#experiences">Culture &amp; Heritage</a>
+                        <a class="site-nav__sublink" href="#experiences">Culture &amp; Heritage</a>
                       </li>
                       <li>
-                        <a class="site-nav__sublink" href="/#experiences">Food &amp; Local Life</a>
+                        <a class="site-nav__sublink" href="#experiences">Food &amp; Local Life</a>
                       </li>
-                      <li><a class="site-nav__sublink" href="/#experiences">Adventure</a></li>
+                      <li><a class="site-nav__sublink" href="#experiences">Adventure</a></li>
                       <li>
-                        <a class="site-nav__sublink" href="/#experiences">Wellness &amp; Leisure</a>
+                        <a class="site-nav__sublink" href="#experiences">Wellness &amp; Leisure</a>
                       </li>
                       <li>
-                        <a class="site-nav__sublink site-nav__sublink--emphasis" href="/#experiences"
+                        <a class="site-nav__sublink site-nav__sublink--emphasis" href="#experiences"
                           >Explore Experiences</a
                         >
                       </li>
@@ -266,45 +283,45 @@
                     <p class="site-nav__group-label">India</p>
                     <ul class="site-nav__sublist">
                       <li>
-                        <a class="site-nav__sublink" href="/travel-guides/">Destination Guides</a>
+                        <a class="site-nav__sublink" href="travel-guides/">Destination Guides</a>
                       </li>
                       <li>
                         <a
                           class="site-nav__sublink"
-                          href="/travel-guides/best-time-to-visit-kashmir/"
+                          href="travel-guides/best-time-to-visit-kashmir/"
                           >Best Time to Visit</a
                         >
                       </li>
-                      <li><a class="site-nav__sublink" href="/travel-guides/">Things to Do</a></li>
-                      <li><a class="site-nav__sublink" href="/travel-guides/">Travel Costs</a></li>
+                      <li><a class="site-nav__sublink" href="travel-guides/">Things to Do</a></li>
+                      <li><a class="site-nav__sublink" href="travel-guides/">Travel Costs</a></li>
                     </ul>
                   </div>
                   <div class="site-nav__group">
                     <p class="site-nav__group-label">International</p>
                     <ul class="site-nav__sublist">
                       <li>
-                        <a class="site-nav__sublink" href="/travel-guides/">Destination Guides</a>
+                        <a class="site-nav__sublink" href="travel-guides/">Destination Guides</a>
                       </li>
                       <li>
-                        <a class="site-nav__sublink" href="/travel-guides/">Best Time to Visit</a>
+                        <a class="site-nav__sublink" href="travel-guides/">Best Time to Visit</a>
                       </li>
-                      <li><a class="site-nav__sublink" href="/travel-guides/">Things to Do</a></li>
-                      <li><a class="site-nav__sublink" href="/travel-guides/">Travel Tips</a></li>
+                      <li><a class="site-nav__sublink" href="travel-guides/">Things to Do</a></li>
+                      <li><a class="site-nav__sublink" href="travel-guides/">Travel Tips</a></li>
                     </ul>
                   </div>
                   <div class="site-nav__group">
                     <p class="site-nav__group-label">Travel Planning</p>
                     <ul class="site-nav__sublist">
-                      <li><a class="site-nav__sublink" href="/travel-guides/">Travel Tips</a></li>
-                      <li><a class="site-nav__sublink" href="/travel-guides/">Transportation</a></li>
-                      <li><a class="site-nav__sublink" href="/travel-guides/">Budget Planning</a></li>
+                      <li><a class="site-nav__sublink" href="travel-guides/">Travel Tips</a></li>
+                      <li><a class="site-nav__sublink" href="travel-guides/">Transportation</a></li>
+                      <li><a class="site-nav__sublink" href="travel-guides/">Budget Planning</a></li>
                     </ul>
                   </div>
                 </div>
               </div>
             </li>
             <li class="site-nav__item site-nav__item--cta">
-              <a class="btn btn--primary" href="/plan-your-trip/">Plan Your Trip</a>
+              <a class="btn btn--primary" href="plan-your-trip/">Plan Your Trip</a>
             </li>
           </ul>
         </nav>
@@ -327,10 +344,10 @@
           <h1>Kashmir Tours &amp; Travel</h1>
           <p class="page-hero__lead">Valleys, lakes, and mountain calm</p>
           <div class="page-hero__actions">
-            <a class="btn btn--primary" href="/plan-your-trip/?destination=kashmir"
+            <a class="btn btn--primary" href="plan-your-trip/?destination=kashmir"
               >Plan Your Trip</a
             >
-            <a class="btn btn--secondary" href="/tours/kashmir-family-tour/"
+            <a class="btn btn--secondary" href="tours/kashmir-family-tour/"
               >View family package</a
             >
           </div>
@@ -341,10 +358,10 @@
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <ol class="breadcrumb__list">
             <li class="breadcrumb__item">
-              <a class="breadcrumb__link" href="/">Home</a>
+              <a class="breadcrumb__link" href="./">Home</a>
             </li>
             <li class="breadcrumb__item">
-              <a class="breadcrumb__link" href="/destinations/">Destinations</a>
+              <a class="breadcrumb__link" href="destinations/">Destinations</a>
             </li>
             <li class="breadcrumb__item">
               <span class="breadcrumb__current" aria-current="page">Kashmir</span>
@@ -465,7 +482,7 @@
             <h2 class="section-heading__title" id="exp-kashmir">Popular Experiences</h2>
           </header>
           <div class="dest-experience-grid">
-            <a class="dest-experience-card" href="/#experiences">
+            <a class="dest-experience-card" href="#experiences">
               <img
                 src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=900&q=80"
                 alt="Calm lake waters framed by mountains in Kashmir"
@@ -477,7 +494,7 @@
                 <h3>Dal Lake Shikara Ride</h3>
               </div>
             </a>
-            <a class="dest-experience-card" href="/#experiences">
+            <a class="dest-experience-card" href="#experiences">
               <img
                 src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80"
                 alt="Open mountain meadow views under a clear sky"
@@ -516,7 +533,7 @@
               <div class="card__body">
                 <p class="card__meta">6 Days / 5 Nights · Family</p>
                 <h3 class="card__title">
-                  <a href="/tours/kashmir-family-tour/">Kashmir Family Escape</a>
+                  <a href="tours/kashmir-family-tour/">Kashmir Family Escape</a>
                 </h3>
                 <p class="card__text">
                   Illustrative family-paced Kashmir circuit with lakeside time, easy
@@ -524,7 +541,7 @@
                 </p>
                 <p class="card__meta">From ₹XX,XXX (illustrative)</p>
                 <div class="card__footer">
-                  <a class="btn btn--ghost" href="/tours/kashmir-family-tour/">View Trip</a>
+                  <a class="btn btn--ghost" href="tours/kashmir-family-tour/">View Trip</a>
                 </div>
               </div>
             </article>
@@ -545,7 +562,7 @@
             <article class="card card--vehicle">
               <div class="card__media">
                 <img
-                  src="/assets/images/vehicle-sedan.jpg"
+                  src="assets/images/vehicle-sedan.jpg"
                   alt="Illustrative sedan for chauffeur-driven travel"
                   width="900"
                   height="600"
@@ -554,7 +571,7 @@
               </div>
               <div class="card__body">
                 <h3 class="card__title">
-                  <a href="/car-rental/vehicles/sedan/">Sedan</a>
+                  <a href="car-rental/vehicles/sedan/">Sedan</a>
                 </h3>
                 <p class="card__text">
                   Illustrative chauffeur-driven sedan for couples and small families on city
@@ -566,7 +583,7 @@
             <article class="card card--vehicle">
               <div class="card__media">
                 <img
-                  src="/assets/images/vehicle-innova-crysta.jpg"
+                  src="assets/images/vehicle-innova-crysta.jpg"
                   alt="Illustrative Innova Crysta for family travel"
                   width="900"
                   height="600"
@@ -575,7 +592,7 @@
               </div>
               <div class="card__body">
                 <h3 class="card__title">
-                  <a href="/car-rental/vehicles/innova-crysta/">Toyota Innova Crysta</a>
+                  <a href="car-rental/vehicles/innova-crysta/">Toyota Innova Crysta</a>
                 </h3>
                 <p class="card__text">
                   Illustrative Innova Crysta option for family trips, long-distance travel,
@@ -587,7 +604,7 @@
             <article class="card card--vehicle">
               <div class="card__media">
                 <img
-                  src="/assets/images/vehicle-suv.jpg"
+                  src="assets/images/vehicle-suv.jpg"
                   alt="Illustrative SUV for hill-route travel"
                   width="900"
                   height="600"
@@ -596,7 +613,7 @@
               </div>
               <div class="card__body">
                 <h3 class="card__title">
-                  <a href="/car-rental/vehicles/suv/">SUV</a>
+                  <a href="car-rental/vehicles/suv/">SUV</a>
                 </h3>
                 <p class="card__text">
                   Illustrative SUV option for hill destinations and travellers who prefer
@@ -607,7 +624,7 @@
             </article>
           </div>
           <div class="section__actions">
-            <a class="btn btn--secondary" href="/car-rental/">Explore Vehicles</a>
+            <a class="btn btn--secondary" href="car-rental/">Explore Vehicles</a>
           </div>
         </div>
       </section>
@@ -620,7 +637,7 @@
           <div class="card-grid">
             <a
               class="card card--link card--guide"
-              href="/travel-guides/best-time-to-visit-kashmir/"
+              href="travel-guides/best-time-to-visit-kashmir/"
             >
               <div class="card__media">
                 <img
@@ -655,7 +672,7 @@
               so you can shape an illustrative enquiry.
             </p>
             <div class="cta-band__actions">
-              <a class="btn btn--primary" href="/plan-your-trip/?destination=kashmir"
+              <a class="btn btn--primary" href="plan-your-trip/?destination=kashmir"
                 >Plan a Journey to Kashmir</a
               >
             </div>
@@ -668,7 +685,7 @@
       <div class="container">
         <div class="site-footer__grid">
           <div class="site-footer__brand">
-            <a class="site-footer__wordmark" href="/">Travel Agency</a>
+            <a class="site-footer__wordmark" href="./">Travel Agency</a>
             <p class="site-footer__statement">
               Curated journeys, comfortable travel, and local experiences designed around
               you.
@@ -678,27 +695,27 @@
           <div>
             <h2 class="site-footer__heading">Explore</h2>
             <ul class="site-footer__list">
-              <li><a href="/destinations/">Destinations</a></li>
-              <li><a href="/tours/">Tours</a></li>
-              <li><a href="/car-rental/">Car Rentals</a></li>
-              <li><a href="/#experiences">Experiences</a></li>
+              <li><a href="destinations/">Destinations</a></li>
+              <li><a href="tours/">Tours</a></li>
+              <li><a href="car-rental/">Car Rentals</a></li>
+              <li><a href="#experiences">Experiences</a></li>
             </ul>
           </div>
 
           <div>
             <h2 class="site-footer__heading">Plan</h2>
             <ul class="site-footer__list">
-              <li><a href="/plan-your-trip/">Plan Your Trip</a></li>
-              <li><a href="/travel-guides/">Travel Guides</a></li>
-              <li><a href="/contact/">Contact</a></li>
+              <li><a href="plan-your-trip/">Plan Your Trip</a></li>
+              <li><a href="travel-guides/">Travel Guides</a></li>
+              <li><a href="contact/">Contact</a></li>
             </ul>
           </div>
 
           <div>
             <h2 class="site-footer__heading">Company</h2>
             <ul class="site-footer__list">
-              <li><a href="/about/">About</a></li>
-              <li><a href="/gallery/">Gallery</a></li>
+              <li><a href="about/">About</a></li>
+              <li><a href="gallery/">Gallery</a></li>
             </ul>
           </div>
 
@@ -723,6 +740,7 @@
       </div>
     </footer>
 
-    <script src="/js/main.js" defer></script>
+    <script src="js/site-base.js"></script>
+    <script src="js/main.js" defer></script>
   </body>
 </html>
