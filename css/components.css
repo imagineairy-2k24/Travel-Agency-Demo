@@ -510,6 +510,8 @@
 
 /* —— Nav toggle (shell) —— */
 .nav-toggle {
+  position: relative;
+  z-index: 3;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -536,5 +538,19 @@
 }
 
 .nav-toggle[aria-expanded="true"] {
-  background-color: var(--color-selection-tint);
+  background-color: var(--color-surface-primary);
+  border-color: var(--color-border-strong);
+  color: var(--color-primary-900);
+}
+
+/* Three CSS lines; glyph text is cleared in JS so color:inherit is safe */
+.nav-toggle > [aria-hidden="true"] {
+  display: block;
+  width: 1.15rem;
+  height: 0.125rem;
+  color: inherit;
+  background-color: currentColor;
+  box-shadow:
+    0 -0.375rem 0 currentColor,
+    0 0.375rem 0 currentColor;
 }

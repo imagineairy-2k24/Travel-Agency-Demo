@@ -149,6 +149,10 @@ ol {
     box-shadow var(--duration-base) var(--ease-standard);
 }
 
+body.nav-is-open .site-header {
+  z-index: 230;
+}
+
 /* Transparent over hero imagery; JS adds .is-scrolled for solid bar */
 .site-header--over-hero {
   position: fixed;
@@ -175,9 +179,16 @@ ol {
 }
 
 .site-header--over-hero .nav-toggle {
-  border-color: rgba(255, 255, 255, 0.45);
-  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.55);
+  background-color: rgba(16, 43, 39, 0.55);
   color: var(--color-text-inverse);
+  backdrop-filter: blur(6px);
+}
+
+body.nav-is-open .site-header--over-hero .nav-toggle {
+  border-color: var(--color-border-strong);
+  background-color: var(--color-surface-primary);
+  color: var(--color-primary-900);
 }
 
 .site-header--over-hero.is-scrolled {
@@ -256,54 +267,187 @@ ol {
   opacity: 1;
 }
 
-/* Mobile: compact panel under header bar (not a full-screen drawer) */
-.site-nav {
-  display: none;
-  flex-basis: 100%;
-  width: 100%;
-  max-width: 100%;
-  margin-top: var(--space-2);
-  padding: var(--space-3);
-  border: 1px solid var(--color-border-default);
-  border-radius: var(--radius-md);
-  background-color: var(--color-surface-primary);
-  box-shadow: var(--shadow-md);
-  overflow-x: hidden;
-}
-
-.site-nav.is-open {
-  display: block;
-}
-
-.site-header--over-hero:not(.is-scrolled) .site-nav {
-  border-color: rgba(255, 255, 255, 0.2);
-  background-color: rgba(16, 43, 39, 0.95);
-}
-
-.site-header--over-hero:not(.is-scrolled) .site-nav__link {
-  color: var(--color-text-inverse);
-}
-
-/*
- * Inverse sublink colors apply only inside the mobile dark nav drawer.
- * Desktop mega-menu panels use a light surface — keep readable dark text there.
- */
+/* Mobile: off-canvas drawer from the right */
 @media (max-width: 767px) {
-  .site-header--over-hero:not(.is-scrolled) .site-nav__sublink {
-    color: rgba(255, 255, 255, 0.92);
+  .site-nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    width: min(20.5rem, 88vw);
+    max-width: 100%;
+    margin: 0;
+    padding: var(--space-6) var(--space-5) var(--space-8);
+    border: 0;
+    border-left: 1px solid var(--color-border-default);
+    border-radius: 0;
+    background-color: var(--color-surface-primary);
+    box-shadow: -12px 0 40px rgba(23, 59, 53, 0.14);
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transform: translate3d(105%, 0, 0);
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      transform var(--duration-slow) var(--ease-standard),
+      visibility var(--duration-slow) var(--ease-standard);
   }
 
-  .site-header--over-hero:not(.is-scrolled) .site-nav__sublink:hover {
-    color: var(--color-text-inverse);
-    background-color: rgba(255, 255, 255, 0.08);
+  .site-nav.is-open {
+    z-index: 4;
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+    pointer-events: auto;
   }
 
-  .site-header--over-hero:not(.is-scrolled) .site-nav__group-label {
-    color: rgba(255, 255, 255, 0.55);
+  .site-nav__drawer-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    margin: 0 0 var(--space-5);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-border-default);
   }
 
-  .site-header--over-hero:not(.is-scrolled) .site-nav__sublink--emphasis {
-    color: var(--color-text-inverse);
+  .site-nav__drawer-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 400;
+    color: var(--color-primary-900);
+  }
+
+  .site-nav__drawer-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    padding: 0;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface-primary);
+    color: var(--color-primary-900);
+    cursor: pointer;
+  }
+
+  /* Crisp CSS X — hide the unicode glyph so it cannot stack with lines */
+  .site-nav__drawer-close > [aria-hidden="true"] {
+    position: relative;
+    display: block;
+    width: 1.15rem;
+    height: 1.15rem;
+    font-size: 0;
+    line-height: 0;
+    color: transparent;
+  }
+
+  .site-nav__drawer-close > [aria-hidden="true"]::before,
+  .site-nav__drawer-close > [aria-hidden="true"]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 0.125rem;
+    background-color: var(--color-primary-900);
+  }
+
+  .site-nav__drawer-close > [aria-hidden="true"]::before {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .site-nav__drawer-close > [aria-hidden="true"]::after {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  .site-nav__drawer-close:hover {
+    background-color: var(--color-surface-soft);
+  }
+
+  .site-nav__drawer-close:focus-visible {
+    outline: var(--focus-ring-width) solid var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  /* Header hamburger sits over the drawer close — hide it while open */
+  body.nav-is-open .nav-toggle {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .nav-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 220;
+    background-color: rgba(11, 22, 20, 0.48);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity var(--duration-slow) var(--ease-standard),
+      visibility var(--duration-slow) var(--ease-standard);
+  }
+
+  .nav-backdrop.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  body.nav-is-open {
+    overflow: hidden;
+  }
+
+  body.nav-is-open .site-header {
+    z-index: 230;
+  }
+
+  /* Keep drawer readable over transparent hero headers */
+  .site-header--over-hero:not(.is-scrolled) .site-nav {
+    border-left-color: var(--color-border-default);
+    background-color: var(--color-surface-primary);
+  }
+
+  .site-header--over-hero:not(.is-scrolled) .site-nav__link,
+  .site-header--over-hero:not(.is-scrolled) .site-nav__trigger {
+    color: var(--color-text-secondary);
+  }
+
+  .site-header--over-hero:not(.is-scrolled) .site-nav__link:hover,
+  .site-header--over-hero:not(.is-scrolled) .site-nav__link[aria-current="page"],
+  .site-header--over-hero:not(.is-scrolled) .site-nav__trigger:hover,
+  .site-header--over-hero:not(.is-scrolled) .site-nav__trigger[aria-current="page"],
+  .site-header--over-hero:not(.is-scrolled) .site-nav__trigger[aria-expanded="true"] {
+    color: var(--color-primary-900);
+    opacity: 1;
+  }
+
+  body.nav-is-open .site-header--over-hero .nav-toggle {
+    border-color: var(--color-border-strong);
+    background-color: var(--color-surface-primary);
+    color: var(--color-primary-900);
+  }
+
+  .site-nav__link,
+  .site-nav__trigger {
+    padding: var(--space-3) var(--space-2);
+    font-size: var(--text-md);
+  }
+
+  .site-nav__item--cta {
+    display: list-item;
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border-default);
+  }
+
+  .site-nav__item--cta .btn {
+    width: 100%;
   }
 }
 
@@ -324,9 +468,9 @@ ol {
 .site-nav__link,
 .site-nav__trigger {
   display: block;
-  padding: var(--space-2) var(--space-2);
+  padding: var(--space-3) var(--space-2);
   font-family: var(--font-body);
-  font-size: var(--text-sm);
+  font-size: var(--text-md);
   font-weight: 500;
   line-height: 1.4;
   color: var(--color-text-secondary);
@@ -442,8 +586,10 @@ ol {
 }
 
 .site-nav__item--cta {
-  display: none;
-  margin-top: var(--space-1);
+  display: list-item;
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-default);
 }
 
 .site-nav__item--cta .btn {
@@ -615,22 +761,49 @@ ol {
 
   .site-nav {
     display: block;
+    position: static;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    z-index: auto;
     flex-basis: auto;
     width: auto;
     max-width: none;
-    margin-top: 0;
-    margin-left: auto;
+    margin: 0 0 0 auto;
     padding: 0;
     border: 0;
     border-radius: 0;
     background-color: transparent;
     box-shadow: none;
     overflow: visible;
+    transform: none;
+    visibility: visible;
+    pointer-events: auto;
+    transition: none;
+  }
+
+  .site-nav__drawer-head,
+  .nav-backdrop {
+    display: none !important;
   }
 
   .site-header--over-hero:not(.is-scrolled) .site-nav {
     border: 0;
     background-color: transparent;
+  }
+
+  .site-header--over-hero:not(.is-scrolled) .site-nav__link,
+  .site-header--over-hero:not(.is-scrolled) .site-nav__trigger {
+    color: var(--color-text-inverse);
+  }
+
+  .site-header--over-hero:not(.is-scrolled) .site-nav__link:hover,
+  .site-header--over-hero:not(.is-scrolled) .site-nav__link[aria-current="page"],
+  .site-header--over-hero:not(.is-scrolled) .site-nav__trigger:hover,
+  .site-header--over-hero:not(.is-scrolled) .site-nav__trigger[aria-current="page"],
+  .site-header--over-hero:not(.is-scrolled) .site-nav__trigger[aria-expanded="true"] {
+    color: var(--color-text-inverse);
+    opacity: 0.85;
   }
 
   .site-nav__list {
@@ -644,6 +817,7 @@ ol {
   .site-nav__trigger {
     width: auto;
     padding: var(--space-1) 0;
+    font-size: var(--text-sm);
     justify-content: flex-start;
   }
 
@@ -718,6 +892,8 @@ ol {
     display: list-item;
     margin-top: 0;
     margin-left: var(--space-2);
+    padding-top: 0;
+    border-top: 0;
   }
 
   .site-nav__item--cta .btn {

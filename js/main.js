@@ -12,7 +12,7 @@
   }
 
   /**
-   * Mobile nav: toggle, Escape close, outside click, link click close.
+   * Mobile nav: right-side drawer, backdrop, Escape/outside close, link close.
    * Expects [data-nav-toggle] + [data-site-nav] (or #site-nav).
    */
   function initNavToggle() {
@@ -20,9 +20,40 @@
     var nav = document.querySelector("[data-site-nav]") || document.getElementById("site-nav");
     if (!toggle || !nav) return;
 
+    /* Drop unicode hamburger so CSS lines are the only icon (avoids double-render) */
+    var toggleIcon = toggle.querySelector("[aria-hidden=\"true\"]");
+    if (toggleIcon) toggleIcon.textContent = "";
+
+    var backdrop = document.querySelector("[data-nav-backdrop]");
+    if (!backdrop) {
+      backdrop = document.createElement("div");
+      backdrop.className = "nav-backdrop";
+      backdrop.setAttribute("data-nav-backdrop", "");
+      backdrop.hidden = true;
+      document.body.appendChild(backdrop);
+    }
+
+    function ensureDrawerChrome() {
+      if (nav.querySelector("[data-nav-drawer-head]")) return;
+      var head = document.createElement("div");
+      head.className = "site-nav__drawer-head";
+      head.setAttribute("data-nav-drawer-head", "");
+      head.innerHTML =
+        '<p class="site-nav__drawer-title">Menu</p>' +
+        '<button type="button" class="site-nav__drawer-close" data-nav-close aria-label="Close menu">' +
+        '<span aria-hidden="true">×</span></button>';
+      nav.insertBefore(head, nav.firstChild);
+    }
+
+    ensureDrawerChrome();
+
     function setOpen(open) {
       nav.classList.toggle("is-open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      document.body.classList.toggle("nav-is-open", open);
+      backdrop.classList.toggle("is-visible", open);
+      backdrop.hidden = !open;
+      nav.setAttribute("aria-hidden", open ? "false" : "true");
       if (!open) closeAllNavPanels(nav);
     }
 
@@ -30,8 +61,31 @@
       return nav.classList.contains("is-open");
     }
 
-    toggle.addEventListener("click", function () {
+    /* Closed drawer should not be announced as visible content on mobile. */
+    if (!isDesktopNav()) {
+      nav.setAttribute("aria-hidden", "true");
+    }
+
+    toggle.addEventListener("click", function (event) {
+      event.stopPropagation();
       setOpen(!isOpen());
+    });
+
+    backdrop.addEventListener("click", function () {
+      setOpen(false);
+      toggle.focus();
+    });
+
+    nav.addEventListener("click", function (event) {
+      var target = event.target;
+      var closeBtn =
+        target && target.closest
+          ? target.closest("[data-nav-close]")
+          : null;
+      if (!closeBtn) return;
+      event.stopPropagation();
+      setOpen(false);
+      toggle.focus();
     });
 
     document.addEventListener("keydown", function (event) {
@@ -45,6 +99,7 @@
       if (!isOpen() || isDesktopNav()) return;
       var target = event.target;
       if (nav.contains(target) || toggle.contains(target)) return;
+      if (backdrop.contains(target)) return;
       setOpen(false);
     });
 
@@ -52,6 +107,15 @@
       link.addEventListener("click", function () {
         if (isOpen() && !isDesktopNav()) setOpen(false);
       });
+    });
+
+    window.matchMedia(DESKTOP_MQ).addEventListener("change", function (event) {
+      if (event.matches) {
+        setOpen(false);
+        nav.removeAttribute("aria-hidden");
+      } else {
+        nav.setAttribute("aria-hidden", isOpen() ? "false" : "true");
+      }
     });
   }
 
